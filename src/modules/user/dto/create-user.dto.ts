@@ -27,8 +27,16 @@ export class CreateUserDto {
   senha: string;
 
   @ApiProperty({
+    description: 'CPF do usuário (apenas números)',
+    example: '12345678909',
+  })
+  @IsNotEmpty({ message: 'O CPF é obrigatório.' })
+  @MinLength(11, { message: 'O CPF deve ter 11 dígitos.' })
+  cpf: string;
+
+  @ApiProperty({
     description: 'Número de telefone para contato',
-    example: '(86) 99999-8888',
+    example: '86999998888',
   })
   @IsNotEmpty({ message: 'O telefone é obrigatório.' })
   telefone: string;

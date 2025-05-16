@@ -29,6 +29,12 @@ export default class UserRepository implements UserInterfaceClass {
     });
   }
 
+  async findByCpf(cpf: string) {
+    return await this.prisma.usuario.findUnique({
+      where: { cpf },
+    });
+  }
+
   async listAll() {
     return await this.prisma.usuario.findMany();
   }

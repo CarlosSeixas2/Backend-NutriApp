@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as bcrypt from 'bcrypt';
 
 import {
   Injectable,
   ConflictException,
+  NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
@@ -32,17 +32,26 @@ export class UserService {
     const user = await this.userRepository.findByEmail(email);
 
     if (!user) {
-      throw new UnauthorizedException('Usuário não encontrado');
+      throw new NotFoundException('Email não encontrado');
     }
 
     return user;
   }
 
   async register(data: CreateUserDto) {
-    const userExists = await this.userRepository.findByEmail(data.email);
+    const emailExists = await this.userRepository.findByEmail(data.email);
+    const cpfExists = await this.userRepository.findByCpf(data.cpf);
 
-    if (userExists) {
-      throw new ConflictException('Usuário já existe');
+    if (emailExists && cpfExists) {
+      throw new ConflictException('Email e CPF já estão em uso');
+    }
+
+    if (emailExists) {
+      throw new ConflictException('Email já está em uso');
+    }
+
+    if (cpfExists) {
+      throw new ConflictException('CPF já está em uso');
     }
 
     const hashedPassword = await bcrypt.hash(data.senha, 10);
@@ -52,9 +61,7 @@ export class UserService {
       senha: hashedPassword,
     });
 
-    const payload = { sub: user.id, email: user.email };
-
-    const token = this.jwtService.sign(payload);
+    const token = this.jwtService.sign({ sub: user.id, email: user.email });
 
     return { user, token };
   }
@@ -66,13 +73,9 @@ export class UserService {
       throw new UnauthorizedException('Credenciais inválidas');
     }
 
-    const payload = { sub: user.id, email: user.email };
+    const token = this.jwtService.sign({ sub: user.id, email: user.email });
 
-    const token = this.jwtService.sign(payload);
-
-    const { senha, ...userData } = user;
-
-    return { userData, token };
+    return { token };
   }
 
   async delete(id: string) {

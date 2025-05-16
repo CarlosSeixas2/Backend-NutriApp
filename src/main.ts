@@ -20,6 +20,14 @@ async function bootstrap() {
     .setDescription('Mobile API for medical consultations')
     .setVersion('1.0')
     .addTag('nutri')
+    .addBearerAuth(
+      {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+      'access-token',
+    )
     .build();
 
   const documentFactory = () => SwaggerModule.createDocument(app, config);

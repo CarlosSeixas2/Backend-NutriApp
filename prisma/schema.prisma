@@ -8,6 +8,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// generator erd {
+//   provider = "prisma-erd-generator"
+//   output   = "./prisma/erd"
+// }
+
 enum TipoRegistro {
   CRM
   CRN
@@ -16,27 +21,31 @@ enum TipoRegistro {
 }
 
 model Paciente {
-  id              String            @id @default(uuid()) @db.Uuid
-  dataNascimento  DateTime          @db.Date
-  peso            Float
-  altura          Float
-  usuarios        Usuario[]         @relation("PacienteUsuario")
-  agendamentos    Consulta[]
-  HistoricoMedico HistoricoMedico[]
+  id                 String               @id @default(uuid()) @db.Uuid
+  dataNascimento     DateTime             @db.Date
+  peso               Float
+  altura             Float
+  alergias           String?
+  usuarios           Usuario[]            @relation("PacienteUsuario")
+  agendamentos       Consulta[]
+  HistoricoMedico    HistoricoMedico[]
+  PacientePlanoSaude PacientePlanoSaude[]
 }
 
 model Profissional {
-  id                   String            @id @default(uuid()) @db.Uuid
-  tipoRegistro         TipoRegistro
-  numeroRegistro       String
-  uf                   String
-  descricao            String
-  instituicaoFormadora String
-  tipoProfissional     String
-  especialidade        String
-  usuarios             Usuario[]         @relation("ProfissionalUsuario")
-  agendamentos         Consulta[]
-  HistoricoMedico      HistoricoMedico[]
+  id                     String                   @id @default(uuid()) @db.Uuid
+  tipoRegistro           TipoRegistro
+  numeroRegistro         String
+  uf                     String
+  descricao              String
+  instituicaoFormadora   String
+  tipoProfissional       String
+  especialidade          String
+  usuarios               Usuario[]                @relation("ProfissionalUsuario")
+  agendamentos           Consulta[]
+  HistoricoMedico        HistoricoMedico[]
+  Disponibilidade        Disponibilidade[]
+  ProfissionalPlanoSaude ProfissionalPlanoSaude[]
 }
 
 model Usuario {
@@ -47,6 +56,7 @@ model Usuario {
   telefone       String
   avatar         String?
   genero         String
+  cpf            String  @unique
   profissionalId String? @db.Uuid
   pacienteId     String? @db.Uuid
 
@@ -64,6 +74,7 @@ model Clinica {
   telefone          String
   tipoAtendimento   String
   enderecos         EnderecoClinica[]
+  Disponibilidade   Disponibilidade[]
 }
 
 model DiaSemana {
@@ -73,12 +84,16 @@ model DiaSemana {
 }
 
 model Disponibilidade {
-  id          String   @id @default(uuid()) @db.Uuid
-  diaSemanaId String   @db.Uuid
-  horaInicio  DateTime @db.Time(0)
-  horaFim     DateTime @db.Time(0)
+  id             String   @id @default(uuid()) @db.Uuid
+  horaInicio     DateTime
+  horaFim        DateTime
+  diaSemanaId    String   @db.Uuid
+  clinicaId      String   @db.Uuid
+  profissionalId String   @db.Uuid
 
-  diaSemana DiaSemana @relation(fields: [diaSemanaId], references: [id])
+  profissional Profissional @relation(fields: [profissionalId], references: [id])
+  clinica      Clinica      @relation(fields: [clinicaId], references: [id])
+  diaSemana    DiaSemana    @relation(fields: [diaSemanaId], references: [id])
 }
 
 model Endereco {
@@ -115,7 +130,7 @@ model EnderecoClinica {
 model Consulta {
   id             String   @id @default(uuid()) @db.Uuid
   data           DateTime @db.Date
-  horaInicio     DateTime @db.Time(0)
+  horaInicio     DateTime
   horaFim        DateTime @db.Time(0)
   turno          String
   tipoConsulta   String
@@ -152,4 +167,33 @@ model HistoricoMedico {
   paciente     Paciente     @relation(fields: [pacienteId], references: [id])
   profissional Profissional @relation(fields: [profissionalId], references: [id])
   consulta     Consulta     @relation(fields: [consultaId], references: [id])
+}
+
+model PlanoSaude {
+  id                     String                   @id @default(uuid()) @db.Uuid
+  nome                   String
+  operadora              String
+  PacientePlanoSaude     PacientePlanoSaude[]
+  ProfissionalPlanoSaude ProfissionalPlanoSaude[]
+}
+
+model PacientePlanoSaude {
+  id                String   @id @default(uuid()) @db.Uuid
+  pacienteId        String   @db.Uuid
+  planoId           String   @db.Uuid
+  numeroCarteirinha String
+  validade          DateTime @db.Date
+  nomeTitular       String
+
+  paciente Paciente   @relation(fields: [pacienteId], references: [id])
+  plano    PlanoSaude @relation(fields: [planoId], references: [id])
+}
+
+model ProfissionalPlanoSaude {
+  id             String @id @default(uuid()) @db.Uuid
+  profissionalId String @db.Uuid
+  planoId        String @db.Uuid
+
+  profissional Profissional @relation(fields: [profissionalId], references: [id])
+  plano        PlanoSaude   @relation(fields: [planoId], references: [id])
 }

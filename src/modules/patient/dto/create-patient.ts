@@ -29,4 +29,12 @@ export default class CreatePatientDto {
   })
   @IsNotEmpty({ message: 'A altura é obrigatória.' })
   altura: number;
+
+  @ApiProperty({
+    description: 'Alergias do paciente',
+    example: 'Nenhuma',
+    type: String,
+  })
+  @IsNotEmpty({ message: 'As alergias são obrigatórias.' })
+  alergias: string;
 }

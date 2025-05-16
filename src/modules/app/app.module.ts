@@ -7,6 +7,8 @@ import { PatientModule } from '../patient/patient.module';
 import { MedicalModule } from '../medical/medical.module';
 import { AdressModule } from '../adress/adress.module';
 import { ClinicModule } from '../clinic/clinic.module';
+import { DayModule } from '../day_week/day.module';
+import { DisponibilityModule } from '../disponibility/disponibility.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { ClinicModule } from '../clinic/clinic.module';
     MedicalModule,
     AdressModule,
     ClinicModule,
+    DayModule,
+    DisponibilityModule,
   ],
   controllers: [AppController],
   providers: [AppService],

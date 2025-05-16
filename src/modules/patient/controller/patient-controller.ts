@@ -4,22 +4,18 @@ import {
   Delete,
   Get,
   Param,
-  Patch,
   Post,
+  Put,
 } from '@nestjs/common';
 import { PatientService } from '../service/patient.service';
 import CreatePatientDto from '../dto/create-patient';
 import { ApiTags } from '@nestjs/swagger';
+import UpdatePatientDto from '../dto/update-patient';
 
 @ApiTags('Paciente')
 @Controller('patients')
 export class PatientController {
   constructor(private readonly patientService: PatientService) {}
-
-  @Post()
-  register(@Body() dto: CreatePatientDto) {
-    return this.patientService.register(dto);
-  }
 
   @Get()
   listAll() {
@@ -31,8 +27,13 @@ export class PatientController {
     return this.patientService.findById(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: CreatePatientDto) {
+  @Post()
+  register(@Body() dto: CreatePatientDto) {
+    return this.patientService.register(dto);
+  }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() dto: UpdatePatientDto) {
     return this.patientService.update(id, dto);
   }
 

@@ -68,6 +68,21 @@ export type Consulta = $Result.DefaultSelection<Prisma.$ConsultaPayload>
  * 
  */
 export type HistoricoMedico = $Result.DefaultSelection<Prisma.$HistoricoMedicoPayload>
+/**
+ * Model PlanoSaude
+ * 
+ */
+export type PlanoSaude = $Result.DefaultSelection<Prisma.$PlanoSaudePayload>
+/**
+ * Model PacientePlanoSaude
+ * 
+ */
+export type PacientePlanoSaude = $Result.DefaultSelection<Prisma.$PacientePlanoSaudePayload>
+/**
+ * Model ProfissionalPlanoSaude
+ * 
+ */
+export type ProfissionalPlanoSaude = $Result.DefaultSelection<Prisma.$ProfissionalPlanoSaudePayload>
 
 /**
  * Enums
@@ -322,6 +337,36 @@ export class PrismaClient<
     * ```
     */
   get historicoMedico(): Prisma.HistoricoMedicoDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.planoSaude`: Exposes CRUD operations for the **PlanoSaude** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more PlanoSaudes
+    * const planoSaudes = await prisma.planoSaude.findMany()
+    * ```
+    */
+  get planoSaude(): Prisma.PlanoSaudeDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.pacientePlanoSaude`: Exposes CRUD operations for the **PacientePlanoSaude** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more PacientePlanoSaudes
+    * const pacientePlanoSaudes = await prisma.pacientePlanoSaude.findMany()
+    * ```
+    */
+  get pacientePlanoSaude(): Prisma.PacientePlanoSaudeDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.profissionalPlanoSaude`: Exposes CRUD operations for the **ProfissionalPlanoSaude** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ProfissionalPlanoSaudes
+    * const profissionalPlanoSaudes = await prisma.profissionalPlanoSaude.findMany()
+    * ```
+    */
+  get profissionalPlanoSaude(): Prisma.ProfissionalPlanoSaudeDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -380,8 +425,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.7.0
-   * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+   * Prisma Client JS version: 6.8.0
+   * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
    */
   export type PrismaVersion = {
     client: string
@@ -772,7 +817,10 @@ export namespace Prisma {
     EnderecoUsuario: 'EnderecoUsuario',
     EnderecoClinica: 'EnderecoClinica',
     Consulta: 'Consulta',
-    HistoricoMedico: 'HistoricoMedico'
+    HistoricoMedico: 'HistoricoMedico',
+    PlanoSaude: 'PlanoSaude',
+    PacientePlanoSaude: 'PacientePlanoSaude',
+    ProfissionalPlanoSaude: 'ProfissionalPlanoSaude'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -791,7 +839,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "paciente" | "profissional" | "usuario" | "clinica" | "diaSemana" | "disponibilidade" | "endereco" | "enderecoUsuario" | "enderecoClinica" | "consulta" | "historicoMedico"
+      modelProps: "paciente" | "profissional" | "usuario" | "clinica" | "diaSemana" | "disponibilidade" | "endereco" | "enderecoUsuario" | "enderecoClinica" | "consulta" | "historicoMedico" | "planoSaude" | "pacientePlanoSaude" | "profissionalPlanoSaude"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1609,6 +1657,228 @@ export namespace Prisma {
           }
         }
       }
+      PlanoSaude: {
+        payload: Prisma.$PlanoSaudePayload<ExtArgs>
+        fields: Prisma.PlanoSaudeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PlanoSaudeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PlanoSaudeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload>
+          }
+          findFirst: {
+            args: Prisma.PlanoSaudeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PlanoSaudeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload>
+          }
+          findMany: {
+            args: Prisma.PlanoSaudeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload>[]
+          }
+          create: {
+            args: Prisma.PlanoSaudeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload>
+          }
+          createMany: {
+            args: Prisma.PlanoSaudeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.PlanoSaudeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload>[]
+          }
+          delete: {
+            args: Prisma.PlanoSaudeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload>
+          }
+          update: {
+            args: Prisma.PlanoSaudeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload>
+          }
+          deleteMany: {
+            args: Prisma.PlanoSaudeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PlanoSaudeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.PlanoSaudeUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload>[]
+          }
+          upsert: {
+            args: Prisma.PlanoSaudeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlanoSaudePayload>
+          }
+          aggregate: {
+            args: Prisma.PlanoSaudeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlanoSaude>
+          }
+          groupBy: {
+            args: Prisma.PlanoSaudeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PlanoSaudeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.PlanoSaudeCountArgs<ExtArgs>
+            result: $Utils.Optional<PlanoSaudeCountAggregateOutputType> | number
+          }
+        }
+      }
+      PacientePlanoSaude: {
+        payload: Prisma.$PacientePlanoSaudePayload<ExtArgs>
+        fields: Prisma.PacientePlanoSaudeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PacientePlanoSaudeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PacientePlanoSaudeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload>
+          }
+          findFirst: {
+            args: Prisma.PacientePlanoSaudeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PacientePlanoSaudeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload>
+          }
+          findMany: {
+            args: Prisma.PacientePlanoSaudeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload>[]
+          }
+          create: {
+            args: Prisma.PacientePlanoSaudeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload>
+          }
+          createMany: {
+            args: Prisma.PacientePlanoSaudeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.PacientePlanoSaudeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload>[]
+          }
+          delete: {
+            args: Prisma.PacientePlanoSaudeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload>
+          }
+          update: {
+            args: Prisma.PacientePlanoSaudeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload>
+          }
+          deleteMany: {
+            args: Prisma.PacientePlanoSaudeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PacientePlanoSaudeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.PacientePlanoSaudeUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload>[]
+          }
+          upsert: {
+            args: Prisma.PacientePlanoSaudeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PacientePlanoSaudePayload>
+          }
+          aggregate: {
+            args: Prisma.PacientePlanoSaudeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePacientePlanoSaude>
+          }
+          groupBy: {
+            args: Prisma.PacientePlanoSaudeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PacientePlanoSaudeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.PacientePlanoSaudeCountArgs<ExtArgs>
+            result: $Utils.Optional<PacientePlanoSaudeCountAggregateOutputType> | number
+          }
+        }
+      }
+      ProfissionalPlanoSaude: {
+        payload: Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>
+        fields: Prisma.ProfissionalPlanoSaudeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ProfissionalPlanoSaudeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ProfissionalPlanoSaudeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload>
+          }
+          findFirst: {
+            args: Prisma.ProfissionalPlanoSaudeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ProfissionalPlanoSaudeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload>
+          }
+          findMany: {
+            args: Prisma.ProfissionalPlanoSaudeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload>[]
+          }
+          create: {
+            args: Prisma.ProfissionalPlanoSaudeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload>
+          }
+          createMany: {
+            args: Prisma.ProfissionalPlanoSaudeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ProfissionalPlanoSaudeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload>[]
+          }
+          delete: {
+            args: Prisma.ProfissionalPlanoSaudeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload>
+          }
+          update: {
+            args: Prisma.ProfissionalPlanoSaudeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload>
+          }
+          deleteMany: {
+            args: Prisma.ProfissionalPlanoSaudeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ProfissionalPlanoSaudeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ProfissionalPlanoSaudeUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload>[]
+          }
+          upsert: {
+            args: Prisma.ProfissionalPlanoSaudeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProfissionalPlanoSaudePayload>
+          }
+          aggregate: {
+            args: Prisma.ProfissionalPlanoSaudeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateProfissionalPlanoSaude>
+          }
+          groupBy: {
+            args: Prisma.ProfissionalPlanoSaudeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ProfissionalPlanoSaudeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ProfissionalPlanoSaudeCountArgs<ExtArgs>
+            result: $Utils.Optional<ProfissionalPlanoSaudeCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1704,6 +1974,9 @@ export namespace Prisma {
     enderecoClinica?: EnderecoClinicaOmit
     consulta?: ConsultaOmit
     historicoMedico?: HistoricoMedicoOmit
+    planoSaude?: PlanoSaudeOmit
+    pacientePlanoSaude?: PacientePlanoSaudeOmit
+    profissionalPlanoSaude?: ProfissionalPlanoSaudeOmit
   }
 
   /* Types for Logging */
@@ -1801,12 +2074,14 @@ export namespace Prisma {
     usuarios: number
     agendamentos: number
     HistoricoMedico: number
+    PacientePlanoSaude: number
   }
 
   export type PacienteCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     usuarios?: boolean | PacienteCountOutputTypeCountUsuariosArgs
     agendamentos?: boolean | PacienteCountOutputTypeCountAgendamentosArgs
     HistoricoMedico?: boolean | PacienteCountOutputTypeCountHistoricoMedicoArgs
+    PacientePlanoSaude?: boolean | PacienteCountOutputTypeCountPacientePlanoSaudeArgs
   }
 
   // Custom InputTypes
@@ -1841,6 +2116,13 @@ export namespace Prisma {
     where?: HistoricoMedicoWhereInput
   }
 
+  /**
+   * PacienteCountOutputType without action
+   */
+  export type PacienteCountOutputTypeCountPacientePlanoSaudeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PacientePlanoSaudeWhereInput
+  }
+
 
   /**
    * Count Type ProfissionalCountOutputType
@@ -1850,12 +2132,16 @@ export namespace Prisma {
     usuarios: number
     agendamentos: number
     HistoricoMedico: number
+    Disponibilidade: number
+    ProfissionalPlanoSaude: number
   }
 
   export type ProfissionalCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     usuarios?: boolean | ProfissionalCountOutputTypeCountUsuariosArgs
     agendamentos?: boolean | ProfissionalCountOutputTypeCountAgendamentosArgs
     HistoricoMedico?: boolean | ProfissionalCountOutputTypeCountHistoricoMedicoArgs
+    Disponibilidade?: boolean | ProfissionalCountOutputTypeCountDisponibilidadeArgs
+    ProfissionalPlanoSaude?: boolean | ProfissionalCountOutputTypeCountProfissionalPlanoSaudeArgs
   }
 
   // Custom InputTypes
@@ -1888,6 +2174,20 @@ export namespace Prisma {
    */
   export type ProfissionalCountOutputTypeCountHistoricoMedicoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: HistoricoMedicoWhereInput
+  }
+
+  /**
+   * ProfissionalCountOutputType without action
+   */
+  export type ProfissionalCountOutputTypeCountDisponibilidadeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: DisponibilidadeWhereInput
+  }
+
+  /**
+   * ProfissionalCountOutputType without action
+   */
+  export type ProfissionalCountOutputTypeCountProfissionalPlanoSaudeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProfissionalPlanoSaudeWhereInput
   }
 
 
@@ -1928,10 +2228,12 @@ export namespace Prisma {
 
   export type ClinicaCountOutputType = {
     enderecos: number
+    Disponibilidade: number
   }
 
   export type ClinicaCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     enderecos?: boolean | ClinicaCountOutputTypeCountEnderecosArgs
+    Disponibilidade?: boolean | ClinicaCountOutputTypeCountDisponibilidadeArgs
   }
 
   // Custom InputTypes
@@ -1950,6 +2252,13 @@ export namespace Prisma {
    */
   export type ClinicaCountOutputTypeCountEnderecosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: EnderecoClinicaWhereInput
+  }
+
+  /**
+   * ClinicaCountOutputType without action
+   */
+  export type ClinicaCountOutputTypeCountDisponibilidadeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: DisponibilidadeWhereInput
   }
 
 
@@ -2056,6 +2365,46 @@ export namespace Prisma {
 
 
   /**
+   * Count Type PlanoSaudeCountOutputType
+   */
+
+  export type PlanoSaudeCountOutputType = {
+    PacientePlanoSaude: number
+    ProfissionalPlanoSaude: number
+  }
+
+  export type PlanoSaudeCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    PacientePlanoSaude?: boolean | PlanoSaudeCountOutputTypeCountPacientePlanoSaudeArgs
+    ProfissionalPlanoSaude?: boolean | PlanoSaudeCountOutputTypeCountProfissionalPlanoSaudeArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * PlanoSaudeCountOutputType without action
+   */
+  export type PlanoSaudeCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaudeCountOutputType
+     */
+    select?: PlanoSaudeCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * PlanoSaudeCountOutputType without action
+   */
+  export type PlanoSaudeCountOutputTypeCountPacientePlanoSaudeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PacientePlanoSaudeWhereInput
+  }
+
+  /**
+   * PlanoSaudeCountOutputType without action
+   */
+  export type PlanoSaudeCountOutputTypeCountProfissionalPlanoSaudeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProfissionalPlanoSaudeWhereInput
+  }
+
+
+  /**
    * Models
    */
 
@@ -2086,6 +2435,7 @@ export namespace Prisma {
     dataNascimento: Date | null
     peso: number | null
     altura: number | null
+    alergias: string | null
   }
 
   export type PacienteMaxAggregateOutputType = {
@@ -2093,6 +2443,7 @@ export namespace Prisma {
     dataNascimento: Date | null
     peso: number | null
     altura: number | null
+    alergias: string | null
   }
 
   export type PacienteCountAggregateOutputType = {
@@ -2100,6 +2451,7 @@ export namespace Prisma {
     dataNascimento: number
     peso: number
     altura: number
+    alergias: number
     _all: number
   }
 
@@ -2119,6 +2471,7 @@ export namespace Prisma {
     dataNascimento?: true
     peso?: true
     altura?: true
+    alergias?: true
   }
 
   export type PacienteMaxAggregateInputType = {
@@ -2126,6 +2479,7 @@ export namespace Prisma {
     dataNascimento?: true
     peso?: true
     altura?: true
+    alergias?: true
   }
 
   export type PacienteCountAggregateInputType = {
@@ -2133,6 +2487,7 @@ export namespace Prisma {
     dataNascimento?: true
     peso?: true
     altura?: true
+    alergias?: true
     _all?: true
   }
 
@@ -2227,6 +2582,7 @@ export namespace Prisma {
     dataNascimento: Date
     peso: number
     altura: number
+    alergias: string | null
     _count: PacienteCountAggregateOutputType | null
     _avg: PacienteAvgAggregateOutputType | null
     _sum: PacienteSumAggregateOutputType | null
@@ -2253,9 +2609,11 @@ export namespace Prisma {
     dataNascimento?: boolean
     peso?: boolean
     altura?: boolean
+    alergias?: boolean
     usuarios?: boolean | Paciente$usuariosArgs<ExtArgs>
     agendamentos?: boolean | Paciente$agendamentosArgs<ExtArgs>
     HistoricoMedico?: boolean | Paciente$HistoricoMedicoArgs<ExtArgs>
+    PacientePlanoSaude?: boolean | Paciente$PacientePlanoSaudeArgs<ExtArgs>
     _count?: boolean | PacienteCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["paciente"]>
 
@@ -2264,6 +2622,7 @@ export namespace Prisma {
     dataNascimento?: boolean
     peso?: boolean
     altura?: boolean
+    alergias?: boolean
   }, ExtArgs["result"]["paciente"]>
 
   export type PacienteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2271,6 +2630,7 @@ export namespace Prisma {
     dataNascimento?: boolean
     peso?: boolean
     altura?: boolean
+    alergias?: boolean
   }, ExtArgs["result"]["paciente"]>
 
   export type PacienteSelectScalar = {
@@ -2278,13 +2638,15 @@ export namespace Prisma {
     dataNascimento?: boolean
     peso?: boolean
     altura?: boolean
+    alergias?: boolean
   }
 
-  export type PacienteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "dataNascimento" | "peso" | "altura", ExtArgs["result"]["paciente"]>
+  export type PacienteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "dataNascimento" | "peso" | "altura" | "alergias", ExtArgs["result"]["paciente"]>
   export type PacienteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     usuarios?: boolean | Paciente$usuariosArgs<ExtArgs>
     agendamentos?: boolean | Paciente$agendamentosArgs<ExtArgs>
     HistoricoMedico?: boolean | Paciente$HistoricoMedicoArgs<ExtArgs>
+    PacientePlanoSaude?: boolean | Paciente$PacientePlanoSaudeArgs<ExtArgs>
     _count?: boolean | PacienteCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type PacienteIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -2296,12 +2658,14 @@ export namespace Prisma {
       usuarios: Prisma.$UsuarioPayload<ExtArgs>[]
       agendamentos: Prisma.$ConsultaPayload<ExtArgs>[]
       HistoricoMedico: Prisma.$HistoricoMedicoPayload<ExtArgs>[]
+      PacientePlanoSaude: Prisma.$PacientePlanoSaudePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       dataNascimento: Date
       peso: number
       altura: number
+      alergias: string | null
     }, ExtArgs["result"]["paciente"]>
     composites: {}
   }
@@ -2699,6 +3063,7 @@ export namespace Prisma {
     usuarios<T extends Paciente$usuariosArgs<ExtArgs> = {}>(args?: Subset<T, Paciente$usuariosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     agendamentos<T extends Paciente$agendamentosArgs<ExtArgs> = {}>(args?: Subset<T, Paciente$agendamentosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     HistoricoMedico<T extends Paciente$HistoricoMedicoArgs<ExtArgs> = {}>(args?: Subset<T, Paciente$HistoricoMedicoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HistoricoMedicoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    PacientePlanoSaude<T extends Paciente$PacientePlanoSaudeArgs<ExtArgs> = {}>(args?: Subset<T, Paciente$PacientePlanoSaudeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2732,6 +3097,7 @@ export namespace Prisma {
     readonly dataNascimento: FieldRef<"Paciente", 'DateTime'>
     readonly peso: FieldRef<"Paciente", 'Float'>
     readonly altura: FieldRef<"Paciente", 'Float'>
+    readonly alergias: FieldRef<"Paciente", 'String'>
   }
     
 
@@ -3192,6 +3558,30 @@ export namespace Prisma {
   }
 
   /**
+   * Paciente.PacientePlanoSaude
+   */
+  export type Paciente$PacientePlanoSaudeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    where?: PacientePlanoSaudeWhereInput
+    orderBy?: PacientePlanoSaudeOrderByWithRelationInput | PacientePlanoSaudeOrderByWithRelationInput[]
+    cursor?: PacientePlanoSaudeWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PacientePlanoSaudeScalarFieldEnum | PacientePlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
    * Paciente without action
    */
   export type PacienteDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3401,6 +3791,8 @@ export namespace Prisma {
     usuarios?: boolean | Profissional$usuariosArgs<ExtArgs>
     agendamentos?: boolean | Profissional$agendamentosArgs<ExtArgs>
     HistoricoMedico?: boolean | Profissional$HistoricoMedicoArgs<ExtArgs>
+    Disponibilidade?: boolean | Profissional$DisponibilidadeArgs<ExtArgs>
+    ProfissionalPlanoSaude?: boolean | Profissional$ProfissionalPlanoSaudeArgs<ExtArgs>
     _count?: boolean | ProfissionalCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["profissional"]>
 
@@ -3442,6 +3834,8 @@ export namespace Prisma {
     usuarios?: boolean | Profissional$usuariosArgs<ExtArgs>
     agendamentos?: boolean | Profissional$agendamentosArgs<ExtArgs>
     HistoricoMedico?: boolean | Profissional$HistoricoMedicoArgs<ExtArgs>
+    Disponibilidade?: boolean | Profissional$DisponibilidadeArgs<ExtArgs>
+    ProfissionalPlanoSaude?: boolean | Profissional$ProfissionalPlanoSaudeArgs<ExtArgs>
     _count?: boolean | ProfissionalCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ProfissionalIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -3453,6 +3847,8 @@ export namespace Prisma {
       usuarios: Prisma.$UsuarioPayload<ExtArgs>[]
       agendamentos: Prisma.$ConsultaPayload<ExtArgs>[]
       HistoricoMedico: Prisma.$HistoricoMedicoPayload<ExtArgs>[]
+      Disponibilidade: Prisma.$DisponibilidadePayload<ExtArgs>[]
+      ProfissionalPlanoSaude: Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -3860,6 +4256,8 @@ export namespace Prisma {
     usuarios<T extends Profissional$usuariosArgs<ExtArgs> = {}>(args?: Subset<T, Profissional$usuariosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     agendamentos<T extends Profissional$agendamentosArgs<ExtArgs> = {}>(args?: Subset<T, Profissional$agendamentosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     HistoricoMedico<T extends Profissional$HistoricoMedicoArgs<ExtArgs> = {}>(args?: Subset<T, Profissional$HistoricoMedicoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HistoricoMedicoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    Disponibilidade<T extends Profissional$DisponibilidadeArgs<ExtArgs> = {}>(args?: Subset<T, Profissional$DisponibilidadeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DisponibilidadePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ProfissionalPlanoSaude<T extends Profissional$ProfissionalPlanoSaudeArgs<ExtArgs> = {}>(args?: Subset<T, Profissional$ProfissionalPlanoSaudeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4357,6 +4755,54 @@ export namespace Prisma {
   }
 
   /**
+   * Profissional.Disponibilidade
+   */
+  export type Profissional$DisponibilidadeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Disponibilidade
+     */
+    select?: DisponibilidadeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Disponibilidade
+     */
+    omit?: DisponibilidadeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DisponibilidadeInclude<ExtArgs> | null
+    where?: DisponibilidadeWhereInput
+    orderBy?: DisponibilidadeOrderByWithRelationInput | DisponibilidadeOrderByWithRelationInput[]
+    cursor?: DisponibilidadeWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: DisponibilidadeScalarFieldEnum | DisponibilidadeScalarFieldEnum[]
+  }
+
+  /**
+   * Profissional.ProfissionalPlanoSaude
+   */
+  export type Profissional$ProfissionalPlanoSaudeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    where?: ProfissionalPlanoSaudeWhereInput
+    orderBy?: ProfissionalPlanoSaudeOrderByWithRelationInput | ProfissionalPlanoSaudeOrderByWithRelationInput[]
+    cursor?: ProfissionalPlanoSaudeWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProfissionalPlanoSaudeScalarFieldEnum | ProfissionalPlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
    * Profissional without action
    */
   export type ProfissionalDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4393,6 +4839,7 @@ export namespace Prisma {
     telefone: string | null
     avatar: string | null
     genero: string | null
+    cpf: string | null
     profissionalId: string | null
     pacienteId: string | null
   }
@@ -4405,6 +4852,7 @@ export namespace Prisma {
     telefone: string | null
     avatar: string | null
     genero: string | null
+    cpf: string | null
     profissionalId: string | null
     pacienteId: string | null
   }
@@ -4417,6 +4865,7 @@ export namespace Prisma {
     telefone: number
     avatar: number
     genero: number
+    cpf: number
     profissionalId: number
     pacienteId: number
     _all: number
@@ -4431,6 +4880,7 @@ export namespace Prisma {
     telefone?: true
     avatar?: true
     genero?: true
+    cpf?: true
     profissionalId?: true
     pacienteId?: true
   }
@@ -4443,6 +4893,7 @@ export namespace Prisma {
     telefone?: true
     avatar?: true
     genero?: true
+    cpf?: true
     profissionalId?: true
     pacienteId?: true
   }
@@ -4455,6 +4906,7 @@ export namespace Prisma {
     telefone?: true
     avatar?: true
     genero?: true
+    cpf?: true
     profissionalId?: true
     pacienteId?: true
     _all?: true
@@ -4540,6 +4992,7 @@ export namespace Prisma {
     telefone: string
     avatar: string | null
     genero: string
+    cpf: string
     profissionalId: string | null
     pacienteId: string | null
     _count: UsuarioCountAggregateOutputType | null
@@ -4569,6 +5022,7 @@ export namespace Prisma {
     telefone?: boolean
     avatar?: boolean
     genero?: boolean
+    cpf?: boolean
     profissionalId?: boolean
     pacienteId?: boolean
     profissional?: boolean | Usuario$profissionalArgs<ExtArgs>
@@ -4585,6 +5039,7 @@ export namespace Prisma {
     telefone?: boolean
     avatar?: boolean
     genero?: boolean
+    cpf?: boolean
     profissionalId?: boolean
     pacienteId?: boolean
     profissional?: boolean | Usuario$profissionalArgs<ExtArgs>
@@ -4599,6 +5054,7 @@ export namespace Prisma {
     telefone?: boolean
     avatar?: boolean
     genero?: boolean
+    cpf?: boolean
     profissionalId?: boolean
     pacienteId?: boolean
     profissional?: boolean | Usuario$profissionalArgs<ExtArgs>
@@ -4613,11 +5069,12 @@ export namespace Prisma {
     telefone?: boolean
     avatar?: boolean
     genero?: boolean
+    cpf?: boolean
     profissionalId?: boolean
     pacienteId?: boolean
   }
 
-  export type UsuarioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "email" | "senha" | "telefone" | "avatar" | "genero" | "profissionalId" | "pacienteId", ExtArgs["result"]["usuario"]>
+  export type UsuarioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "email" | "senha" | "telefone" | "avatar" | "genero" | "cpf" | "profissionalId" | "pacienteId", ExtArgs["result"]["usuario"]>
   export type UsuarioInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     profissional?: boolean | Usuario$profissionalArgs<ExtArgs>
     paciente?: boolean | Usuario$pacienteArgs<ExtArgs>
@@ -4648,6 +5105,7 @@ export namespace Prisma {
       telefone: string
       avatar: string | null
       genero: string
+      cpf: string
       profissionalId: string | null
       pacienteId: string | null
     }, ExtArgs["result"]["usuario"]>
@@ -5083,6 +5541,7 @@ export namespace Prisma {
     readonly telefone: FieldRef<"Usuario", 'String'>
     readonly avatar: FieldRef<"Usuario", 'String'>
     readonly genero: FieldRef<"Usuario", 'String'>
+    readonly cpf: FieldRef<"Usuario", 'String'>
     readonly profissionalId: FieldRef<"Usuario", 'String'>
     readonly pacienteId: FieldRef<"Usuario", 'String'>
   }
@@ -5742,6 +6201,7 @@ export namespace Prisma {
     telefone?: boolean
     tipoAtendimento?: boolean
     enderecos?: boolean | Clinica$enderecosArgs<ExtArgs>
+    Disponibilidade?: boolean | Clinica$DisponibilidadeArgs<ExtArgs>
     _count?: boolean | ClinicaCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["clinica"]>
 
@@ -5778,6 +6238,7 @@ export namespace Prisma {
   export type ClinicaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomeFantasia" | "razaoSocial" | "cnpj" | "inscricaoEstadual" | "telefone" | "tipoAtendimento", ExtArgs["result"]["clinica"]>
   export type ClinicaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     enderecos?: boolean | Clinica$enderecosArgs<ExtArgs>
+    Disponibilidade?: boolean | Clinica$DisponibilidadeArgs<ExtArgs>
     _count?: boolean | ClinicaCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ClinicaIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -5787,6 +6248,7 @@ export namespace Prisma {
     name: "Clinica"
     objects: {
       enderecos: Prisma.$EnderecoClinicaPayload<ExtArgs>[]
+      Disponibilidade: Prisma.$DisponibilidadePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -6191,6 +6653,7 @@ export namespace Prisma {
   export interface Prisma__ClinicaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     enderecos<T extends Clinica$enderecosArgs<ExtArgs> = {}>(args?: Subset<T, Clinica$enderecosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EnderecoClinicaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    Disponibilidade<T extends Clinica$DisponibilidadeArgs<ExtArgs> = {}>(args?: Subset<T, Clinica$DisponibilidadeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DisponibilidadePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6636,6 +7099,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: EnderecoClinicaScalarFieldEnum | EnderecoClinicaScalarFieldEnum[]
+  }
+
+  /**
+   * Clinica.Disponibilidade
+   */
+  export type Clinica$DisponibilidadeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Disponibilidade
+     */
+    select?: DisponibilidadeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Disponibilidade
+     */
+    omit?: DisponibilidadeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: DisponibilidadeInclude<ExtArgs> | null
+    where?: DisponibilidadeWhereInput
+    orderBy?: DisponibilidadeOrderByWithRelationInput | DisponibilidadeOrderByWithRelationInput[]
+    cursor?: DisponibilidadeWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: DisponibilidadeScalarFieldEnum | DisponibilidadeScalarFieldEnum[]
   }
 
   /**
@@ -7700,46 +8187,58 @@ export namespace Prisma {
 
   export type DisponibilidadeMinAggregateOutputType = {
     id: string | null
-    diaSemanaId: string | null
     horaInicio: Date | null
     horaFim: Date | null
+    diaSemanaId: string | null
+    clinicaId: string | null
+    profissionalId: string | null
   }
 
   export type DisponibilidadeMaxAggregateOutputType = {
     id: string | null
-    diaSemanaId: string | null
     horaInicio: Date | null
     horaFim: Date | null
+    diaSemanaId: string | null
+    clinicaId: string | null
+    profissionalId: string | null
   }
 
   export type DisponibilidadeCountAggregateOutputType = {
     id: number
-    diaSemanaId: number
     horaInicio: number
     horaFim: number
+    diaSemanaId: number
+    clinicaId: number
+    profissionalId: number
     _all: number
   }
 
 
   export type DisponibilidadeMinAggregateInputType = {
     id?: true
-    diaSemanaId?: true
     horaInicio?: true
     horaFim?: true
+    diaSemanaId?: true
+    clinicaId?: true
+    profissionalId?: true
   }
 
   export type DisponibilidadeMaxAggregateInputType = {
     id?: true
-    diaSemanaId?: true
     horaInicio?: true
     horaFim?: true
+    diaSemanaId?: true
+    clinicaId?: true
+    profissionalId?: true
   }
 
   export type DisponibilidadeCountAggregateInputType = {
     id?: true
-    diaSemanaId?: true
     horaInicio?: true
     horaFim?: true
+    diaSemanaId?: true
+    clinicaId?: true
+    profissionalId?: true
     _all?: true
   }
 
@@ -7817,9 +8316,11 @@ export namespace Prisma {
 
   export type DisponibilidadeGroupByOutputType = {
     id: string
-    diaSemanaId: string
     horaInicio: Date
     horaFim: Date
+    diaSemanaId: string
+    clinicaId: string
+    profissionalId: string
     _count: DisponibilidadeCountAggregateOutputType | null
     _min: DisponibilidadeMinAggregateOutputType | null
     _max: DisponibilidadeMaxAggregateOutputType | null
@@ -7841,56 +8342,80 @@ export namespace Prisma {
 
   export type DisponibilidadeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    diaSemanaId?: boolean
     horaInicio?: boolean
     horaFim?: boolean
+    diaSemanaId?: boolean
+    clinicaId?: boolean
+    profissionalId?: boolean
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    clinica?: boolean | ClinicaDefaultArgs<ExtArgs>
     diaSemana?: boolean | DiaSemanaDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["disponibilidade"]>
 
   export type DisponibilidadeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    diaSemanaId?: boolean
     horaInicio?: boolean
     horaFim?: boolean
+    diaSemanaId?: boolean
+    clinicaId?: boolean
+    profissionalId?: boolean
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    clinica?: boolean | ClinicaDefaultArgs<ExtArgs>
     diaSemana?: boolean | DiaSemanaDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["disponibilidade"]>
 
   export type DisponibilidadeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    diaSemanaId?: boolean
     horaInicio?: boolean
     horaFim?: boolean
+    diaSemanaId?: boolean
+    clinicaId?: boolean
+    profissionalId?: boolean
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    clinica?: boolean | ClinicaDefaultArgs<ExtArgs>
     diaSemana?: boolean | DiaSemanaDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["disponibilidade"]>
 
   export type DisponibilidadeSelectScalar = {
     id?: boolean
-    diaSemanaId?: boolean
     horaInicio?: boolean
     horaFim?: boolean
+    diaSemanaId?: boolean
+    clinicaId?: boolean
+    profissionalId?: boolean
   }
 
-  export type DisponibilidadeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "diaSemanaId" | "horaInicio" | "horaFim", ExtArgs["result"]["disponibilidade"]>
+  export type DisponibilidadeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "horaInicio" | "horaFim" | "diaSemanaId" | "clinicaId" | "profissionalId", ExtArgs["result"]["disponibilidade"]>
   export type DisponibilidadeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    clinica?: boolean | ClinicaDefaultArgs<ExtArgs>
     diaSemana?: boolean | DiaSemanaDefaultArgs<ExtArgs>
   }
   export type DisponibilidadeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    clinica?: boolean | ClinicaDefaultArgs<ExtArgs>
     diaSemana?: boolean | DiaSemanaDefaultArgs<ExtArgs>
   }
   export type DisponibilidadeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    clinica?: boolean | ClinicaDefaultArgs<ExtArgs>
     diaSemana?: boolean | DiaSemanaDefaultArgs<ExtArgs>
   }
 
   export type $DisponibilidadePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Disponibilidade"
     objects: {
+      profissional: Prisma.$ProfissionalPayload<ExtArgs>
+      clinica: Prisma.$ClinicaPayload<ExtArgs>
       diaSemana: Prisma.$DiaSemanaPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      diaSemanaId: string
       horaInicio: Date
       horaFim: Date
+      diaSemanaId: string
+      clinicaId: string
+      profissionalId: string
     }, ExtArgs["result"]["disponibilidade"]>
     composites: {}
   }
@@ -8285,6 +8810,8 @@ export namespace Prisma {
    */
   export interface Prisma__DisponibilidadeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    profissional<T extends ProfissionalDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ProfissionalDefaultArgs<ExtArgs>>): Prisma__ProfissionalClient<$Result.GetResult<Prisma.$ProfissionalPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    clinica<T extends ClinicaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClinicaDefaultArgs<ExtArgs>>): Prisma__ClinicaClient<$Result.GetResult<Prisma.$ClinicaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     diaSemana<T extends DiaSemanaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DiaSemanaDefaultArgs<ExtArgs>>): Prisma__DiaSemanaClient<$Result.GetResult<Prisma.$DiaSemanaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -8316,9 +8843,11 @@ export namespace Prisma {
    */
   interface DisponibilidadeFieldRefs {
     readonly id: FieldRef<"Disponibilidade", 'String'>
-    readonly diaSemanaId: FieldRef<"Disponibilidade", 'String'>
     readonly horaInicio: FieldRef<"Disponibilidade", 'DateTime'>
     readonly horaFim: FieldRef<"Disponibilidade", 'DateTime'>
+    readonly diaSemanaId: FieldRef<"Disponibilidade", 'String'>
+    readonly clinicaId: FieldRef<"Disponibilidade", 'String'>
+    readonly profissionalId: FieldRef<"Disponibilidade", 'String'>
   }
     
 
@@ -14389,6 +14918,3197 @@ export namespace Prisma {
 
 
   /**
+   * Model PlanoSaude
+   */
+
+  export type AggregatePlanoSaude = {
+    _count: PlanoSaudeCountAggregateOutputType | null
+    _min: PlanoSaudeMinAggregateOutputType | null
+    _max: PlanoSaudeMaxAggregateOutputType | null
+  }
+
+  export type PlanoSaudeMinAggregateOutputType = {
+    id: string | null
+    nome: string | null
+    operadora: string | null
+  }
+
+  export type PlanoSaudeMaxAggregateOutputType = {
+    id: string | null
+    nome: string | null
+    operadora: string | null
+  }
+
+  export type PlanoSaudeCountAggregateOutputType = {
+    id: number
+    nome: number
+    operadora: number
+    _all: number
+  }
+
+
+  export type PlanoSaudeMinAggregateInputType = {
+    id?: true
+    nome?: true
+    operadora?: true
+  }
+
+  export type PlanoSaudeMaxAggregateInputType = {
+    id?: true
+    nome?: true
+    operadora?: true
+  }
+
+  export type PlanoSaudeCountAggregateInputType = {
+    id?: true
+    nome?: true
+    operadora?: true
+    _all?: true
+  }
+
+  export type PlanoSaudeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PlanoSaude to aggregate.
+     */
+    where?: PlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PlanoSaudes to fetch.
+     */
+    orderBy?: PlanoSaudeOrderByWithRelationInput | PlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: PlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PlanoSaudes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned PlanoSaudes
+    **/
+    _count?: true | PlanoSaudeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PlanoSaudeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PlanoSaudeMaxAggregateInputType
+  }
+
+  export type GetPlanoSaudeAggregateType<T extends PlanoSaudeAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlanoSaude]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlanoSaude[P]>
+      : GetScalarType<T[P], AggregatePlanoSaude[P]>
+  }
+
+
+
+
+  export type PlanoSaudeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PlanoSaudeWhereInput
+    orderBy?: PlanoSaudeOrderByWithAggregationInput | PlanoSaudeOrderByWithAggregationInput[]
+    by: PlanoSaudeScalarFieldEnum[] | PlanoSaudeScalarFieldEnum
+    having?: PlanoSaudeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PlanoSaudeCountAggregateInputType | true
+    _min?: PlanoSaudeMinAggregateInputType
+    _max?: PlanoSaudeMaxAggregateInputType
+  }
+
+  export type PlanoSaudeGroupByOutputType = {
+    id: string
+    nome: string
+    operadora: string
+    _count: PlanoSaudeCountAggregateOutputType | null
+    _min: PlanoSaudeMinAggregateOutputType | null
+    _max: PlanoSaudeMaxAggregateOutputType | null
+  }
+
+  type GetPlanoSaudeGroupByPayload<T extends PlanoSaudeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PlanoSaudeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PlanoSaudeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PlanoSaudeGroupByOutputType[P]>
+            : GetScalarType<T[P], PlanoSaudeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type PlanoSaudeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    nome?: boolean
+    operadora?: boolean
+    PacientePlanoSaude?: boolean | PlanoSaude$PacientePlanoSaudeArgs<ExtArgs>
+    ProfissionalPlanoSaude?: boolean | PlanoSaude$ProfissionalPlanoSaudeArgs<ExtArgs>
+    _count?: boolean | PlanoSaudeCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["planoSaude"]>
+
+  export type PlanoSaudeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    nome?: boolean
+    operadora?: boolean
+  }, ExtArgs["result"]["planoSaude"]>
+
+  export type PlanoSaudeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    nome?: boolean
+    operadora?: boolean
+  }, ExtArgs["result"]["planoSaude"]>
+
+  export type PlanoSaudeSelectScalar = {
+    id?: boolean
+    nome?: boolean
+    operadora?: boolean
+  }
+
+  export type PlanoSaudeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "operadora", ExtArgs["result"]["planoSaude"]>
+  export type PlanoSaudeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    PacientePlanoSaude?: boolean | PlanoSaude$PacientePlanoSaudeArgs<ExtArgs>
+    ProfissionalPlanoSaude?: boolean | PlanoSaude$ProfissionalPlanoSaudeArgs<ExtArgs>
+    _count?: boolean | PlanoSaudeCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type PlanoSaudeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type PlanoSaudeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $PlanoSaudePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "PlanoSaude"
+    objects: {
+      PacientePlanoSaude: Prisma.$PacientePlanoSaudePayload<ExtArgs>[]
+      ProfissionalPlanoSaude: Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      nome: string
+      operadora: string
+    }, ExtArgs["result"]["planoSaude"]>
+    composites: {}
+  }
+
+  type PlanoSaudeGetPayload<S extends boolean | null | undefined | PlanoSaudeDefaultArgs> = $Result.GetResult<Prisma.$PlanoSaudePayload, S>
+
+  type PlanoSaudeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PlanoSaudeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PlanoSaudeCountAggregateInputType | true
+    }
+
+  export interface PlanoSaudeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PlanoSaude'], meta: { name: 'PlanoSaude' } }
+    /**
+     * Find zero or one PlanoSaude that matches the filter.
+     * @param {PlanoSaudeFindUniqueArgs} args - Arguments to find a PlanoSaude
+     * @example
+     * // Get one PlanoSaude
+     * const planoSaude = await prisma.planoSaude.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PlanoSaudeFindUniqueArgs>(args: SelectSubset<T, PlanoSaudeFindUniqueArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one PlanoSaude that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PlanoSaudeFindUniqueOrThrowArgs} args - Arguments to find a PlanoSaude
+     * @example
+     * // Get one PlanoSaude
+     * const planoSaude = await prisma.planoSaude.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PlanoSaudeFindUniqueOrThrowArgs>(args: SelectSubset<T, PlanoSaudeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PlanoSaude that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlanoSaudeFindFirstArgs} args - Arguments to find a PlanoSaude
+     * @example
+     * // Get one PlanoSaude
+     * const planoSaude = await prisma.planoSaude.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PlanoSaudeFindFirstArgs>(args?: SelectSubset<T, PlanoSaudeFindFirstArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PlanoSaude that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlanoSaudeFindFirstOrThrowArgs} args - Arguments to find a PlanoSaude
+     * @example
+     * // Get one PlanoSaude
+     * const planoSaude = await prisma.planoSaude.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PlanoSaudeFindFirstOrThrowArgs>(args?: SelectSubset<T, PlanoSaudeFindFirstOrThrowArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more PlanoSaudes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlanoSaudeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PlanoSaudes
+     * const planoSaudes = await prisma.planoSaude.findMany()
+     * 
+     * // Get first 10 PlanoSaudes
+     * const planoSaudes = await prisma.planoSaude.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const planoSaudeWithIdOnly = await prisma.planoSaude.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends PlanoSaudeFindManyArgs>(args?: SelectSubset<T, PlanoSaudeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a PlanoSaude.
+     * @param {PlanoSaudeCreateArgs} args - Arguments to create a PlanoSaude.
+     * @example
+     * // Create one PlanoSaude
+     * const PlanoSaude = await prisma.planoSaude.create({
+     *   data: {
+     *     // ... data to create a PlanoSaude
+     *   }
+     * })
+     * 
+     */
+    create<T extends PlanoSaudeCreateArgs>(args: SelectSubset<T, PlanoSaudeCreateArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many PlanoSaudes.
+     * @param {PlanoSaudeCreateManyArgs} args - Arguments to create many PlanoSaudes.
+     * @example
+     * // Create many PlanoSaudes
+     * const planoSaude = await prisma.planoSaude.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends PlanoSaudeCreateManyArgs>(args?: SelectSubset<T, PlanoSaudeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many PlanoSaudes and returns the data saved in the database.
+     * @param {PlanoSaudeCreateManyAndReturnArgs} args - Arguments to create many PlanoSaudes.
+     * @example
+     * // Create many PlanoSaudes
+     * const planoSaude = await prisma.planoSaude.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many PlanoSaudes and only return the `id`
+     * const planoSaudeWithIdOnly = await prisma.planoSaude.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends PlanoSaudeCreateManyAndReturnArgs>(args?: SelectSubset<T, PlanoSaudeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a PlanoSaude.
+     * @param {PlanoSaudeDeleteArgs} args - Arguments to delete one PlanoSaude.
+     * @example
+     * // Delete one PlanoSaude
+     * const PlanoSaude = await prisma.planoSaude.delete({
+     *   where: {
+     *     // ... filter to delete one PlanoSaude
+     *   }
+     * })
+     * 
+     */
+    delete<T extends PlanoSaudeDeleteArgs>(args: SelectSubset<T, PlanoSaudeDeleteArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one PlanoSaude.
+     * @param {PlanoSaudeUpdateArgs} args - Arguments to update one PlanoSaude.
+     * @example
+     * // Update one PlanoSaude
+     * const planoSaude = await prisma.planoSaude.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends PlanoSaudeUpdateArgs>(args: SelectSubset<T, PlanoSaudeUpdateArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more PlanoSaudes.
+     * @param {PlanoSaudeDeleteManyArgs} args - Arguments to filter PlanoSaudes to delete.
+     * @example
+     * // Delete a few PlanoSaudes
+     * const { count } = await prisma.planoSaude.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends PlanoSaudeDeleteManyArgs>(args?: SelectSubset<T, PlanoSaudeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PlanoSaudes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlanoSaudeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PlanoSaudes
+     * const planoSaude = await prisma.planoSaude.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends PlanoSaudeUpdateManyArgs>(args: SelectSubset<T, PlanoSaudeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PlanoSaudes and returns the data updated in the database.
+     * @param {PlanoSaudeUpdateManyAndReturnArgs} args - Arguments to update many PlanoSaudes.
+     * @example
+     * // Update many PlanoSaudes
+     * const planoSaude = await prisma.planoSaude.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more PlanoSaudes and only return the `id`
+     * const planoSaudeWithIdOnly = await prisma.planoSaude.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends PlanoSaudeUpdateManyAndReturnArgs>(args: SelectSubset<T, PlanoSaudeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one PlanoSaude.
+     * @param {PlanoSaudeUpsertArgs} args - Arguments to update or create a PlanoSaude.
+     * @example
+     * // Update or create a PlanoSaude
+     * const planoSaude = await prisma.planoSaude.upsert({
+     *   create: {
+     *     // ... data to create a PlanoSaude
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PlanoSaude we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PlanoSaudeUpsertArgs>(args: SelectSubset<T, PlanoSaudeUpsertArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of PlanoSaudes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlanoSaudeCountArgs} args - Arguments to filter PlanoSaudes to count.
+     * @example
+     * // Count the number of PlanoSaudes
+     * const count = await prisma.planoSaude.count({
+     *   where: {
+     *     // ... the filter for the PlanoSaudes we want to count
+     *   }
+     * })
+    **/
+    count<T extends PlanoSaudeCountArgs>(
+      args?: Subset<T, PlanoSaudeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PlanoSaudeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a PlanoSaude.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlanoSaudeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PlanoSaudeAggregateArgs>(args: Subset<T, PlanoSaudeAggregateArgs>): Prisma.PrismaPromise<GetPlanoSaudeAggregateType<T>>
+
+    /**
+     * Group by PlanoSaude.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlanoSaudeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends PlanoSaudeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: PlanoSaudeGroupByArgs['orderBy'] }
+        : { orderBy?: PlanoSaudeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, PlanoSaudeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlanoSaudeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the PlanoSaude model
+   */
+  readonly fields: PlanoSaudeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for PlanoSaude.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__PlanoSaudeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    PacientePlanoSaude<T extends PlanoSaude$PacientePlanoSaudeArgs<ExtArgs> = {}>(args?: Subset<T, PlanoSaude$PacientePlanoSaudeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ProfissionalPlanoSaude<T extends PlanoSaude$ProfissionalPlanoSaudeArgs<ExtArgs> = {}>(args?: Subset<T, PlanoSaude$ProfissionalPlanoSaudeArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the PlanoSaude model
+   */
+  interface PlanoSaudeFieldRefs {
+    readonly id: FieldRef<"PlanoSaude", 'String'>
+    readonly nome: FieldRef<"PlanoSaude", 'String'>
+    readonly operadora: FieldRef<"PlanoSaude", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * PlanoSaude findUnique
+   */
+  export type PlanoSaudeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PlanoSaude to fetch.
+     */
+    where: PlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * PlanoSaude findUniqueOrThrow
+   */
+  export type PlanoSaudeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PlanoSaude to fetch.
+     */
+    where: PlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * PlanoSaude findFirst
+   */
+  export type PlanoSaudeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PlanoSaude to fetch.
+     */
+    where?: PlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PlanoSaudes to fetch.
+     */
+    orderBy?: PlanoSaudeOrderByWithRelationInput | PlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PlanoSaudes.
+     */
+    cursor?: PlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PlanoSaudes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PlanoSaudes.
+     */
+    distinct?: PlanoSaudeScalarFieldEnum | PlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * PlanoSaude findFirstOrThrow
+   */
+  export type PlanoSaudeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PlanoSaude to fetch.
+     */
+    where?: PlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PlanoSaudes to fetch.
+     */
+    orderBy?: PlanoSaudeOrderByWithRelationInput | PlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PlanoSaudes.
+     */
+    cursor?: PlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PlanoSaudes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PlanoSaudes.
+     */
+    distinct?: PlanoSaudeScalarFieldEnum | PlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * PlanoSaude findMany
+   */
+  export type PlanoSaudeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PlanoSaudes to fetch.
+     */
+    where?: PlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PlanoSaudes to fetch.
+     */
+    orderBy?: PlanoSaudeOrderByWithRelationInput | PlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing PlanoSaudes.
+     */
+    cursor?: PlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PlanoSaudes.
+     */
+    skip?: number
+    distinct?: PlanoSaudeScalarFieldEnum | PlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * PlanoSaude create
+   */
+  export type PlanoSaudeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+    /**
+     * The data needed to create a PlanoSaude.
+     */
+    data: XOR<PlanoSaudeCreateInput, PlanoSaudeUncheckedCreateInput>
+  }
+
+  /**
+   * PlanoSaude createMany
+   */
+  export type PlanoSaudeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PlanoSaudes.
+     */
+    data: PlanoSaudeCreateManyInput | PlanoSaudeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * PlanoSaude createManyAndReturn
+   */
+  export type PlanoSaudeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * The data used to create many PlanoSaudes.
+     */
+    data: PlanoSaudeCreateManyInput | PlanoSaudeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * PlanoSaude update
+   */
+  export type PlanoSaudeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+    /**
+     * The data needed to update a PlanoSaude.
+     */
+    data: XOR<PlanoSaudeUpdateInput, PlanoSaudeUncheckedUpdateInput>
+    /**
+     * Choose, which PlanoSaude to update.
+     */
+    where: PlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * PlanoSaude updateMany
+   */
+  export type PlanoSaudeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PlanoSaudes.
+     */
+    data: XOR<PlanoSaudeUpdateManyMutationInput, PlanoSaudeUncheckedUpdateManyInput>
+    /**
+     * Filter which PlanoSaudes to update
+     */
+    where?: PlanoSaudeWhereInput
+    /**
+     * Limit how many PlanoSaudes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * PlanoSaude updateManyAndReturn
+   */
+  export type PlanoSaudeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * The data used to update PlanoSaudes.
+     */
+    data: XOR<PlanoSaudeUpdateManyMutationInput, PlanoSaudeUncheckedUpdateManyInput>
+    /**
+     * Filter which PlanoSaudes to update
+     */
+    where?: PlanoSaudeWhereInput
+    /**
+     * Limit how many PlanoSaudes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * PlanoSaude upsert
+   */
+  export type PlanoSaudeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+    /**
+     * The filter to search for the PlanoSaude to update in case it exists.
+     */
+    where: PlanoSaudeWhereUniqueInput
+    /**
+     * In case the PlanoSaude found by the `where` argument doesn't exist, create a new PlanoSaude with this data.
+     */
+    create: XOR<PlanoSaudeCreateInput, PlanoSaudeUncheckedCreateInput>
+    /**
+     * In case the PlanoSaude was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PlanoSaudeUpdateInput, PlanoSaudeUncheckedUpdateInput>
+  }
+
+  /**
+   * PlanoSaude delete
+   */
+  export type PlanoSaudeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter which PlanoSaude to delete.
+     */
+    where: PlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * PlanoSaude deleteMany
+   */
+  export type PlanoSaudeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PlanoSaudes to delete
+     */
+    where?: PlanoSaudeWhereInput
+    /**
+     * Limit how many PlanoSaudes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * PlanoSaude.PacientePlanoSaude
+   */
+  export type PlanoSaude$PacientePlanoSaudeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    where?: PacientePlanoSaudeWhereInput
+    orderBy?: PacientePlanoSaudeOrderByWithRelationInput | PacientePlanoSaudeOrderByWithRelationInput[]
+    cursor?: PacientePlanoSaudeWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PacientePlanoSaudeScalarFieldEnum | PacientePlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * PlanoSaude.ProfissionalPlanoSaude
+   */
+  export type PlanoSaude$ProfissionalPlanoSaudeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    where?: ProfissionalPlanoSaudeWhereInput
+    orderBy?: ProfissionalPlanoSaudeOrderByWithRelationInput | ProfissionalPlanoSaudeOrderByWithRelationInput[]
+    cursor?: ProfissionalPlanoSaudeWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProfissionalPlanoSaudeScalarFieldEnum | ProfissionalPlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * PlanoSaude without action
+   */
+  export type PlanoSaudeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlanoSaude
+     */
+    select?: PlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlanoSaude
+     */
+    omit?: PlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlanoSaudeInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model PacientePlanoSaude
+   */
+
+  export type AggregatePacientePlanoSaude = {
+    _count: PacientePlanoSaudeCountAggregateOutputType | null
+    _min: PacientePlanoSaudeMinAggregateOutputType | null
+    _max: PacientePlanoSaudeMaxAggregateOutputType | null
+  }
+
+  export type PacientePlanoSaudeMinAggregateOutputType = {
+    id: string | null
+    pacienteId: string | null
+    planoId: string | null
+    numeroCarteirinha: string | null
+    validade: Date | null
+    nomeTitular: string | null
+  }
+
+  export type PacientePlanoSaudeMaxAggregateOutputType = {
+    id: string | null
+    pacienteId: string | null
+    planoId: string | null
+    numeroCarteirinha: string | null
+    validade: Date | null
+    nomeTitular: string | null
+  }
+
+  export type PacientePlanoSaudeCountAggregateOutputType = {
+    id: number
+    pacienteId: number
+    planoId: number
+    numeroCarteirinha: number
+    validade: number
+    nomeTitular: number
+    _all: number
+  }
+
+
+  export type PacientePlanoSaudeMinAggregateInputType = {
+    id?: true
+    pacienteId?: true
+    planoId?: true
+    numeroCarteirinha?: true
+    validade?: true
+    nomeTitular?: true
+  }
+
+  export type PacientePlanoSaudeMaxAggregateInputType = {
+    id?: true
+    pacienteId?: true
+    planoId?: true
+    numeroCarteirinha?: true
+    validade?: true
+    nomeTitular?: true
+  }
+
+  export type PacientePlanoSaudeCountAggregateInputType = {
+    id?: true
+    pacienteId?: true
+    planoId?: true
+    numeroCarteirinha?: true
+    validade?: true
+    nomeTitular?: true
+    _all?: true
+  }
+
+  export type PacientePlanoSaudeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PacientePlanoSaude to aggregate.
+     */
+    where?: PacientePlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PacientePlanoSaudes to fetch.
+     */
+    orderBy?: PacientePlanoSaudeOrderByWithRelationInput | PacientePlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: PacientePlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PacientePlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PacientePlanoSaudes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned PacientePlanoSaudes
+    **/
+    _count?: true | PacientePlanoSaudeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PacientePlanoSaudeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PacientePlanoSaudeMaxAggregateInputType
+  }
+
+  export type GetPacientePlanoSaudeAggregateType<T extends PacientePlanoSaudeAggregateArgs> = {
+        [P in keyof T & keyof AggregatePacientePlanoSaude]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePacientePlanoSaude[P]>
+      : GetScalarType<T[P], AggregatePacientePlanoSaude[P]>
+  }
+
+
+
+
+  export type PacientePlanoSaudeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PacientePlanoSaudeWhereInput
+    orderBy?: PacientePlanoSaudeOrderByWithAggregationInput | PacientePlanoSaudeOrderByWithAggregationInput[]
+    by: PacientePlanoSaudeScalarFieldEnum[] | PacientePlanoSaudeScalarFieldEnum
+    having?: PacientePlanoSaudeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PacientePlanoSaudeCountAggregateInputType | true
+    _min?: PacientePlanoSaudeMinAggregateInputType
+    _max?: PacientePlanoSaudeMaxAggregateInputType
+  }
+
+  export type PacientePlanoSaudeGroupByOutputType = {
+    id: string
+    pacienteId: string
+    planoId: string
+    numeroCarteirinha: string
+    validade: Date
+    nomeTitular: string
+    _count: PacientePlanoSaudeCountAggregateOutputType | null
+    _min: PacientePlanoSaudeMinAggregateOutputType | null
+    _max: PacientePlanoSaudeMaxAggregateOutputType | null
+  }
+
+  type GetPacientePlanoSaudeGroupByPayload<T extends PacientePlanoSaudeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PacientePlanoSaudeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PacientePlanoSaudeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PacientePlanoSaudeGroupByOutputType[P]>
+            : GetScalarType<T[P], PacientePlanoSaudeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type PacientePlanoSaudeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    pacienteId?: boolean
+    planoId?: boolean
+    numeroCarteirinha?: boolean
+    validade?: boolean
+    nomeTitular?: boolean
+    paciente?: boolean | PacienteDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["pacientePlanoSaude"]>
+
+  export type PacientePlanoSaudeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    pacienteId?: boolean
+    planoId?: boolean
+    numeroCarteirinha?: boolean
+    validade?: boolean
+    nomeTitular?: boolean
+    paciente?: boolean | PacienteDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["pacientePlanoSaude"]>
+
+  export type PacientePlanoSaudeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    pacienteId?: boolean
+    planoId?: boolean
+    numeroCarteirinha?: boolean
+    validade?: boolean
+    nomeTitular?: boolean
+    paciente?: boolean | PacienteDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["pacientePlanoSaude"]>
+
+  export type PacientePlanoSaudeSelectScalar = {
+    id?: boolean
+    pacienteId?: boolean
+    planoId?: boolean
+    numeroCarteirinha?: boolean
+    validade?: boolean
+    nomeTitular?: boolean
+  }
+
+  export type PacientePlanoSaudeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "pacienteId" | "planoId" | "numeroCarteirinha" | "validade" | "nomeTitular", ExtArgs["result"]["pacientePlanoSaude"]>
+  export type PacientePlanoSaudeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    paciente?: boolean | PacienteDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }
+  export type PacientePlanoSaudeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    paciente?: boolean | PacienteDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }
+  export type PacientePlanoSaudeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    paciente?: boolean | PacienteDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }
+
+  export type $PacientePlanoSaudePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "PacientePlanoSaude"
+    objects: {
+      paciente: Prisma.$PacientePayload<ExtArgs>
+      plano: Prisma.$PlanoSaudePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      pacienteId: string
+      planoId: string
+      numeroCarteirinha: string
+      validade: Date
+      nomeTitular: string
+    }, ExtArgs["result"]["pacientePlanoSaude"]>
+    composites: {}
+  }
+
+  type PacientePlanoSaudeGetPayload<S extends boolean | null | undefined | PacientePlanoSaudeDefaultArgs> = $Result.GetResult<Prisma.$PacientePlanoSaudePayload, S>
+
+  type PacientePlanoSaudeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PacientePlanoSaudeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PacientePlanoSaudeCountAggregateInputType | true
+    }
+
+  export interface PacientePlanoSaudeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PacientePlanoSaude'], meta: { name: 'PacientePlanoSaude' } }
+    /**
+     * Find zero or one PacientePlanoSaude that matches the filter.
+     * @param {PacientePlanoSaudeFindUniqueArgs} args - Arguments to find a PacientePlanoSaude
+     * @example
+     * // Get one PacientePlanoSaude
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PacientePlanoSaudeFindUniqueArgs>(args: SelectSubset<T, PacientePlanoSaudeFindUniqueArgs<ExtArgs>>): Prisma__PacientePlanoSaudeClient<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one PacientePlanoSaude that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PacientePlanoSaudeFindUniqueOrThrowArgs} args - Arguments to find a PacientePlanoSaude
+     * @example
+     * // Get one PacientePlanoSaude
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PacientePlanoSaudeFindUniqueOrThrowArgs>(args: SelectSubset<T, PacientePlanoSaudeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PacientePlanoSaudeClient<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PacientePlanoSaude that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PacientePlanoSaudeFindFirstArgs} args - Arguments to find a PacientePlanoSaude
+     * @example
+     * // Get one PacientePlanoSaude
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PacientePlanoSaudeFindFirstArgs>(args?: SelectSubset<T, PacientePlanoSaudeFindFirstArgs<ExtArgs>>): Prisma__PacientePlanoSaudeClient<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PacientePlanoSaude that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PacientePlanoSaudeFindFirstOrThrowArgs} args - Arguments to find a PacientePlanoSaude
+     * @example
+     * // Get one PacientePlanoSaude
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PacientePlanoSaudeFindFirstOrThrowArgs>(args?: SelectSubset<T, PacientePlanoSaudeFindFirstOrThrowArgs<ExtArgs>>): Prisma__PacientePlanoSaudeClient<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more PacientePlanoSaudes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PacientePlanoSaudeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PacientePlanoSaudes
+     * const pacientePlanoSaudes = await prisma.pacientePlanoSaude.findMany()
+     * 
+     * // Get first 10 PacientePlanoSaudes
+     * const pacientePlanoSaudes = await prisma.pacientePlanoSaude.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const pacientePlanoSaudeWithIdOnly = await prisma.pacientePlanoSaude.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends PacientePlanoSaudeFindManyArgs>(args?: SelectSubset<T, PacientePlanoSaudeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a PacientePlanoSaude.
+     * @param {PacientePlanoSaudeCreateArgs} args - Arguments to create a PacientePlanoSaude.
+     * @example
+     * // Create one PacientePlanoSaude
+     * const PacientePlanoSaude = await prisma.pacientePlanoSaude.create({
+     *   data: {
+     *     // ... data to create a PacientePlanoSaude
+     *   }
+     * })
+     * 
+     */
+    create<T extends PacientePlanoSaudeCreateArgs>(args: SelectSubset<T, PacientePlanoSaudeCreateArgs<ExtArgs>>): Prisma__PacientePlanoSaudeClient<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many PacientePlanoSaudes.
+     * @param {PacientePlanoSaudeCreateManyArgs} args - Arguments to create many PacientePlanoSaudes.
+     * @example
+     * // Create many PacientePlanoSaudes
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends PacientePlanoSaudeCreateManyArgs>(args?: SelectSubset<T, PacientePlanoSaudeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many PacientePlanoSaudes and returns the data saved in the database.
+     * @param {PacientePlanoSaudeCreateManyAndReturnArgs} args - Arguments to create many PacientePlanoSaudes.
+     * @example
+     * // Create many PacientePlanoSaudes
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many PacientePlanoSaudes and only return the `id`
+     * const pacientePlanoSaudeWithIdOnly = await prisma.pacientePlanoSaude.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends PacientePlanoSaudeCreateManyAndReturnArgs>(args?: SelectSubset<T, PacientePlanoSaudeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a PacientePlanoSaude.
+     * @param {PacientePlanoSaudeDeleteArgs} args - Arguments to delete one PacientePlanoSaude.
+     * @example
+     * // Delete one PacientePlanoSaude
+     * const PacientePlanoSaude = await prisma.pacientePlanoSaude.delete({
+     *   where: {
+     *     // ... filter to delete one PacientePlanoSaude
+     *   }
+     * })
+     * 
+     */
+    delete<T extends PacientePlanoSaudeDeleteArgs>(args: SelectSubset<T, PacientePlanoSaudeDeleteArgs<ExtArgs>>): Prisma__PacientePlanoSaudeClient<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one PacientePlanoSaude.
+     * @param {PacientePlanoSaudeUpdateArgs} args - Arguments to update one PacientePlanoSaude.
+     * @example
+     * // Update one PacientePlanoSaude
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends PacientePlanoSaudeUpdateArgs>(args: SelectSubset<T, PacientePlanoSaudeUpdateArgs<ExtArgs>>): Prisma__PacientePlanoSaudeClient<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more PacientePlanoSaudes.
+     * @param {PacientePlanoSaudeDeleteManyArgs} args - Arguments to filter PacientePlanoSaudes to delete.
+     * @example
+     * // Delete a few PacientePlanoSaudes
+     * const { count } = await prisma.pacientePlanoSaude.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends PacientePlanoSaudeDeleteManyArgs>(args?: SelectSubset<T, PacientePlanoSaudeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PacientePlanoSaudes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PacientePlanoSaudeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PacientePlanoSaudes
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends PacientePlanoSaudeUpdateManyArgs>(args: SelectSubset<T, PacientePlanoSaudeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PacientePlanoSaudes and returns the data updated in the database.
+     * @param {PacientePlanoSaudeUpdateManyAndReturnArgs} args - Arguments to update many PacientePlanoSaudes.
+     * @example
+     * // Update many PacientePlanoSaudes
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more PacientePlanoSaudes and only return the `id`
+     * const pacientePlanoSaudeWithIdOnly = await prisma.pacientePlanoSaude.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends PacientePlanoSaudeUpdateManyAndReturnArgs>(args: SelectSubset<T, PacientePlanoSaudeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one PacientePlanoSaude.
+     * @param {PacientePlanoSaudeUpsertArgs} args - Arguments to update or create a PacientePlanoSaude.
+     * @example
+     * // Update or create a PacientePlanoSaude
+     * const pacientePlanoSaude = await prisma.pacientePlanoSaude.upsert({
+     *   create: {
+     *     // ... data to create a PacientePlanoSaude
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PacientePlanoSaude we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PacientePlanoSaudeUpsertArgs>(args: SelectSubset<T, PacientePlanoSaudeUpsertArgs<ExtArgs>>): Prisma__PacientePlanoSaudeClient<$Result.GetResult<Prisma.$PacientePlanoSaudePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of PacientePlanoSaudes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PacientePlanoSaudeCountArgs} args - Arguments to filter PacientePlanoSaudes to count.
+     * @example
+     * // Count the number of PacientePlanoSaudes
+     * const count = await prisma.pacientePlanoSaude.count({
+     *   where: {
+     *     // ... the filter for the PacientePlanoSaudes we want to count
+     *   }
+     * })
+    **/
+    count<T extends PacientePlanoSaudeCountArgs>(
+      args?: Subset<T, PacientePlanoSaudeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PacientePlanoSaudeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a PacientePlanoSaude.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PacientePlanoSaudeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PacientePlanoSaudeAggregateArgs>(args: Subset<T, PacientePlanoSaudeAggregateArgs>): Prisma.PrismaPromise<GetPacientePlanoSaudeAggregateType<T>>
+
+    /**
+     * Group by PacientePlanoSaude.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PacientePlanoSaudeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends PacientePlanoSaudeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: PacientePlanoSaudeGroupByArgs['orderBy'] }
+        : { orderBy?: PacientePlanoSaudeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, PacientePlanoSaudeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPacientePlanoSaudeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the PacientePlanoSaude model
+   */
+  readonly fields: PacientePlanoSaudeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for PacientePlanoSaude.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__PacientePlanoSaudeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    paciente<T extends PacienteDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PacienteDefaultArgs<ExtArgs>>): Prisma__PacienteClient<$Result.GetResult<Prisma.$PacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    plano<T extends PlanoSaudeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PlanoSaudeDefaultArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the PacientePlanoSaude model
+   */
+  interface PacientePlanoSaudeFieldRefs {
+    readonly id: FieldRef<"PacientePlanoSaude", 'String'>
+    readonly pacienteId: FieldRef<"PacientePlanoSaude", 'String'>
+    readonly planoId: FieldRef<"PacientePlanoSaude", 'String'>
+    readonly numeroCarteirinha: FieldRef<"PacientePlanoSaude", 'String'>
+    readonly validade: FieldRef<"PacientePlanoSaude", 'DateTime'>
+    readonly nomeTitular: FieldRef<"PacientePlanoSaude", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * PacientePlanoSaude findUnique
+   */
+  export type PacientePlanoSaudeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PacientePlanoSaude to fetch.
+     */
+    where: PacientePlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * PacientePlanoSaude findUniqueOrThrow
+   */
+  export type PacientePlanoSaudeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PacientePlanoSaude to fetch.
+     */
+    where: PacientePlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * PacientePlanoSaude findFirst
+   */
+  export type PacientePlanoSaudeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PacientePlanoSaude to fetch.
+     */
+    where?: PacientePlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PacientePlanoSaudes to fetch.
+     */
+    orderBy?: PacientePlanoSaudeOrderByWithRelationInput | PacientePlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PacientePlanoSaudes.
+     */
+    cursor?: PacientePlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PacientePlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PacientePlanoSaudes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PacientePlanoSaudes.
+     */
+    distinct?: PacientePlanoSaudeScalarFieldEnum | PacientePlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * PacientePlanoSaude findFirstOrThrow
+   */
+  export type PacientePlanoSaudeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PacientePlanoSaude to fetch.
+     */
+    where?: PacientePlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PacientePlanoSaudes to fetch.
+     */
+    orderBy?: PacientePlanoSaudeOrderByWithRelationInput | PacientePlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PacientePlanoSaudes.
+     */
+    cursor?: PacientePlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PacientePlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PacientePlanoSaudes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PacientePlanoSaudes.
+     */
+    distinct?: PacientePlanoSaudeScalarFieldEnum | PacientePlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * PacientePlanoSaude findMany
+   */
+  export type PacientePlanoSaudeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which PacientePlanoSaudes to fetch.
+     */
+    where?: PacientePlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PacientePlanoSaudes to fetch.
+     */
+    orderBy?: PacientePlanoSaudeOrderByWithRelationInput | PacientePlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing PacientePlanoSaudes.
+     */
+    cursor?: PacientePlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PacientePlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PacientePlanoSaudes.
+     */
+    skip?: number
+    distinct?: PacientePlanoSaudeScalarFieldEnum | PacientePlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * PacientePlanoSaude create
+   */
+  export type PacientePlanoSaudeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    /**
+     * The data needed to create a PacientePlanoSaude.
+     */
+    data: XOR<PacientePlanoSaudeCreateInput, PacientePlanoSaudeUncheckedCreateInput>
+  }
+
+  /**
+   * PacientePlanoSaude createMany
+   */
+  export type PacientePlanoSaudeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PacientePlanoSaudes.
+     */
+    data: PacientePlanoSaudeCreateManyInput | PacientePlanoSaudeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * PacientePlanoSaude createManyAndReturn
+   */
+  export type PacientePlanoSaudeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * The data used to create many PacientePlanoSaudes.
+     */
+    data: PacientePlanoSaudeCreateManyInput | PacientePlanoSaudeCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PacientePlanoSaude update
+   */
+  export type PacientePlanoSaudeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    /**
+     * The data needed to update a PacientePlanoSaude.
+     */
+    data: XOR<PacientePlanoSaudeUpdateInput, PacientePlanoSaudeUncheckedUpdateInput>
+    /**
+     * Choose, which PacientePlanoSaude to update.
+     */
+    where: PacientePlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * PacientePlanoSaude updateMany
+   */
+  export type PacientePlanoSaudeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PacientePlanoSaudes.
+     */
+    data: XOR<PacientePlanoSaudeUpdateManyMutationInput, PacientePlanoSaudeUncheckedUpdateManyInput>
+    /**
+     * Filter which PacientePlanoSaudes to update
+     */
+    where?: PacientePlanoSaudeWhereInput
+    /**
+     * Limit how many PacientePlanoSaudes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * PacientePlanoSaude updateManyAndReturn
+   */
+  export type PacientePlanoSaudeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * The data used to update PacientePlanoSaudes.
+     */
+    data: XOR<PacientePlanoSaudeUpdateManyMutationInput, PacientePlanoSaudeUncheckedUpdateManyInput>
+    /**
+     * Filter which PacientePlanoSaudes to update
+     */
+    where?: PacientePlanoSaudeWhereInput
+    /**
+     * Limit how many PacientePlanoSaudes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PacientePlanoSaude upsert
+   */
+  export type PacientePlanoSaudeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    /**
+     * The filter to search for the PacientePlanoSaude to update in case it exists.
+     */
+    where: PacientePlanoSaudeWhereUniqueInput
+    /**
+     * In case the PacientePlanoSaude found by the `where` argument doesn't exist, create a new PacientePlanoSaude with this data.
+     */
+    create: XOR<PacientePlanoSaudeCreateInput, PacientePlanoSaudeUncheckedCreateInput>
+    /**
+     * In case the PacientePlanoSaude was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PacientePlanoSaudeUpdateInput, PacientePlanoSaudeUncheckedUpdateInput>
+  }
+
+  /**
+   * PacientePlanoSaude delete
+   */
+  export type PacientePlanoSaudeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter which PacientePlanoSaude to delete.
+     */
+    where: PacientePlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * PacientePlanoSaude deleteMany
+   */
+  export type PacientePlanoSaudeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PacientePlanoSaudes to delete
+     */
+    where?: PacientePlanoSaudeWhereInput
+    /**
+     * Limit how many PacientePlanoSaudes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * PacientePlanoSaude without action
+   */
+  export type PacientePlanoSaudeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PacientePlanoSaude
+     */
+    select?: PacientePlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PacientePlanoSaude
+     */
+    omit?: PacientePlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PacientePlanoSaudeInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ProfissionalPlanoSaude
+   */
+
+  export type AggregateProfissionalPlanoSaude = {
+    _count: ProfissionalPlanoSaudeCountAggregateOutputType | null
+    _min: ProfissionalPlanoSaudeMinAggregateOutputType | null
+    _max: ProfissionalPlanoSaudeMaxAggregateOutputType | null
+  }
+
+  export type ProfissionalPlanoSaudeMinAggregateOutputType = {
+    id: string | null
+    profissionalId: string | null
+    planoId: string | null
+  }
+
+  export type ProfissionalPlanoSaudeMaxAggregateOutputType = {
+    id: string | null
+    profissionalId: string | null
+    planoId: string | null
+  }
+
+  export type ProfissionalPlanoSaudeCountAggregateOutputType = {
+    id: number
+    profissionalId: number
+    planoId: number
+    _all: number
+  }
+
+
+  export type ProfissionalPlanoSaudeMinAggregateInputType = {
+    id?: true
+    profissionalId?: true
+    planoId?: true
+  }
+
+  export type ProfissionalPlanoSaudeMaxAggregateInputType = {
+    id?: true
+    profissionalId?: true
+    planoId?: true
+  }
+
+  export type ProfissionalPlanoSaudeCountAggregateInputType = {
+    id?: true
+    profissionalId?: true
+    planoId?: true
+    _all?: true
+  }
+
+  export type ProfissionalPlanoSaudeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProfissionalPlanoSaude to aggregate.
+     */
+    where?: ProfissionalPlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProfissionalPlanoSaudes to fetch.
+     */
+    orderBy?: ProfissionalPlanoSaudeOrderByWithRelationInput | ProfissionalPlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ProfissionalPlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProfissionalPlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProfissionalPlanoSaudes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ProfissionalPlanoSaudes
+    **/
+    _count?: true | ProfissionalPlanoSaudeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ProfissionalPlanoSaudeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ProfissionalPlanoSaudeMaxAggregateInputType
+  }
+
+  export type GetProfissionalPlanoSaudeAggregateType<T extends ProfissionalPlanoSaudeAggregateArgs> = {
+        [P in keyof T & keyof AggregateProfissionalPlanoSaude]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateProfissionalPlanoSaude[P]>
+      : GetScalarType<T[P], AggregateProfissionalPlanoSaude[P]>
+  }
+
+
+
+
+  export type ProfissionalPlanoSaudeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProfissionalPlanoSaudeWhereInput
+    orderBy?: ProfissionalPlanoSaudeOrderByWithAggregationInput | ProfissionalPlanoSaudeOrderByWithAggregationInput[]
+    by: ProfissionalPlanoSaudeScalarFieldEnum[] | ProfissionalPlanoSaudeScalarFieldEnum
+    having?: ProfissionalPlanoSaudeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ProfissionalPlanoSaudeCountAggregateInputType | true
+    _min?: ProfissionalPlanoSaudeMinAggregateInputType
+    _max?: ProfissionalPlanoSaudeMaxAggregateInputType
+  }
+
+  export type ProfissionalPlanoSaudeGroupByOutputType = {
+    id: string
+    profissionalId: string
+    planoId: string
+    _count: ProfissionalPlanoSaudeCountAggregateOutputType | null
+    _min: ProfissionalPlanoSaudeMinAggregateOutputType | null
+    _max: ProfissionalPlanoSaudeMaxAggregateOutputType | null
+  }
+
+  type GetProfissionalPlanoSaudeGroupByPayload<T extends ProfissionalPlanoSaudeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ProfissionalPlanoSaudeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ProfissionalPlanoSaudeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ProfissionalPlanoSaudeGroupByOutputType[P]>
+            : GetScalarType<T[P], ProfissionalPlanoSaudeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ProfissionalPlanoSaudeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    profissionalId?: boolean
+    planoId?: boolean
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["profissionalPlanoSaude"]>
+
+  export type ProfissionalPlanoSaudeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    profissionalId?: boolean
+    planoId?: boolean
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["profissionalPlanoSaude"]>
+
+  export type ProfissionalPlanoSaudeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    profissionalId?: boolean
+    planoId?: boolean
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["profissionalPlanoSaude"]>
+
+  export type ProfissionalPlanoSaudeSelectScalar = {
+    id?: boolean
+    profissionalId?: boolean
+    planoId?: boolean
+  }
+
+  export type ProfissionalPlanoSaudeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "profissionalId" | "planoId", ExtArgs["result"]["profissionalPlanoSaude"]>
+  export type ProfissionalPlanoSaudeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }
+  export type ProfissionalPlanoSaudeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }
+  export type ProfissionalPlanoSaudeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    profissional?: boolean | ProfissionalDefaultArgs<ExtArgs>
+    plano?: boolean | PlanoSaudeDefaultArgs<ExtArgs>
+  }
+
+  export type $ProfissionalPlanoSaudePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ProfissionalPlanoSaude"
+    objects: {
+      profissional: Prisma.$ProfissionalPayload<ExtArgs>
+      plano: Prisma.$PlanoSaudePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      profissionalId: string
+      planoId: string
+    }, ExtArgs["result"]["profissionalPlanoSaude"]>
+    composites: {}
+  }
+
+  type ProfissionalPlanoSaudeGetPayload<S extends boolean | null | undefined | ProfissionalPlanoSaudeDefaultArgs> = $Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload, S>
+
+  type ProfissionalPlanoSaudeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ProfissionalPlanoSaudeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ProfissionalPlanoSaudeCountAggregateInputType | true
+    }
+
+  export interface ProfissionalPlanoSaudeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ProfissionalPlanoSaude'], meta: { name: 'ProfissionalPlanoSaude' } }
+    /**
+     * Find zero or one ProfissionalPlanoSaude that matches the filter.
+     * @param {ProfissionalPlanoSaudeFindUniqueArgs} args - Arguments to find a ProfissionalPlanoSaude
+     * @example
+     * // Get one ProfissionalPlanoSaude
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ProfissionalPlanoSaudeFindUniqueArgs>(args: SelectSubset<T, ProfissionalPlanoSaudeFindUniqueArgs<ExtArgs>>): Prisma__ProfissionalPlanoSaudeClient<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ProfissionalPlanoSaude that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ProfissionalPlanoSaudeFindUniqueOrThrowArgs} args - Arguments to find a ProfissionalPlanoSaude
+     * @example
+     * // Get one ProfissionalPlanoSaude
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ProfissionalPlanoSaudeFindUniqueOrThrowArgs>(args: SelectSubset<T, ProfissionalPlanoSaudeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProfissionalPlanoSaudeClient<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProfissionalPlanoSaude that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProfissionalPlanoSaudeFindFirstArgs} args - Arguments to find a ProfissionalPlanoSaude
+     * @example
+     * // Get one ProfissionalPlanoSaude
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ProfissionalPlanoSaudeFindFirstArgs>(args?: SelectSubset<T, ProfissionalPlanoSaudeFindFirstArgs<ExtArgs>>): Prisma__ProfissionalPlanoSaudeClient<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProfissionalPlanoSaude that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProfissionalPlanoSaudeFindFirstOrThrowArgs} args - Arguments to find a ProfissionalPlanoSaude
+     * @example
+     * // Get one ProfissionalPlanoSaude
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ProfissionalPlanoSaudeFindFirstOrThrowArgs>(args?: SelectSubset<T, ProfissionalPlanoSaudeFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProfissionalPlanoSaudeClient<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ProfissionalPlanoSaudes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProfissionalPlanoSaudeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ProfissionalPlanoSaudes
+     * const profissionalPlanoSaudes = await prisma.profissionalPlanoSaude.findMany()
+     * 
+     * // Get first 10 ProfissionalPlanoSaudes
+     * const profissionalPlanoSaudes = await prisma.profissionalPlanoSaude.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const profissionalPlanoSaudeWithIdOnly = await prisma.profissionalPlanoSaude.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ProfissionalPlanoSaudeFindManyArgs>(args?: SelectSubset<T, ProfissionalPlanoSaudeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ProfissionalPlanoSaude.
+     * @param {ProfissionalPlanoSaudeCreateArgs} args - Arguments to create a ProfissionalPlanoSaude.
+     * @example
+     * // Create one ProfissionalPlanoSaude
+     * const ProfissionalPlanoSaude = await prisma.profissionalPlanoSaude.create({
+     *   data: {
+     *     // ... data to create a ProfissionalPlanoSaude
+     *   }
+     * })
+     * 
+     */
+    create<T extends ProfissionalPlanoSaudeCreateArgs>(args: SelectSubset<T, ProfissionalPlanoSaudeCreateArgs<ExtArgs>>): Prisma__ProfissionalPlanoSaudeClient<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ProfissionalPlanoSaudes.
+     * @param {ProfissionalPlanoSaudeCreateManyArgs} args - Arguments to create many ProfissionalPlanoSaudes.
+     * @example
+     * // Create many ProfissionalPlanoSaudes
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ProfissionalPlanoSaudeCreateManyArgs>(args?: SelectSubset<T, ProfissionalPlanoSaudeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ProfissionalPlanoSaudes and returns the data saved in the database.
+     * @param {ProfissionalPlanoSaudeCreateManyAndReturnArgs} args - Arguments to create many ProfissionalPlanoSaudes.
+     * @example
+     * // Create many ProfissionalPlanoSaudes
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ProfissionalPlanoSaudes and only return the `id`
+     * const profissionalPlanoSaudeWithIdOnly = await prisma.profissionalPlanoSaude.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ProfissionalPlanoSaudeCreateManyAndReturnArgs>(args?: SelectSubset<T, ProfissionalPlanoSaudeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ProfissionalPlanoSaude.
+     * @param {ProfissionalPlanoSaudeDeleteArgs} args - Arguments to delete one ProfissionalPlanoSaude.
+     * @example
+     * // Delete one ProfissionalPlanoSaude
+     * const ProfissionalPlanoSaude = await prisma.profissionalPlanoSaude.delete({
+     *   where: {
+     *     // ... filter to delete one ProfissionalPlanoSaude
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ProfissionalPlanoSaudeDeleteArgs>(args: SelectSubset<T, ProfissionalPlanoSaudeDeleteArgs<ExtArgs>>): Prisma__ProfissionalPlanoSaudeClient<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ProfissionalPlanoSaude.
+     * @param {ProfissionalPlanoSaudeUpdateArgs} args - Arguments to update one ProfissionalPlanoSaude.
+     * @example
+     * // Update one ProfissionalPlanoSaude
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ProfissionalPlanoSaudeUpdateArgs>(args: SelectSubset<T, ProfissionalPlanoSaudeUpdateArgs<ExtArgs>>): Prisma__ProfissionalPlanoSaudeClient<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ProfissionalPlanoSaudes.
+     * @param {ProfissionalPlanoSaudeDeleteManyArgs} args - Arguments to filter ProfissionalPlanoSaudes to delete.
+     * @example
+     * // Delete a few ProfissionalPlanoSaudes
+     * const { count } = await prisma.profissionalPlanoSaude.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ProfissionalPlanoSaudeDeleteManyArgs>(args?: SelectSubset<T, ProfissionalPlanoSaudeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProfissionalPlanoSaudes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProfissionalPlanoSaudeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ProfissionalPlanoSaudes
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ProfissionalPlanoSaudeUpdateManyArgs>(args: SelectSubset<T, ProfissionalPlanoSaudeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProfissionalPlanoSaudes and returns the data updated in the database.
+     * @param {ProfissionalPlanoSaudeUpdateManyAndReturnArgs} args - Arguments to update many ProfissionalPlanoSaudes.
+     * @example
+     * // Update many ProfissionalPlanoSaudes
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ProfissionalPlanoSaudes and only return the `id`
+     * const profissionalPlanoSaudeWithIdOnly = await prisma.profissionalPlanoSaude.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ProfissionalPlanoSaudeUpdateManyAndReturnArgs>(args: SelectSubset<T, ProfissionalPlanoSaudeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ProfissionalPlanoSaude.
+     * @param {ProfissionalPlanoSaudeUpsertArgs} args - Arguments to update or create a ProfissionalPlanoSaude.
+     * @example
+     * // Update or create a ProfissionalPlanoSaude
+     * const profissionalPlanoSaude = await prisma.profissionalPlanoSaude.upsert({
+     *   create: {
+     *     // ... data to create a ProfissionalPlanoSaude
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ProfissionalPlanoSaude we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ProfissionalPlanoSaudeUpsertArgs>(args: SelectSubset<T, ProfissionalPlanoSaudeUpsertArgs<ExtArgs>>): Prisma__ProfissionalPlanoSaudeClient<$Result.GetResult<Prisma.$ProfissionalPlanoSaudePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ProfissionalPlanoSaudes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProfissionalPlanoSaudeCountArgs} args - Arguments to filter ProfissionalPlanoSaudes to count.
+     * @example
+     * // Count the number of ProfissionalPlanoSaudes
+     * const count = await prisma.profissionalPlanoSaude.count({
+     *   where: {
+     *     // ... the filter for the ProfissionalPlanoSaudes we want to count
+     *   }
+     * })
+    **/
+    count<T extends ProfissionalPlanoSaudeCountArgs>(
+      args?: Subset<T, ProfissionalPlanoSaudeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ProfissionalPlanoSaudeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ProfissionalPlanoSaude.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProfissionalPlanoSaudeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ProfissionalPlanoSaudeAggregateArgs>(args: Subset<T, ProfissionalPlanoSaudeAggregateArgs>): Prisma.PrismaPromise<GetProfissionalPlanoSaudeAggregateType<T>>
+
+    /**
+     * Group by ProfissionalPlanoSaude.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProfissionalPlanoSaudeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ProfissionalPlanoSaudeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ProfissionalPlanoSaudeGroupByArgs['orderBy'] }
+        : { orderBy?: ProfissionalPlanoSaudeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ProfissionalPlanoSaudeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProfissionalPlanoSaudeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ProfissionalPlanoSaude model
+   */
+  readonly fields: ProfissionalPlanoSaudeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ProfissionalPlanoSaude.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ProfissionalPlanoSaudeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    profissional<T extends ProfissionalDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ProfissionalDefaultArgs<ExtArgs>>): Prisma__ProfissionalClient<$Result.GetResult<Prisma.$ProfissionalPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    plano<T extends PlanoSaudeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PlanoSaudeDefaultArgs<ExtArgs>>): Prisma__PlanoSaudeClient<$Result.GetResult<Prisma.$PlanoSaudePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ProfissionalPlanoSaude model
+   */
+  interface ProfissionalPlanoSaudeFieldRefs {
+    readonly id: FieldRef<"ProfissionalPlanoSaude", 'String'>
+    readonly profissionalId: FieldRef<"ProfissionalPlanoSaude", 'String'>
+    readonly planoId: FieldRef<"ProfissionalPlanoSaude", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ProfissionalPlanoSaude findUnique
+   */
+  export type ProfissionalPlanoSaudeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which ProfissionalPlanoSaude to fetch.
+     */
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * ProfissionalPlanoSaude findUniqueOrThrow
+   */
+  export type ProfissionalPlanoSaudeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which ProfissionalPlanoSaude to fetch.
+     */
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * ProfissionalPlanoSaude findFirst
+   */
+  export type ProfissionalPlanoSaudeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which ProfissionalPlanoSaude to fetch.
+     */
+    where?: ProfissionalPlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProfissionalPlanoSaudes to fetch.
+     */
+    orderBy?: ProfissionalPlanoSaudeOrderByWithRelationInput | ProfissionalPlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProfissionalPlanoSaudes.
+     */
+    cursor?: ProfissionalPlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProfissionalPlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProfissionalPlanoSaudes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProfissionalPlanoSaudes.
+     */
+    distinct?: ProfissionalPlanoSaudeScalarFieldEnum | ProfissionalPlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * ProfissionalPlanoSaude findFirstOrThrow
+   */
+  export type ProfissionalPlanoSaudeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which ProfissionalPlanoSaude to fetch.
+     */
+    where?: ProfissionalPlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProfissionalPlanoSaudes to fetch.
+     */
+    orderBy?: ProfissionalPlanoSaudeOrderByWithRelationInput | ProfissionalPlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProfissionalPlanoSaudes.
+     */
+    cursor?: ProfissionalPlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProfissionalPlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProfissionalPlanoSaudes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProfissionalPlanoSaudes.
+     */
+    distinct?: ProfissionalPlanoSaudeScalarFieldEnum | ProfissionalPlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * ProfissionalPlanoSaude findMany
+   */
+  export type ProfissionalPlanoSaudeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter, which ProfissionalPlanoSaudes to fetch.
+     */
+    where?: ProfissionalPlanoSaudeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProfissionalPlanoSaudes to fetch.
+     */
+    orderBy?: ProfissionalPlanoSaudeOrderByWithRelationInput | ProfissionalPlanoSaudeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ProfissionalPlanoSaudes.
+     */
+    cursor?: ProfissionalPlanoSaudeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProfissionalPlanoSaudes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProfissionalPlanoSaudes.
+     */
+    skip?: number
+    distinct?: ProfissionalPlanoSaudeScalarFieldEnum | ProfissionalPlanoSaudeScalarFieldEnum[]
+  }
+
+  /**
+   * ProfissionalPlanoSaude create
+   */
+  export type ProfissionalPlanoSaudeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ProfissionalPlanoSaude.
+     */
+    data: XOR<ProfissionalPlanoSaudeCreateInput, ProfissionalPlanoSaudeUncheckedCreateInput>
+  }
+
+  /**
+   * ProfissionalPlanoSaude createMany
+   */
+  export type ProfissionalPlanoSaudeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ProfissionalPlanoSaudes.
+     */
+    data: ProfissionalPlanoSaudeCreateManyInput | ProfissionalPlanoSaudeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ProfissionalPlanoSaude createManyAndReturn
+   */
+  export type ProfissionalPlanoSaudeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * The data used to create many ProfissionalPlanoSaudes.
+     */
+    data: ProfissionalPlanoSaudeCreateManyInput | ProfissionalPlanoSaudeCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ProfissionalPlanoSaude update
+   */
+  export type ProfissionalPlanoSaudeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ProfissionalPlanoSaude.
+     */
+    data: XOR<ProfissionalPlanoSaudeUpdateInput, ProfissionalPlanoSaudeUncheckedUpdateInput>
+    /**
+     * Choose, which ProfissionalPlanoSaude to update.
+     */
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * ProfissionalPlanoSaude updateMany
+   */
+  export type ProfissionalPlanoSaudeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ProfissionalPlanoSaudes.
+     */
+    data: XOR<ProfissionalPlanoSaudeUpdateManyMutationInput, ProfissionalPlanoSaudeUncheckedUpdateManyInput>
+    /**
+     * Filter which ProfissionalPlanoSaudes to update
+     */
+    where?: ProfissionalPlanoSaudeWhereInput
+    /**
+     * Limit how many ProfissionalPlanoSaudes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProfissionalPlanoSaude updateManyAndReturn
+   */
+  export type ProfissionalPlanoSaudeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * The data used to update ProfissionalPlanoSaudes.
+     */
+    data: XOR<ProfissionalPlanoSaudeUpdateManyMutationInput, ProfissionalPlanoSaudeUncheckedUpdateManyInput>
+    /**
+     * Filter which ProfissionalPlanoSaudes to update
+     */
+    where?: ProfissionalPlanoSaudeWhereInput
+    /**
+     * Limit how many ProfissionalPlanoSaudes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ProfissionalPlanoSaude upsert
+   */
+  export type ProfissionalPlanoSaudeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ProfissionalPlanoSaude to update in case it exists.
+     */
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+    /**
+     * In case the ProfissionalPlanoSaude found by the `where` argument doesn't exist, create a new ProfissionalPlanoSaude with this data.
+     */
+    create: XOR<ProfissionalPlanoSaudeCreateInput, ProfissionalPlanoSaudeUncheckedCreateInput>
+    /**
+     * In case the ProfissionalPlanoSaude was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ProfissionalPlanoSaudeUpdateInput, ProfissionalPlanoSaudeUncheckedUpdateInput>
+  }
+
+  /**
+   * ProfissionalPlanoSaude delete
+   */
+  export type ProfissionalPlanoSaudeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+    /**
+     * Filter which ProfissionalPlanoSaude to delete.
+     */
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+  }
+
+  /**
+   * ProfissionalPlanoSaude deleteMany
+   */
+  export type ProfissionalPlanoSaudeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProfissionalPlanoSaudes to delete
+     */
+    where?: ProfissionalPlanoSaudeWhereInput
+    /**
+     * Limit how many ProfissionalPlanoSaudes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProfissionalPlanoSaude without action
+   */
+  export type ProfissionalPlanoSaudeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProfissionalPlanoSaude
+     */
+    select?: ProfissionalPlanoSaudeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProfissionalPlanoSaude
+     */
+    omit?: ProfissionalPlanoSaudeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfissionalPlanoSaudeInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -14406,7 +18126,8 @@ export namespace Prisma {
     id: 'id',
     dataNascimento: 'dataNascimento',
     peso: 'peso',
-    altura: 'altura'
+    altura: 'altura',
+    alergias: 'alergias'
   };
 
   export type PacienteScalarFieldEnum = (typeof PacienteScalarFieldEnum)[keyof typeof PacienteScalarFieldEnum]
@@ -14434,6 +18155,7 @@ export namespace Prisma {
     telefone: 'telefone',
     avatar: 'avatar',
     genero: 'genero',
+    cpf: 'cpf',
     profissionalId: 'profissionalId',
     pacienteId: 'pacienteId'
   };
@@ -14464,9 +18186,11 @@ export namespace Prisma {
 
   export const DisponibilidadeScalarFieldEnum: {
     id: 'id',
-    diaSemanaId: 'diaSemanaId',
     horaInicio: 'horaInicio',
-    horaFim: 'horaFim'
+    horaFim: 'horaFim',
+    diaSemanaId: 'diaSemanaId',
+    clinicaId: 'clinicaId',
+    profissionalId: 'profissionalId'
   };
 
   export type DisponibilidadeScalarFieldEnum = (typeof DisponibilidadeScalarFieldEnum)[keyof typeof DisponibilidadeScalarFieldEnum]
@@ -14542,6 +18266,36 @@ export namespace Prisma {
   };
 
   export type HistoricoMedicoScalarFieldEnum = (typeof HistoricoMedicoScalarFieldEnum)[keyof typeof HistoricoMedicoScalarFieldEnum]
+
+
+  export const PlanoSaudeScalarFieldEnum: {
+    id: 'id',
+    nome: 'nome',
+    operadora: 'operadora'
+  };
+
+  export type PlanoSaudeScalarFieldEnum = (typeof PlanoSaudeScalarFieldEnum)[keyof typeof PlanoSaudeScalarFieldEnum]
+
+
+  export const PacientePlanoSaudeScalarFieldEnum: {
+    id: 'id',
+    pacienteId: 'pacienteId',
+    planoId: 'planoId',
+    numeroCarteirinha: 'numeroCarteirinha',
+    validade: 'validade',
+    nomeTitular: 'nomeTitular'
+  };
+
+  export type PacientePlanoSaudeScalarFieldEnum = (typeof PacientePlanoSaudeScalarFieldEnum)[keyof typeof PacientePlanoSaudeScalarFieldEnum]
+
+
+  export const ProfissionalPlanoSaudeScalarFieldEnum: {
+    id: 'id',
+    profissionalId: 'profissionalId',
+    planoId: 'planoId'
+  };
+
+  export type ProfissionalPlanoSaudeScalarFieldEnum = (typeof ProfissionalPlanoSaudeScalarFieldEnum)[keyof typeof ProfissionalPlanoSaudeScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -14654,9 +18408,11 @@ export namespace Prisma {
     dataNascimento?: DateTimeFilter<"Paciente"> | Date | string
     peso?: FloatFilter<"Paciente"> | number
     altura?: FloatFilter<"Paciente"> | number
+    alergias?: StringNullableFilter<"Paciente"> | string | null
     usuarios?: UsuarioListRelationFilter
     agendamentos?: ConsultaListRelationFilter
     HistoricoMedico?: HistoricoMedicoListRelationFilter
+    PacientePlanoSaude?: PacientePlanoSaudeListRelationFilter
   }
 
   export type PacienteOrderByWithRelationInput = {
@@ -14664,9 +18420,11 @@ export namespace Prisma {
     dataNascimento?: SortOrder
     peso?: SortOrder
     altura?: SortOrder
+    alergias?: SortOrderInput | SortOrder
     usuarios?: UsuarioOrderByRelationAggregateInput
     agendamentos?: ConsultaOrderByRelationAggregateInput
     HistoricoMedico?: HistoricoMedicoOrderByRelationAggregateInput
+    PacientePlanoSaude?: PacientePlanoSaudeOrderByRelationAggregateInput
   }
 
   export type PacienteWhereUniqueInput = Prisma.AtLeast<{
@@ -14677,9 +18435,11 @@ export namespace Prisma {
     dataNascimento?: DateTimeFilter<"Paciente"> | Date | string
     peso?: FloatFilter<"Paciente"> | number
     altura?: FloatFilter<"Paciente"> | number
+    alergias?: StringNullableFilter<"Paciente"> | string | null
     usuarios?: UsuarioListRelationFilter
     agendamentos?: ConsultaListRelationFilter
     HistoricoMedico?: HistoricoMedicoListRelationFilter
+    PacientePlanoSaude?: PacientePlanoSaudeListRelationFilter
   }, "id">
 
   export type PacienteOrderByWithAggregationInput = {
@@ -14687,6 +18447,7 @@ export namespace Prisma {
     dataNascimento?: SortOrder
     peso?: SortOrder
     altura?: SortOrder
+    alergias?: SortOrderInput | SortOrder
     _count?: PacienteCountOrderByAggregateInput
     _avg?: PacienteAvgOrderByAggregateInput
     _max?: PacienteMaxOrderByAggregateInput
@@ -14702,6 +18463,7 @@ export namespace Prisma {
     dataNascimento?: DateTimeWithAggregatesFilter<"Paciente"> | Date | string
     peso?: FloatWithAggregatesFilter<"Paciente"> | number
     altura?: FloatWithAggregatesFilter<"Paciente"> | number
+    alergias?: StringNullableWithAggregatesFilter<"Paciente"> | string | null
   }
 
   export type ProfissionalWhereInput = {
@@ -14719,6 +18481,8 @@ export namespace Prisma {
     usuarios?: UsuarioListRelationFilter
     agendamentos?: ConsultaListRelationFilter
     HistoricoMedico?: HistoricoMedicoListRelationFilter
+    Disponibilidade?: DisponibilidadeListRelationFilter
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeListRelationFilter
   }
 
   export type ProfissionalOrderByWithRelationInput = {
@@ -14733,6 +18497,8 @@ export namespace Prisma {
     usuarios?: UsuarioOrderByRelationAggregateInput
     agendamentos?: ConsultaOrderByRelationAggregateInput
     HistoricoMedico?: HistoricoMedicoOrderByRelationAggregateInput
+    Disponibilidade?: DisponibilidadeOrderByRelationAggregateInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeOrderByRelationAggregateInput
   }
 
   export type ProfissionalWhereUniqueInput = Prisma.AtLeast<{
@@ -14750,6 +18516,8 @@ export namespace Prisma {
     usuarios?: UsuarioListRelationFilter
     agendamentos?: ConsultaListRelationFilter
     HistoricoMedico?: HistoricoMedicoListRelationFilter
+    Disponibilidade?: DisponibilidadeListRelationFilter
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeListRelationFilter
   }, "id">
 
   export type ProfissionalOrderByWithAggregationInput = {
@@ -14791,6 +18559,7 @@ export namespace Prisma {
     telefone?: StringFilter<"Usuario"> | string
     avatar?: StringNullableFilter<"Usuario"> | string | null
     genero?: StringFilter<"Usuario"> | string
+    cpf?: StringFilter<"Usuario"> | string
     profissionalId?: UuidNullableFilter<"Usuario"> | string | null
     pacienteId?: UuidNullableFilter<"Usuario"> | string | null
     profissional?: XOR<ProfissionalNullableScalarRelationFilter, ProfissionalWhereInput> | null
@@ -14806,6 +18575,7 @@ export namespace Prisma {
     telefone?: SortOrder
     avatar?: SortOrderInput | SortOrder
     genero?: SortOrder
+    cpf?: SortOrder
     profissionalId?: SortOrderInput | SortOrder
     pacienteId?: SortOrderInput | SortOrder
     profissional?: ProfissionalOrderByWithRelationInput
@@ -14816,6 +18586,7 @@ export namespace Prisma {
   export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     email?: string
+    cpf?: string
     AND?: UsuarioWhereInput | UsuarioWhereInput[]
     OR?: UsuarioWhereInput[]
     NOT?: UsuarioWhereInput | UsuarioWhereInput[]
@@ -14829,7 +18600,7 @@ export namespace Prisma {
     profissional?: XOR<ProfissionalNullableScalarRelationFilter, ProfissionalWhereInput> | null
     paciente?: XOR<PacienteNullableScalarRelationFilter, PacienteWhereInput> | null
     enderecos?: EnderecoUsuarioListRelationFilter
-  }, "id" | "email">
+  }, "id" | "email" | "cpf">
 
   export type UsuarioOrderByWithAggregationInput = {
     id?: SortOrder
@@ -14839,6 +18610,7 @@ export namespace Prisma {
     telefone?: SortOrder
     avatar?: SortOrderInput | SortOrder
     genero?: SortOrder
+    cpf?: SortOrder
     profissionalId?: SortOrderInput | SortOrder
     pacienteId?: SortOrderInput | SortOrder
     _count?: UsuarioCountOrderByAggregateInput
@@ -14857,6 +18629,7 @@ export namespace Prisma {
     telefone?: StringWithAggregatesFilter<"Usuario"> | string
     avatar?: StringNullableWithAggregatesFilter<"Usuario"> | string | null
     genero?: StringWithAggregatesFilter<"Usuario"> | string
+    cpf?: StringWithAggregatesFilter<"Usuario"> | string
     profissionalId?: UuidNullableWithAggregatesFilter<"Usuario"> | string | null
     pacienteId?: UuidNullableWithAggregatesFilter<"Usuario"> | string | null
   }
@@ -14873,6 +18646,7 @@ export namespace Prisma {
     telefone?: StringFilter<"Clinica"> | string
     tipoAtendimento?: StringFilter<"Clinica"> | string
     enderecos?: EnderecoClinicaListRelationFilter
+    Disponibilidade?: DisponibilidadeListRelationFilter
   }
 
   export type ClinicaOrderByWithRelationInput = {
@@ -14884,6 +18658,7 @@ export namespace Prisma {
     telefone?: SortOrder
     tipoAtendimento?: SortOrder
     enderecos?: EnderecoClinicaOrderByRelationAggregateInput
+    Disponibilidade?: DisponibilidadeOrderByRelationAggregateInput
   }
 
   export type ClinicaWhereUniqueInput = Prisma.AtLeast<{
@@ -14898,6 +18673,7 @@ export namespace Prisma {
     telefone?: StringFilter<"Clinica"> | string
     tipoAtendimento?: StringFilter<"Clinica"> | string
     enderecos?: EnderecoClinicaListRelationFilter
+    Disponibilidade?: DisponibilidadeListRelationFilter
   }, "id">
 
   export type ClinicaOrderByWithAggregationInput = {
@@ -14971,17 +18747,25 @@ export namespace Prisma {
     OR?: DisponibilidadeWhereInput[]
     NOT?: DisponibilidadeWhereInput | DisponibilidadeWhereInput[]
     id?: UuidFilter<"Disponibilidade"> | string
-    diaSemanaId?: UuidFilter<"Disponibilidade"> | string
     horaInicio?: DateTimeFilter<"Disponibilidade"> | Date | string
     horaFim?: DateTimeFilter<"Disponibilidade"> | Date | string
+    diaSemanaId?: UuidFilter<"Disponibilidade"> | string
+    clinicaId?: UuidFilter<"Disponibilidade"> | string
+    profissionalId?: UuidFilter<"Disponibilidade"> | string
+    profissional?: XOR<ProfissionalScalarRelationFilter, ProfissionalWhereInput>
+    clinica?: XOR<ClinicaScalarRelationFilter, ClinicaWhereInput>
     diaSemana?: XOR<DiaSemanaScalarRelationFilter, DiaSemanaWhereInput>
   }
 
   export type DisponibilidadeOrderByWithRelationInput = {
     id?: SortOrder
-    diaSemanaId?: SortOrder
     horaInicio?: SortOrder
     horaFim?: SortOrder
+    diaSemanaId?: SortOrder
+    clinicaId?: SortOrder
+    profissionalId?: SortOrder
+    profissional?: ProfissionalOrderByWithRelationInput
+    clinica?: ClinicaOrderByWithRelationInput
     diaSemana?: DiaSemanaOrderByWithRelationInput
   }
 
@@ -14990,17 +18774,23 @@ export namespace Prisma {
     AND?: DisponibilidadeWhereInput | DisponibilidadeWhereInput[]
     OR?: DisponibilidadeWhereInput[]
     NOT?: DisponibilidadeWhereInput | DisponibilidadeWhereInput[]
-    diaSemanaId?: UuidFilter<"Disponibilidade"> | string
     horaInicio?: DateTimeFilter<"Disponibilidade"> | Date | string
     horaFim?: DateTimeFilter<"Disponibilidade"> | Date | string
+    diaSemanaId?: UuidFilter<"Disponibilidade"> | string
+    clinicaId?: UuidFilter<"Disponibilidade"> | string
+    profissionalId?: UuidFilter<"Disponibilidade"> | string
+    profissional?: XOR<ProfissionalScalarRelationFilter, ProfissionalWhereInput>
+    clinica?: XOR<ClinicaScalarRelationFilter, ClinicaWhereInput>
     diaSemana?: XOR<DiaSemanaScalarRelationFilter, DiaSemanaWhereInput>
   }, "id">
 
   export type DisponibilidadeOrderByWithAggregationInput = {
     id?: SortOrder
-    diaSemanaId?: SortOrder
     horaInicio?: SortOrder
     horaFim?: SortOrder
+    diaSemanaId?: SortOrder
+    clinicaId?: SortOrder
+    profissionalId?: SortOrder
     _count?: DisponibilidadeCountOrderByAggregateInput
     _max?: DisponibilidadeMaxOrderByAggregateInput
     _min?: DisponibilidadeMinOrderByAggregateInput
@@ -15011,9 +18801,11 @@ export namespace Prisma {
     OR?: DisponibilidadeScalarWhereWithAggregatesInput[]
     NOT?: DisponibilidadeScalarWhereWithAggregatesInput | DisponibilidadeScalarWhereWithAggregatesInput[]
     id?: UuidWithAggregatesFilter<"Disponibilidade"> | string
-    diaSemanaId?: UuidWithAggregatesFilter<"Disponibilidade"> | string
     horaInicio?: DateTimeWithAggregatesFilter<"Disponibilidade"> | Date | string
     horaFim?: DateTimeWithAggregatesFilter<"Disponibilidade"> | Date | string
+    diaSemanaId?: UuidWithAggregatesFilter<"Disponibilidade"> | string
+    clinicaId?: UuidWithAggregatesFilter<"Disponibilidade"> | string
+    profissionalId?: UuidWithAggregatesFilter<"Disponibilidade"> | string
   }
 
   export type EnderecoWhereInput = {
@@ -15399,14 +19191,175 @@ export namespace Prisma {
     consultaId?: UuidWithAggregatesFilter<"HistoricoMedico"> | string
   }
 
+  export type PlanoSaudeWhereInput = {
+    AND?: PlanoSaudeWhereInput | PlanoSaudeWhereInput[]
+    OR?: PlanoSaudeWhereInput[]
+    NOT?: PlanoSaudeWhereInput | PlanoSaudeWhereInput[]
+    id?: UuidFilter<"PlanoSaude"> | string
+    nome?: StringFilter<"PlanoSaude"> | string
+    operadora?: StringFilter<"PlanoSaude"> | string
+    PacientePlanoSaude?: PacientePlanoSaudeListRelationFilter
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeListRelationFilter
+  }
+
+  export type PlanoSaudeOrderByWithRelationInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    operadora?: SortOrder
+    PacientePlanoSaude?: PacientePlanoSaudeOrderByRelationAggregateInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeOrderByRelationAggregateInput
+  }
+
+  export type PlanoSaudeWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: PlanoSaudeWhereInput | PlanoSaudeWhereInput[]
+    OR?: PlanoSaudeWhereInput[]
+    NOT?: PlanoSaudeWhereInput | PlanoSaudeWhereInput[]
+    nome?: StringFilter<"PlanoSaude"> | string
+    operadora?: StringFilter<"PlanoSaude"> | string
+    PacientePlanoSaude?: PacientePlanoSaudeListRelationFilter
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeListRelationFilter
+  }, "id">
+
+  export type PlanoSaudeOrderByWithAggregationInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    operadora?: SortOrder
+    _count?: PlanoSaudeCountOrderByAggregateInput
+    _max?: PlanoSaudeMaxOrderByAggregateInput
+    _min?: PlanoSaudeMinOrderByAggregateInput
+  }
+
+  export type PlanoSaudeScalarWhereWithAggregatesInput = {
+    AND?: PlanoSaudeScalarWhereWithAggregatesInput | PlanoSaudeScalarWhereWithAggregatesInput[]
+    OR?: PlanoSaudeScalarWhereWithAggregatesInput[]
+    NOT?: PlanoSaudeScalarWhereWithAggregatesInput | PlanoSaudeScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"PlanoSaude"> | string
+    nome?: StringWithAggregatesFilter<"PlanoSaude"> | string
+    operadora?: StringWithAggregatesFilter<"PlanoSaude"> | string
+  }
+
+  export type PacientePlanoSaudeWhereInput = {
+    AND?: PacientePlanoSaudeWhereInput | PacientePlanoSaudeWhereInput[]
+    OR?: PacientePlanoSaudeWhereInput[]
+    NOT?: PacientePlanoSaudeWhereInput | PacientePlanoSaudeWhereInput[]
+    id?: UuidFilter<"PacientePlanoSaude"> | string
+    pacienteId?: UuidFilter<"PacientePlanoSaude"> | string
+    planoId?: UuidFilter<"PacientePlanoSaude"> | string
+    numeroCarteirinha?: StringFilter<"PacientePlanoSaude"> | string
+    validade?: DateTimeFilter<"PacientePlanoSaude"> | Date | string
+    nomeTitular?: StringFilter<"PacientePlanoSaude"> | string
+    paciente?: XOR<PacienteScalarRelationFilter, PacienteWhereInput>
+    plano?: XOR<PlanoSaudeScalarRelationFilter, PlanoSaudeWhereInput>
+  }
+
+  export type PacientePlanoSaudeOrderByWithRelationInput = {
+    id?: SortOrder
+    pacienteId?: SortOrder
+    planoId?: SortOrder
+    numeroCarteirinha?: SortOrder
+    validade?: SortOrder
+    nomeTitular?: SortOrder
+    paciente?: PacienteOrderByWithRelationInput
+    plano?: PlanoSaudeOrderByWithRelationInput
+  }
+
+  export type PacientePlanoSaudeWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: PacientePlanoSaudeWhereInput | PacientePlanoSaudeWhereInput[]
+    OR?: PacientePlanoSaudeWhereInput[]
+    NOT?: PacientePlanoSaudeWhereInput | PacientePlanoSaudeWhereInput[]
+    pacienteId?: UuidFilter<"PacientePlanoSaude"> | string
+    planoId?: UuidFilter<"PacientePlanoSaude"> | string
+    numeroCarteirinha?: StringFilter<"PacientePlanoSaude"> | string
+    validade?: DateTimeFilter<"PacientePlanoSaude"> | Date | string
+    nomeTitular?: StringFilter<"PacientePlanoSaude"> | string
+    paciente?: XOR<PacienteScalarRelationFilter, PacienteWhereInput>
+    plano?: XOR<PlanoSaudeScalarRelationFilter, PlanoSaudeWhereInput>
+  }, "id">
+
+  export type PacientePlanoSaudeOrderByWithAggregationInput = {
+    id?: SortOrder
+    pacienteId?: SortOrder
+    planoId?: SortOrder
+    numeroCarteirinha?: SortOrder
+    validade?: SortOrder
+    nomeTitular?: SortOrder
+    _count?: PacientePlanoSaudeCountOrderByAggregateInput
+    _max?: PacientePlanoSaudeMaxOrderByAggregateInput
+    _min?: PacientePlanoSaudeMinOrderByAggregateInput
+  }
+
+  export type PacientePlanoSaudeScalarWhereWithAggregatesInput = {
+    AND?: PacientePlanoSaudeScalarWhereWithAggregatesInput | PacientePlanoSaudeScalarWhereWithAggregatesInput[]
+    OR?: PacientePlanoSaudeScalarWhereWithAggregatesInput[]
+    NOT?: PacientePlanoSaudeScalarWhereWithAggregatesInput | PacientePlanoSaudeScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"PacientePlanoSaude"> | string
+    pacienteId?: UuidWithAggregatesFilter<"PacientePlanoSaude"> | string
+    planoId?: UuidWithAggregatesFilter<"PacientePlanoSaude"> | string
+    numeroCarteirinha?: StringWithAggregatesFilter<"PacientePlanoSaude"> | string
+    validade?: DateTimeWithAggregatesFilter<"PacientePlanoSaude"> | Date | string
+    nomeTitular?: StringWithAggregatesFilter<"PacientePlanoSaude"> | string
+  }
+
+  export type ProfissionalPlanoSaudeWhereInput = {
+    AND?: ProfissionalPlanoSaudeWhereInput | ProfissionalPlanoSaudeWhereInput[]
+    OR?: ProfissionalPlanoSaudeWhereInput[]
+    NOT?: ProfissionalPlanoSaudeWhereInput | ProfissionalPlanoSaudeWhereInput[]
+    id?: UuidFilter<"ProfissionalPlanoSaude"> | string
+    profissionalId?: UuidFilter<"ProfissionalPlanoSaude"> | string
+    planoId?: UuidFilter<"ProfissionalPlanoSaude"> | string
+    profissional?: XOR<ProfissionalScalarRelationFilter, ProfissionalWhereInput>
+    plano?: XOR<PlanoSaudeScalarRelationFilter, PlanoSaudeWhereInput>
+  }
+
+  export type ProfissionalPlanoSaudeOrderByWithRelationInput = {
+    id?: SortOrder
+    profissionalId?: SortOrder
+    planoId?: SortOrder
+    profissional?: ProfissionalOrderByWithRelationInput
+    plano?: PlanoSaudeOrderByWithRelationInput
+  }
+
+  export type ProfissionalPlanoSaudeWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ProfissionalPlanoSaudeWhereInput | ProfissionalPlanoSaudeWhereInput[]
+    OR?: ProfissionalPlanoSaudeWhereInput[]
+    NOT?: ProfissionalPlanoSaudeWhereInput | ProfissionalPlanoSaudeWhereInput[]
+    profissionalId?: UuidFilter<"ProfissionalPlanoSaude"> | string
+    planoId?: UuidFilter<"ProfissionalPlanoSaude"> | string
+    profissional?: XOR<ProfissionalScalarRelationFilter, ProfissionalWhereInput>
+    plano?: XOR<PlanoSaudeScalarRelationFilter, PlanoSaudeWhereInput>
+  }, "id">
+
+  export type ProfissionalPlanoSaudeOrderByWithAggregationInput = {
+    id?: SortOrder
+    profissionalId?: SortOrder
+    planoId?: SortOrder
+    _count?: ProfissionalPlanoSaudeCountOrderByAggregateInput
+    _max?: ProfissionalPlanoSaudeMaxOrderByAggregateInput
+    _min?: ProfissionalPlanoSaudeMinOrderByAggregateInput
+  }
+
+  export type ProfissionalPlanoSaudeScalarWhereWithAggregatesInput = {
+    AND?: ProfissionalPlanoSaudeScalarWhereWithAggregatesInput | ProfissionalPlanoSaudeScalarWhereWithAggregatesInput[]
+    OR?: ProfissionalPlanoSaudeScalarWhereWithAggregatesInput[]
+    NOT?: ProfissionalPlanoSaudeScalarWhereWithAggregatesInput | ProfissionalPlanoSaudeScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"ProfissionalPlanoSaude"> | string
+    profissionalId?: UuidWithAggregatesFilter<"ProfissionalPlanoSaude"> | string
+    planoId?: UuidWithAggregatesFilter<"ProfissionalPlanoSaude"> | string
+  }
+
   export type PacienteCreateInput = {
     id?: string
     dataNascimento: Date | string
     peso: number
     altura: number
+    alergias?: string | null
     usuarios?: UsuarioCreateNestedManyWithoutPacienteInput
     agendamentos?: ConsultaCreateNestedManyWithoutPacienteInput
     HistoricoMedico?: HistoricoMedicoCreateNestedManyWithoutPacienteInput
+    PacientePlanoSaude?: PacientePlanoSaudeCreateNestedManyWithoutPacienteInput
   }
 
   export type PacienteUncheckedCreateInput = {
@@ -15414,9 +19367,11 @@ export namespace Prisma {
     dataNascimento: Date | string
     peso: number
     altura: number
+    alergias?: string | null
     usuarios?: UsuarioUncheckedCreateNestedManyWithoutPacienteInput
     agendamentos?: ConsultaUncheckedCreateNestedManyWithoutPacienteInput
     HistoricoMedico?: HistoricoMedicoUncheckedCreateNestedManyWithoutPacienteInput
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedCreateNestedManyWithoutPacienteInput
   }
 
   export type PacienteUpdateInput = {
@@ -15424,9 +19379,11 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
     usuarios?: UsuarioUpdateManyWithoutPacienteNestedInput
     agendamentos?: ConsultaUpdateManyWithoutPacienteNestedInput
     HistoricoMedico?: HistoricoMedicoUpdateManyWithoutPacienteNestedInput
+    PacientePlanoSaude?: PacientePlanoSaudeUpdateManyWithoutPacienteNestedInput
   }
 
   export type PacienteUncheckedUpdateInput = {
@@ -15434,9 +19391,11 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
     usuarios?: UsuarioUncheckedUpdateManyWithoutPacienteNestedInput
     agendamentos?: ConsultaUncheckedUpdateManyWithoutPacienteNestedInput
     HistoricoMedico?: HistoricoMedicoUncheckedUpdateManyWithoutPacienteNestedInput
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedUpdateManyWithoutPacienteNestedInput
   }
 
   export type PacienteCreateManyInput = {
@@ -15444,6 +19403,7 @@ export namespace Prisma {
     dataNascimento: Date | string
     peso: number
     altura: number
+    alergias?: string | null
   }
 
   export type PacienteUpdateManyMutationInput = {
@@ -15451,6 +19411,7 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type PacienteUncheckedUpdateManyInput = {
@@ -15458,6 +19419,7 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProfissionalCreateInput = {
@@ -15472,6 +19434,8 @@ export namespace Prisma {
     usuarios?: UsuarioCreateNestedManyWithoutProfissionalInput
     agendamentos?: ConsultaCreateNestedManyWithoutProfissionalInput
     HistoricoMedico?: HistoricoMedicoCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeCreateNestedManyWithoutProfissionalInput
   }
 
   export type ProfissionalUncheckedCreateInput = {
@@ -15486,6 +19450,8 @@ export namespace Prisma {
     usuarios?: UsuarioUncheckedCreateNestedManyWithoutProfissionalInput
     agendamentos?: ConsultaUncheckedCreateNestedManyWithoutProfissionalInput
     HistoricoMedico?: HistoricoMedicoUncheckedCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeUncheckedCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedCreateNestedManyWithoutProfissionalInput
   }
 
   export type ProfissionalUpdateInput = {
@@ -15500,6 +19466,8 @@ export namespace Prisma {
     usuarios?: UsuarioUpdateManyWithoutProfissionalNestedInput
     agendamentos?: ConsultaUpdateManyWithoutProfissionalNestedInput
     HistoricoMedico?: HistoricoMedicoUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUpdateManyWithoutProfissionalNestedInput
   }
 
   export type ProfissionalUncheckedUpdateInput = {
@@ -15514,6 +19482,8 @@ export namespace Prisma {
     usuarios?: UsuarioUncheckedUpdateManyWithoutProfissionalNestedInput
     agendamentos?: ConsultaUncheckedUpdateManyWithoutProfissionalNestedInput
     HistoricoMedico?: HistoricoMedicoUncheckedUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUncheckedUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedUpdateManyWithoutProfissionalNestedInput
   }
 
   export type ProfissionalCreateManyInput = {
@@ -15557,6 +19527,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     profissional?: ProfissionalCreateNestedOneWithoutUsuariosInput
     paciente?: PacienteCreateNestedOneWithoutUsuariosInput
     enderecos?: EnderecoUsuarioCreateNestedManyWithoutUsuarioInput
@@ -15570,6 +19541,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     profissionalId?: string | null
     pacienteId?: string | null
     enderecos?: EnderecoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
@@ -15583,6 +19555,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     profissional?: ProfissionalUpdateOneWithoutUsuariosNestedInput
     paciente?: PacienteUpdateOneWithoutUsuariosNestedInput
     enderecos?: EnderecoUsuarioUpdateManyWithoutUsuarioNestedInput
@@ -15596,6 +19569,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     profissionalId?: NullableStringFieldUpdateOperationsInput | string | null
     pacienteId?: NullableStringFieldUpdateOperationsInput | string | null
     enderecos?: EnderecoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
@@ -15609,6 +19583,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     profissionalId?: string | null
     pacienteId?: string | null
   }
@@ -15621,6 +19596,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
   }
 
   export type UsuarioUncheckedUpdateManyInput = {
@@ -15631,6 +19607,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     profissionalId?: NullableStringFieldUpdateOperationsInput | string | null
     pacienteId?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -15644,6 +19621,7 @@ export namespace Prisma {
     telefone: string
     tipoAtendimento: string
     enderecos?: EnderecoClinicaCreateNestedManyWithoutClinicaInput
+    Disponibilidade?: DisponibilidadeCreateNestedManyWithoutClinicaInput
   }
 
   export type ClinicaUncheckedCreateInput = {
@@ -15655,6 +19633,7 @@ export namespace Prisma {
     telefone: string
     tipoAtendimento: string
     enderecos?: EnderecoClinicaUncheckedCreateNestedManyWithoutClinicaInput
+    Disponibilidade?: DisponibilidadeUncheckedCreateNestedManyWithoutClinicaInput
   }
 
   export type ClinicaUpdateInput = {
@@ -15666,6 +19645,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     tipoAtendimento?: StringFieldUpdateOperationsInput | string
     enderecos?: EnderecoClinicaUpdateManyWithoutClinicaNestedInput
+    Disponibilidade?: DisponibilidadeUpdateManyWithoutClinicaNestedInput
   }
 
   export type ClinicaUncheckedUpdateInput = {
@@ -15677,6 +19657,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     tipoAtendimento?: StringFieldUpdateOperationsInput | string
     enderecos?: EnderecoClinicaUncheckedUpdateManyWithoutClinicaNestedInput
+    Disponibilidade?: DisponibilidadeUncheckedUpdateManyWithoutClinicaNestedInput
   }
 
   export type ClinicaCreateManyInput = {
@@ -15752,35 +19733,45 @@ export namespace Prisma {
     id?: string
     horaInicio: Date | string
     horaFim: Date | string
+    profissional: ProfissionalCreateNestedOneWithoutDisponibilidadeInput
+    clinica: ClinicaCreateNestedOneWithoutDisponibilidadeInput
     diaSemana: DiaSemanaCreateNestedOneWithoutDisponibilidadeInput
   }
 
   export type DisponibilidadeUncheckedCreateInput = {
     id?: string
-    diaSemanaId: string
     horaInicio: Date | string
     horaFim: Date | string
+    diaSemanaId: string
+    clinicaId: string
+    profissionalId: string
   }
 
   export type DisponibilidadeUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    profissional?: ProfissionalUpdateOneRequiredWithoutDisponibilidadeNestedInput
+    clinica?: ClinicaUpdateOneRequiredWithoutDisponibilidadeNestedInput
     diaSemana?: DiaSemanaUpdateOneRequiredWithoutDisponibilidadeNestedInput
   }
 
   export type DisponibilidadeUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    diaSemanaId?: StringFieldUpdateOperationsInput | string
     horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    diaSemanaId?: StringFieldUpdateOperationsInput | string
+    clinicaId?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
   }
 
   export type DisponibilidadeCreateManyInput = {
     id?: string
-    diaSemanaId: string
     horaInicio: Date | string
     horaFim: Date | string
+    diaSemanaId: string
+    clinicaId: string
+    profissionalId: string
   }
 
   export type DisponibilidadeUpdateManyMutationInput = {
@@ -15791,9 +19782,11 @@ export namespace Prisma {
 
   export type DisponibilidadeUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    diaSemanaId?: StringFieldUpdateOperationsInput | string
     horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    diaSemanaId?: StringFieldUpdateOperationsInput | string
+    clinicaId?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
   }
 
   export type EnderecoCreateInput = {
@@ -16198,6 +20191,157 @@ export namespace Prisma {
     consultaId?: StringFieldUpdateOperationsInput | string
   }
 
+  export type PlanoSaudeCreateInput = {
+    id?: string
+    nome: string
+    operadora: string
+    PacientePlanoSaude?: PacientePlanoSaudeCreateNestedManyWithoutPlanoInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeCreateNestedManyWithoutPlanoInput
+  }
+
+  export type PlanoSaudeUncheckedCreateInput = {
+    id?: string
+    nome: string
+    operadora: string
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedCreateNestedManyWithoutPlanoInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedCreateNestedManyWithoutPlanoInput
+  }
+
+  export type PlanoSaudeUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    operadora?: StringFieldUpdateOperationsInput | string
+    PacientePlanoSaude?: PacientePlanoSaudeUpdateManyWithoutPlanoNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUpdateManyWithoutPlanoNestedInput
+  }
+
+  export type PlanoSaudeUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    operadora?: StringFieldUpdateOperationsInput | string
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedUpdateManyWithoutPlanoNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedUpdateManyWithoutPlanoNestedInput
+  }
+
+  export type PlanoSaudeCreateManyInput = {
+    id?: string
+    nome: string
+    operadora: string
+  }
+
+  export type PlanoSaudeUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    operadora?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type PlanoSaudeUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    operadora?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type PacientePlanoSaudeCreateInput = {
+    id?: string
+    numeroCarteirinha: string
+    validade: Date | string
+    nomeTitular: string
+    paciente: PacienteCreateNestedOneWithoutPacientePlanoSaudeInput
+    plano: PlanoSaudeCreateNestedOneWithoutPacientePlanoSaudeInput
+  }
+
+  export type PacientePlanoSaudeUncheckedCreateInput = {
+    id?: string
+    pacienteId: string
+    planoId: string
+    numeroCarteirinha: string
+    validade: Date | string
+    nomeTitular: string
+  }
+
+  export type PacientePlanoSaudeUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+    paciente?: PacienteUpdateOneRequiredWithoutPacientePlanoSaudeNestedInput
+    plano?: PlanoSaudeUpdateOneRequiredWithoutPacientePlanoSaudeNestedInput
+  }
+
+  export type PacientePlanoSaudeUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    pacienteId?: StringFieldUpdateOperationsInput | string
+    planoId?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type PacientePlanoSaudeCreateManyInput = {
+    id?: string
+    pacienteId: string
+    planoId: string
+    numeroCarteirinha: string
+    validade: Date | string
+    nomeTitular: string
+  }
+
+  export type PacientePlanoSaudeUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type PacientePlanoSaudeUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    pacienteId?: StringFieldUpdateOperationsInput | string
+    planoId?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProfissionalPlanoSaudeCreateInput = {
+    id?: string
+    profissional: ProfissionalCreateNestedOneWithoutProfissionalPlanoSaudeInput
+    plano: PlanoSaudeCreateNestedOneWithoutProfissionalPlanoSaudeInput
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedCreateInput = {
+    id?: string
+    profissionalId: string
+    planoId: string
+  }
+
+  export type ProfissionalPlanoSaudeUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    profissional?: ProfissionalUpdateOneRequiredWithoutProfissionalPlanoSaudeNestedInput
+    plano?: PlanoSaudeUpdateOneRequiredWithoutProfissionalPlanoSaudeNestedInput
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
+    planoId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProfissionalPlanoSaudeCreateManyInput = {
+    id?: string
+    profissionalId: string
+    planoId: string
+  }
+
+  export type ProfissionalPlanoSaudeUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
+    planoId?: StringFieldUpdateOperationsInput | string
+  }
+
   export type UuidFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -16232,6 +20376,21 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type UsuarioListRelationFilter = {
     every?: UsuarioWhereInput
     some?: UsuarioWhereInput
@@ -16250,6 +20409,17 @@ export namespace Prisma {
     none?: HistoricoMedicoWhereInput
   }
 
+  export type PacientePlanoSaudeListRelationFilter = {
+    every?: PacientePlanoSaudeWhereInput
+    some?: PacientePlanoSaudeWhereInput
+    none?: PacientePlanoSaudeWhereInput
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type UsuarioOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -16262,11 +20432,16 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
+  export type PacientePlanoSaudeOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
   export type PacienteCountOrderByAggregateInput = {
     id?: SortOrder
     dataNascimento?: SortOrder
     peso?: SortOrder
     altura?: SortOrder
+    alergias?: SortOrder
   }
 
   export type PacienteAvgOrderByAggregateInput = {
@@ -16279,6 +20454,7 @@ export namespace Prisma {
     dataNascimento?: SortOrder
     peso?: SortOrder
     altura?: SortOrder
+    alergias?: SortOrder
   }
 
   export type PacienteMinOrderByAggregateInput = {
@@ -16286,6 +20462,7 @@ export namespace Prisma {
     dataNascimento?: SortOrder
     peso?: SortOrder
     altura?: SortOrder
+    alergias?: SortOrder
   }
 
   export type PacienteSumOrderByAggregateInput = {
@@ -16338,6 +20515,24 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type EnumTipoRegistroFilter<$PrismaModel = never> = {
     equals?: $Enums.TipoRegistro | EnumTipoRegistroFieldRefInput<$PrismaModel>
     in?: $Enums.TipoRegistro[] | ListEnumTipoRegistroFieldRefInput<$PrismaModel>
@@ -16358,6 +20553,26 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type DisponibilidadeListRelationFilter = {
+    every?: DisponibilidadeWhereInput
+    some?: DisponibilidadeWhereInput
+    none?: DisponibilidadeWhereInput
+  }
+
+  export type ProfissionalPlanoSaudeListRelationFilter = {
+    every?: ProfissionalPlanoSaudeWhereInput
+    some?: ProfissionalPlanoSaudeWhereInput
+    none?: ProfissionalPlanoSaudeWhereInput
+  }
+
+  export type DisponibilidadeOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ProfissionalPlanoSaudeOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type ProfissionalCountOrderByAggregateInput = {
@@ -16421,21 +20636,6 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
   export type UuidNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -16464,11 +20664,6 @@ export namespace Prisma {
     none?: EnderecoUsuarioWhereInput
   }
 
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
-  }
-
   export type EnderecoUsuarioOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -16481,6 +20676,7 @@ export namespace Prisma {
     telefone?: SortOrder
     avatar?: SortOrder
     genero?: SortOrder
+    cpf?: SortOrder
     profissionalId?: SortOrder
     pacienteId?: SortOrder
   }
@@ -16493,6 +20689,7 @@ export namespace Prisma {
     telefone?: SortOrder
     avatar?: SortOrder
     genero?: SortOrder
+    cpf?: SortOrder
     profissionalId?: SortOrder
     pacienteId?: SortOrder
   }
@@ -16505,26 +20702,9 @@ export namespace Prisma {
     telefone?: SortOrder
     avatar?: SortOrder
     genero?: SortOrder
+    cpf?: SortOrder
     profissionalId?: SortOrder
     pacienteId?: SortOrder
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type UuidNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -16582,16 +20762,6 @@ export namespace Prisma {
     tipoAtendimento?: SortOrder
   }
 
-  export type DisponibilidadeListRelationFilter = {
-    every?: DisponibilidadeWhereInput
-    some?: DisponibilidadeWhereInput
-    none?: DisponibilidadeWhereInput
-  }
-
-  export type DisponibilidadeOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
   export type DiaSemanaCountOrderByAggregateInput = {
     id?: SortOrder
     dia?: SortOrder
@@ -16607,6 +20777,16 @@ export namespace Prisma {
     dia?: SortOrder
   }
 
+  export type ProfissionalScalarRelationFilter = {
+    is?: ProfissionalWhereInput
+    isNot?: ProfissionalWhereInput
+  }
+
+  export type ClinicaScalarRelationFilter = {
+    is?: ClinicaWhereInput
+    isNot?: ClinicaWhereInput
+  }
+
   export type DiaSemanaScalarRelationFilter = {
     is?: DiaSemanaWhereInput
     isNot?: DiaSemanaWhereInput
@@ -16614,23 +20794,29 @@ export namespace Prisma {
 
   export type DisponibilidadeCountOrderByAggregateInput = {
     id?: SortOrder
-    diaSemanaId?: SortOrder
     horaInicio?: SortOrder
     horaFim?: SortOrder
+    diaSemanaId?: SortOrder
+    clinicaId?: SortOrder
+    profissionalId?: SortOrder
   }
 
   export type DisponibilidadeMaxOrderByAggregateInput = {
     id?: SortOrder
-    diaSemanaId?: SortOrder
     horaInicio?: SortOrder
     horaFim?: SortOrder
+    diaSemanaId?: SortOrder
+    clinicaId?: SortOrder
+    profissionalId?: SortOrder
   }
 
   export type DisponibilidadeMinOrderByAggregateInput = {
     id?: SortOrder
-    diaSemanaId?: SortOrder
     horaInicio?: SortOrder
     horaFim?: SortOrder
+    diaSemanaId?: SortOrder
+    clinicaId?: SortOrder
+    profissionalId?: SortOrder
   }
 
   export type EnderecoCountOrderByAggregateInput = {
@@ -16694,11 +20880,6 @@ export namespace Prisma {
     enderecoId?: SortOrder
   }
 
-  export type ClinicaScalarRelationFilter = {
-    is?: ClinicaWhereInput
-    isNot?: ClinicaWhereInput
-  }
-
   export type EnderecoClinicaCountOrderByAggregateInput = {
     id?: SortOrder
     clinicaId?: SortOrder
@@ -16731,11 +20912,6 @@ export namespace Prisma {
   export type PacienteScalarRelationFilter = {
     is?: PacienteWhereInput
     isNot?: PacienteWhereInput
-  }
-
-  export type ProfissionalScalarRelationFilter = {
-    is?: ProfissionalWhereInput
-    isNot?: ProfissionalWhereInput
   }
 
   export type ConsultaCountOrderByAggregateInput = {
@@ -16869,6 +21045,74 @@ export namespace Prisma {
     consultaId?: SortOrder
   }
 
+  export type PlanoSaudeCountOrderByAggregateInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    operadora?: SortOrder
+  }
+
+  export type PlanoSaudeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    operadora?: SortOrder
+  }
+
+  export type PlanoSaudeMinOrderByAggregateInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    operadora?: SortOrder
+  }
+
+  export type PlanoSaudeScalarRelationFilter = {
+    is?: PlanoSaudeWhereInput
+    isNot?: PlanoSaudeWhereInput
+  }
+
+  export type PacientePlanoSaudeCountOrderByAggregateInput = {
+    id?: SortOrder
+    pacienteId?: SortOrder
+    planoId?: SortOrder
+    numeroCarteirinha?: SortOrder
+    validade?: SortOrder
+    nomeTitular?: SortOrder
+  }
+
+  export type PacientePlanoSaudeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    pacienteId?: SortOrder
+    planoId?: SortOrder
+    numeroCarteirinha?: SortOrder
+    validade?: SortOrder
+    nomeTitular?: SortOrder
+  }
+
+  export type PacientePlanoSaudeMinOrderByAggregateInput = {
+    id?: SortOrder
+    pacienteId?: SortOrder
+    planoId?: SortOrder
+    numeroCarteirinha?: SortOrder
+    validade?: SortOrder
+    nomeTitular?: SortOrder
+  }
+
+  export type ProfissionalPlanoSaudeCountOrderByAggregateInput = {
+    id?: SortOrder
+    profissionalId?: SortOrder
+    planoId?: SortOrder
+  }
+
+  export type ProfissionalPlanoSaudeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    profissionalId?: SortOrder
+    planoId?: SortOrder
+  }
+
+  export type ProfissionalPlanoSaudeMinOrderByAggregateInput = {
+    id?: SortOrder
+    profissionalId?: SortOrder
+    planoId?: SortOrder
+  }
+
   export type UsuarioCreateNestedManyWithoutPacienteInput = {
     create?: XOR<UsuarioCreateWithoutPacienteInput, UsuarioUncheckedCreateWithoutPacienteInput> | UsuarioCreateWithoutPacienteInput[] | UsuarioUncheckedCreateWithoutPacienteInput[]
     connectOrCreate?: UsuarioCreateOrConnectWithoutPacienteInput | UsuarioCreateOrConnectWithoutPacienteInput[]
@@ -16888,6 +21132,13 @@ export namespace Prisma {
     connectOrCreate?: HistoricoMedicoCreateOrConnectWithoutPacienteInput | HistoricoMedicoCreateOrConnectWithoutPacienteInput[]
     createMany?: HistoricoMedicoCreateManyPacienteInputEnvelope
     connect?: HistoricoMedicoWhereUniqueInput | HistoricoMedicoWhereUniqueInput[]
+  }
+
+  export type PacientePlanoSaudeCreateNestedManyWithoutPacienteInput = {
+    create?: XOR<PacientePlanoSaudeCreateWithoutPacienteInput, PacientePlanoSaudeUncheckedCreateWithoutPacienteInput> | PacientePlanoSaudeCreateWithoutPacienteInput[] | PacientePlanoSaudeUncheckedCreateWithoutPacienteInput[]
+    connectOrCreate?: PacientePlanoSaudeCreateOrConnectWithoutPacienteInput | PacientePlanoSaudeCreateOrConnectWithoutPacienteInput[]
+    createMany?: PacientePlanoSaudeCreateManyPacienteInputEnvelope
+    connect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
   }
 
   export type UsuarioUncheckedCreateNestedManyWithoutPacienteInput = {
@@ -16911,6 +21162,13 @@ export namespace Prisma {
     connect?: HistoricoMedicoWhereUniqueInput | HistoricoMedicoWhereUniqueInput[]
   }
 
+  export type PacientePlanoSaudeUncheckedCreateNestedManyWithoutPacienteInput = {
+    create?: XOR<PacientePlanoSaudeCreateWithoutPacienteInput, PacientePlanoSaudeUncheckedCreateWithoutPacienteInput> | PacientePlanoSaudeCreateWithoutPacienteInput[] | PacientePlanoSaudeUncheckedCreateWithoutPacienteInput[]
+    connectOrCreate?: PacientePlanoSaudeCreateOrConnectWithoutPacienteInput | PacientePlanoSaudeCreateOrConnectWithoutPacienteInput[]
+    createMany?: PacientePlanoSaudeCreateManyPacienteInputEnvelope
+    connect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
@@ -16925,6 +21183,10 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type UsuarioUpdateManyWithoutPacienteNestedInput = {
@@ -16969,6 +21231,20 @@ export namespace Prisma {
     deleteMany?: HistoricoMedicoScalarWhereInput | HistoricoMedicoScalarWhereInput[]
   }
 
+  export type PacientePlanoSaudeUpdateManyWithoutPacienteNestedInput = {
+    create?: XOR<PacientePlanoSaudeCreateWithoutPacienteInput, PacientePlanoSaudeUncheckedCreateWithoutPacienteInput> | PacientePlanoSaudeCreateWithoutPacienteInput[] | PacientePlanoSaudeUncheckedCreateWithoutPacienteInput[]
+    connectOrCreate?: PacientePlanoSaudeCreateOrConnectWithoutPacienteInput | PacientePlanoSaudeCreateOrConnectWithoutPacienteInput[]
+    upsert?: PacientePlanoSaudeUpsertWithWhereUniqueWithoutPacienteInput | PacientePlanoSaudeUpsertWithWhereUniqueWithoutPacienteInput[]
+    createMany?: PacientePlanoSaudeCreateManyPacienteInputEnvelope
+    set?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    disconnect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    delete?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    connect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    update?: PacientePlanoSaudeUpdateWithWhereUniqueWithoutPacienteInput | PacientePlanoSaudeUpdateWithWhereUniqueWithoutPacienteInput[]
+    updateMany?: PacientePlanoSaudeUpdateManyWithWhereWithoutPacienteInput | PacientePlanoSaudeUpdateManyWithWhereWithoutPacienteInput[]
+    deleteMany?: PacientePlanoSaudeScalarWhereInput | PacientePlanoSaudeScalarWhereInput[]
+  }
+
   export type UsuarioUncheckedUpdateManyWithoutPacienteNestedInput = {
     create?: XOR<UsuarioCreateWithoutPacienteInput, UsuarioUncheckedCreateWithoutPacienteInput> | UsuarioCreateWithoutPacienteInput[] | UsuarioUncheckedCreateWithoutPacienteInput[]
     connectOrCreate?: UsuarioCreateOrConnectWithoutPacienteInput | UsuarioCreateOrConnectWithoutPacienteInput[]
@@ -17011,6 +21287,20 @@ export namespace Prisma {
     deleteMany?: HistoricoMedicoScalarWhereInput | HistoricoMedicoScalarWhereInput[]
   }
 
+  export type PacientePlanoSaudeUncheckedUpdateManyWithoutPacienteNestedInput = {
+    create?: XOR<PacientePlanoSaudeCreateWithoutPacienteInput, PacientePlanoSaudeUncheckedCreateWithoutPacienteInput> | PacientePlanoSaudeCreateWithoutPacienteInput[] | PacientePlanoSaudeUncheckedCreateWithoutPacienteInput[]
+    connectOrCreate?: PacientePlanoSaudeCreateOrConnectWithoutPacienteInput | PacientePlanoSaudeCreateOrConnectWithoutPacienteInput[]
+    upsert?: PacientePlanoSaudeUpsertWithWhereUniqueWithoutPacienteInput | PacientePlanoSaudeUpsertWithWhereUniqueWithoutPacienteInput[]
+    createMany?: PacientePlanoSaudeCreateManyPacienteInputEnvelope
+    set?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    disconnect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    delete?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    connect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    update?: PacientePlanoSaudeUpdateWithWhereUniqueWithoutPacienteInput | PacientePlanoSaudeUpdateWithWhereUniqueWithoutPacienteInput[]
+    updateMany?: PacientePlanoSaudeUpdateManyWithWhereWithoutPacienteInput | PacientePlanoSaudeUpdateManyWithWhereWithoutPacienteInput[]
+    deleteMany?: PacientePlanoSaudeScalarWhereInput | PacientePlanoSaudeScalarWhereInput[]
+  }
+
   export type UsuarioCreateNestedManyWithoutProfissionalInput = {
     create?: XOR<UsuarioCreateWithoutProfissionalInput, UsuarioUncheckedCreateWithoutProfissionalInput> | UsuarioCreateWithoutProfissionalInput[] | UsuarioUncheckedCreateWithoutProfissionalInput[]
     connectOrCreate?: UsuarioCreateOrConnectWithoutProfissionalInput | UsuarioCreateOrConnectWithoutProfissionalInput[]
@@ -17032,6 +21322,20 @@ export namespace Prisma {
     connect?: HistoricoMedicoWhereUniqueInput | HistoricoMedicoWhereUniqueInput[]
   }
 
+  export type DisponibilidadeCreateNestedManyWithoutProfissionalInput = {
+    create?: XOR<DisponibilidadeCreateWithoutProfissionalInput, DisponibilidadeUncheckedCreateWithoutProfissionalInput> | DisponibilidadeCreateWithoutProfissionalInput[] | DisponibilidadeUncheckedCreateWithoutProfissionalInput[]
+    connectOrCreate?: DisponibilidadeCreateOrConnectWithoutProfissionalInput | DisponibilidadeCreateOrConnectWithoutProfissionalInput[]
+    createMany?: DisponibilidadeCreateManyProfissionalInputEnvelope
+    connect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+  }
+
+  export type ProfissionalPlanoSaudeCreateNestedManyWithoutProfissionalInput = {
+    create?: XOR<ProfissionalPlanoSaudeCreateWithoutProfissionalInput, ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput> | ProfissionalPlanoSaudeCreateWithoutProfissionalInput[] | ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput[]
+    connectOrCreate?: ProfissionalPlanoSaudeCreateOrConnectWithoutProfissionalInput | ProfissionalPlanoSaudeCreateOrConnectWithoutProfissionalInput[]
+    createMany?: ProfissionalPlanoSaudeCreateManyProfissionalInputEnvelope
+    connect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+  }
+
   export type UsuarioUncheckedCreateNestedManyWithoutProfissionalInput = {
     create?: XOR<UsuarioCreateWithoutProfissionalInput, UsuarioUncheckedCreateWithoutProfissionalInput> | UsuarioCreateWithoutProfissionalInput[] | UsuarioUncheckedCreateWithoutProfissionalInput[]
     connectOrCreate?: UsuarioCreateOrConnectWithoutProfissionalInput | UsuarioCreateOrConnectWithoutProfissionalInput[]
@@ -17051,6 +21355,20 @@ export namespace Prisma {
     connectOrCreate?: HistoricoMedicoCreateOrConnectWithoutProfissionalInput | HistoricoMedicoCreateOrConnectWithoutProfissionalInput[]
     createMany?: HistoricoMedicoCreateManyProfissionalInputEnvelope
     connect?: HistoricoMedicoWhereUniqueInput | HistoricoMedicoWhereUniqueInput[]
+  }
+
+  export type DisponibilidadeUncheckedCreateNestedManyWithoutProfissionalInput = {
+    create?: XOR<DisponibilidadeCreateWithoutProfissionalInput, DisponibilidadeUncheckedCreateWithoutProfissionalInput> | DisponibilidadeCreateWithoutProfissionalInput[] | DisponibilidadeUncheckedCreateWithoutProfissionalInput[]
+    connectOrCreate?: DisponibilidadeCreateOrConnectWithoutProfissionalInput | DisponibilidadeCreateOrConnectWithoutProfissionalInput[]
+    createMany?: DisponibilidadeCreateManyProfissionalInputEnvelope
+    connect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedCreateNestedManyWithoutProfissionalInput = {
+    create?: XOR<ProfissionalPlanoSaudeCreateWithoutProfissionalInput, ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput> | ProfissionalPlanoSaudeCreateWithoutProfissionalInput[] | ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput[]
+    connectOrCreate?: ProfissionalPlanoSaudeCreateOrConnectWithoutProfissionalInput | ProfissionalPlanoSaudeCreateOrConnectWithoutProfissionalInput[]
+    createMany?: ProfissionalPlanoSaudeCreateManyProfissionalInputEnvelope
+    connect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
   }
 
   export type EnumTipoRegistroFieldUpdateOperationsInput = {
@@ -17099,6 +21417,34 @@ export namespace Prisma {
     deleteMany?: HistoricoMedicoScalarWhereInput | HistoricoMedicoScalarWhereInput[]
   }
 
+  export type DisponibilidadeUpdateManyWithoutProfissionalNestedInput = {
+    create?: XOR<DisponibilidadeCreateWithoutProfissionalInput, DisponibilidadeUncheckedCreateWithoutProfissionalInput> | DisponibilidadeCreateWithoutProfissionalInput[] | DisponibilidadeUncheckedCreateWithoutProfissionalInput[]
+    connectOrCreate?: DisponibilidadeCreateOrConnectWithoutProfissionalInput | DisponibilidadeCreateOrConnectWithoutProfissionalInput[]
+    upsert?: DisponibilidadeUpsertWithWhereUniqueWithoutProfissionalInput | DisponibilidadeUpsertWithWhereUniqueWithoutProfissionalInput[]
+    createMany?: DisponibilidadeCreateManyProfissionalInputEnvelope
+    set?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    disconnect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    delete?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    connect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    update?: DisponibilidadeUpdateWithWhereUniqueWithoutProfissionalInput | DisponibilidadeUpdateWithWhereUniqueWithoutProfissionalInput[]
+    updateMany?: DisponibilidadeUpdateManyWithWhereWithoutProfissionalInput | DisponibilidadeUpdateManyWithWhereWithoutProfissionalInput[]
+    deleteMany?: DisponibilidadeScalarWhereInput | DisponibilidadeScalarWhereInput[]
+  }
+
+  export type ProfissionalPlanoSaudeUpdateManyWithoutProfissionalNestedInput = {
+    create?: XOR<ProfissionalPlanoSaudeCreateWithoutProfissionalInput, ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput> | ProfissionalPlanoSaudeCreateWithoutProfissionalInput[] | ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput[]
+    connectOrCreate?: ProfissionalPlanoSaudeCreateOrConnectWithoutProfissionalInput | ProfissionalPlanoSaudeCreateOrConnectWithoutProfissionalInput[]
+    upsert?: ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutProfissionalInput | ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutProfissionalInput[]
+    createMany?: ProfissionalPlanoSaudeCreateManyProfissionalInputEnvelope
+    set?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    disconnect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    delete?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    connect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    update?: ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutProfissionalInput | ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutProfissionalInput[]
+    updateMany?: ProfissionalPlanoSaudeUpdateManyWithWhereWithoutProfissionalInput | ProfissionalPlanoSaudeUpdateManyWithWhereWithoutProfissionalInput[]
+    deleteMany?: ProfissionalPlanoSaudeScalarWhereInput | ProfissionalPlanoSaudeScalarWhereInput[]
+  }
+
   export type UsuarioUncheckedUpdateManyWithoutProfissionalNestedInput = {
     create?: XOR<UsuarioCreateWithoutProfissionalInput, UsuarioUncheckedCreateWithoutProfissionalInput> | UsuarioCreateWithoutProfissionalInput[] | UsuarioUncheckedCreateWithoutProfissionalInput[]
     connectOrCreate?: UsuarioCreateOrConnectWithoutProfissionalInput | UsuarioCreateOrConnectWithoutProfissionalInput[]
@@ -17141,6 +21487,34 @@ export namespace Prisma {
     deleteMany?: HistoricoMedicoScalarWhereInput | HistoricoMedicoScalarWhereInput[]
   }
 
+  export type DisponibilidadeUncheckedUpdateManyWithoutProfissionalNestedInput = {
+    create?: XOR<DisponibilidadeCreateWithoutProfissionalInput, DisponibilidadeUncheckedCreateWithoutProfissionalInput> | DisponibilidadeCreateWithoutProfissionalInput[] | DisponibilidadeUncheckedCreateWithoutProfissionalInput[]
+    connectOrCreate?: DisponibilidadeCreateOrConnectWithoutProfissionalInput | DisponibilidadeCreateOrConnectWithoutProfissionalInput[]
+    upsert?: DisponibilidadeUpsertWithWhereUniqueWithoutProfissionalInput | DisponibilidadeUpsertWithWhereUniqueWithoutProfissionalInput[]
+    createMany?: DisponibilidadeCreateManyProfissionalInputEnvelope
+    set?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    disconnect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    delete?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    connect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    update?: DisponibilidadeUpdateWithWhereUniqueWithoutProfissionalInput | DisponibilidadeUpdateWithWhereUniqueWithoutProfissionalInput[]
+    updateMany?: DisponibilidadeUpdateManyWithWhereWithoutProfissionalInput | DisponibilidadeUpdateManyWithWhereWithoutProfissionalInput[]
+    deleteMany?: DisponibilidadeScalarWhereInput | DisponibilidadeScalarWhereInput[]
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedUpdateManyWithoutProfissionalNestedInput = {
+    create?: XOR<ProfissionalPlanoSaudeCreateWithoutProfissionalInput, ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput> | ProfissionalPlanoSaudeCreateWithoutProfissionalInput[] | ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput[]
+    connectOrCreate?: ProfissionalPlanoSaudeCreateOrConnectWithoutProfissionalInput | ProfissionalPlanoSaudeCreateOrConnectWithoutProfissionalInput[]
+    upsert?: ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutProfissionalInput | ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutProfissionalInput[]
+    createMany?: ProfissionalPlanoSaudeCreateManyProfissionalInputEnvelope
+    set?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    disconnect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    delete?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    connect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    update?: ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutProfissionalInput | ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutProfissionalInput[]
+    updateMany?: ProfissionalPlanoSaudeUpdateManyWithWhereWithoutProfissionalInput | ProfissionalPlanoSaudeUpdateManyWithWhereWithoutProfissionalInput[]
+    deleteMany?: ProfissionalPlanoSaudeScalarWhereInput | ProfissionalPlanoSaudeScalarWhereInput[]
+  }
+
   export type ProfissionalCreateNestedOneWithoutUsuariosInput = {
     create?: XOR<ProfissionalCreateWithoutUsuariosInput, ProfissionalUncheckedCreateWithoutUsuariosInput>
     connectOrCreate?: ProfissionalCreateOrConnectWithoutUsuariosInput
@@ -17165,10 +21539,6 @@ export namespace Prisma {
     connectOrCreate?: EnderecoUsuarioCreateOrConnectWithoutUsuarioInput | EnderecoUsuarioCreateOrConnectWithoutUsuarioInput[]
     createMany?: EnderecoUsuarioCreateManyUsuarioInputEnvelope
     connect?: EnderecoUsuarioWhereUniqueInput | EnderecoUsuarioWhereUniqueInput[]
-  }
-
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
   }
 
   export type ProfissionalUpdateOneWithoutUsuariosNestedInput = {
@@ -17226,11 +21596,25 @@ export namespace Prisma {
     connect?: EnderecoClinicaWhereUniqueInput | EnderecoClinicaWhereUniqueInput[]
   }
 
+  export type DisponibilidadeCreateNestedManyWithoutClinicaInput = {
+    create?: XOR<DisponibilidadeCreateWithoutClinicaInput, DisponibilidadeUncheckedCreateWithoutClinicaInput> | DisponibilidadeCreateWithoutClinicaInput[] | DisponibilidadeUncheckedCreateWithoutClinicaInput[]
+    connectOrCreate?: DisponibilidadeCreateOrConnectWithoutClinicaInput | DisponibilidadeCreateOrConnectWithoutClinicaInput[]
+    createMany?: DisponibilidadeCreateManyClinicaInputEnvelope
+    connect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+  }
+
   export type EnderecoClinicaUncheckedCreateNestedManyWithoutClinicaInput = {
     create?: XOR<EnderecoClinicaCreateWithoutClinicaInput, EnderecoClinicaUncheckedCreateWithoutClinicaInput> | EnderecoClinicaCreateWithoutClinicaInput[] | EnderecoClinicaUncheckedCreateWithoutClinicaInput[]
     connectOrCreate?: EnderecoClinicaCreateOrConnectWithoutClinicaInput | EnderecoClinicaCreateOrConnectWithoutClinicaInput[]
     createMany?: EnderecoClinicaCreateManyClinicaInputEnvelope
     connect?: EnderecoClinicaWhereUniqueInput | EnderecoClinicaWhereUniqueInput[]
+  }
+
+  export type DisponibilidadeUncheckedCreateNestedManyWithoutClinicaInput = {
+    create?: XOR<DisponibilidadeCreateWithoutClinicaInput, DisponibilidadeUncheckedCreateWithoutClinicaInput> | DisponibilidadeCreateWithoutClinicaInput[] | DisponibilidadeUncheckedCreateWithoutClinicaInput[]
+    connectOrCreate?: DisponibilidadeCreateOrConnectWithoutClinicaInput | DisponibilidadeCreateOrConnectWithoutClinicaInput[]
+    createMany?: DisponibilidadeCreateManyClinicaInputEnvelope
+    connect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
   }
 
   export type EnderecoClinicaUpdateManyWithoutClinicaNestedInput = {
@@ -17247,6 +21631,20 @@ export namespace Prisma {
     deleteMany?: EnderecoClinicaScalarWhereInput | EnderecoClinicaScalarWhereInput[]
   }
 
+  export type DisponibilidadeUpdateManyWithoutClinicaNestedInput = {
+    create?: XOR<DisponibilidadeCreateWithoutClinicaInput, DisponibilidadeUncheckedCreateWithoutClinicaInput> | DisponibilidadeCreateWithoutClinicaInput[] | DisponibilidadeUncheckedCreateWithoutClinicaInput[]
+    connectOrCreate?: DisponibilidadeCreateOrConnectWithoutClinicaInput | DisponibilidadeCreateOrConnectWithoutClinicaInput[]
+    upsert?: DisponibilidadeUpsertWithWhereUniqueWithoutClinicaInput | DisponibilidadeUpsertWithWhereUniqueWithoutClinicaInput[]
+    createMany?: DisponibilidadeCreateManyClinicaInputEnvelope
+    set?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    disconnect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    delete?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    connect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    update?: DisponibilidadeUpdateWithWhereUniqueWithoutClinicaInput | DisponibilidadeUpdateWithWhereUniqueWithoutClinicaInput[]
+    updateMany?: DisponibilidadeUpdateManyWithWhereWithoutClinicaInput | DisponibilidadeUpdateManyWithWhereWithoutClinicaInput[]
+    deleteMany?: DisponibilidadeScalarWhereInput | DisponibilidadeScalarWhereInput[]
+  }
+
   export type EnderecoClinicaUncheckedUpdateManyWithoutClinicaNestedInput = {
     create?: XOR<EnderecoClinicaCreateWithoutClinicaInput, EnderecoClinicaUncheckedCreateWithoutClinicaInput> | EnderecoClinicaCreateWithoutClinicaInput[] | EnderecoClinicaUncheckedCreateWithoutClinicaInput[]
     connectOrCreate?: EnderecoClinicaCreateOrConnectWithoutClinicaInput | EnderecoClinicaCreateOrConnectWithoutClinicaInput[]
@@ -17259,6 +21657,20 @@ export namespace Prisma {
     update?: EnderecoClinicaUpdateWithWhereUniqueWithoutClinicaInput | EnderecoClinicaUpdateWithWhereUniqueWithoutClinicaInput[]
     updateMany?: EnderecoClinicaUpdateManyWithWhereWithoutClinicaInput | EnderecoClinicaUpdateManyWithWhereWithoutClinicaInput[]
     deleteMany?: EnderecoClinicaScalarWhereInput | EnderecoClinicaScalarWhereInput[]
+  }
+
+  export type DisponibilidadeUncheckedUpdateManyWithoutClinicaNestedInput = {
+    create?: XOR<DisponibilidadeCreateWithoutClinicaInput, DisponibilidadeUncheckedCreateWithoutClinicaInput> | DisponibilidadeCreateWithoutClinicaInput[] | DisponibilidadeUncheckedCreateWithoutClinicaInput[]
+    connectOrCreate?: DisponibilidadeCreateOrConnectWithoutClinicaInput | DisponibilidadeCreateOrConnectWithoutClinicaInput[]
+    upsert?: DisponibilidadeUpsertWithWhereUniqueWithoutClinicaInput | DisponibilidadeUpsertWithWhereUniqueWithoutClinicaInput[]
+    createMany?: DisponibilidadeCreateManyClinicaInputEnvelope
+    set?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    disconnect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    delete?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    connect?: DisponibilidadeWhereUniqueInput | DisponibilidadeWhereUniqueInput[]
+    update?: DisponibilidadeUpdateWithWhereUniqueWithoutClinicaInput | DisponibilidadeUpdateWithWhereUniqueWithoutClinicaInput[]
+    updateMany?: DisponibilidadeUpdateManyWithWhereWithoutClinicaInput | DisponibilidadeUpdateManyWithWhereWithoutClinicaInput[]
+    deleteMany?: DisponibilidadeScalarWhereInput | DisponibilidadeScalarWhereInput[]
   }
 
   export type DisponibilidadeCreateNestedManyWithoutDiaSemanaInput = {
@@ -17303,10 +21715,38 @@ export namespace Prisma {
     deleteMany?: DisponibilidadeScalarWhereInput | DisponibilidadeScalarWhereInput[]
   }
 
+  export type ProfissionalCreateNestedOneWithoutDisponibilidadeInput = {
+    create?: XOR<ProfissionalCreateWithoutDisponibilidadeInput, ProfissionalUncheckedCreateWithoutDisponibilidadeInput>
+    connectOrCreate?: ProfissionalCreateOrConnectWithoutDisponibilidadeInput
+    connect?: ProfissionalWhereUniqueInput
+  }
+
+  export type ClinicaCreateNestedOneWithoutDisponibilidadeInput = {
+    create?: XOR<ClinicaCreateWithoutDisponibilidadeInput, ClinicaUncheckedCreateWithoutDisponibilidadeInput>
+    connectOrCreate?: ClinicaCreateOrConnectWithoutDisponibilidadeInput
+    connect?: ClinicaWhereUniqueInput
+  }
+
   export type DiaSemanaCreateNestedOneWithoutDisponibilidadeInput = {
     create?: XOR<DiaSemanaCreateWithoutDisponibilidadeInput, DiaSemanaUncheckedCreateWithoutDisponibilidadeInput>
     connectOrCreate?: DiaSemanaCreateOrConnectWithoutDisponibilidadeInput
     connect?: DiaSemanaWhereUniqueInput
+  }
+
+  export type ProfissionalUpdateOneRequiredWithoutDisponibilidadeNestedInput = {
+    create?: XOR<ProfissionalCreateWithoutDisponibilidadeInput, ProfissionalUncheckedCreateWithoutDisponibilidadeInput>
+    connectOrCreate?: ProfissionalCreateOrConnectWithoutDisponibilidadeInput
+    upsert?: ProfissionalUpsertWithoutDisponibilidadeInput
+    connect?: ProfissionalWhereUniqueInput
+    update?: XOR<XOR<ProfissionalUpdateToOneWithWhereWithoutDisponibilidadeInput, ProfissionalUpdateWithoutDisponibilidadeInput>, ProfissionalUncheckedUpdateWithoutDisponibilidadeInput>
+  }
+
+  export type ClinicaUpdateOneRequiredWithoutDisponibilidadeNestedInput = {
+    create?: XOR<ClinicaCreateWithoutDisponibilidadeInput, ClinicaUncheckedCreateWithoutDisponibilidadeInput>
+    connectOrCreate?: ClinicaCreateOrConnectWithoutDisponibilidadeInput
+    upsert?: ClinicaUpsertWithoutDisponibilidadeInput
+    connect?: ClinicaWhereUniqueInput
+    update?: XOR<XOR<ClinicaUpdateToOneWithWhereWithoutDisponibilidadeInput, ClinicaUpdateWithoutDisponibilidadeInput>, ClinicaUncheckedUpdateWithoutDisponibilidadeInput>
   }
 
   export type DiaSemanaUpdateOneRequiredWithoutDisponibilidadeNestedInput = {
@@ -17577,6 +22017,146 @@ export namespace Prisma {
     update?: XOR<XOR<ConsultaUpdateToOneWithWhereWithoutHistoricoMedicoInput, ConsultaUpdateWithoutHistoricoMedicoInput>, ConsultaUncheckedUpdateWithoutHistoricoMedicoInput>
   }
 
+  export type PacientePlanoSaudeCreateNestedManyWithoutPlanoInput = {
+    create?: XOR<PacientePlanoSaudeCreateWithoutPlanoInput, PacientePlanoSaudeUncheckedCreateWithoutPlanoInput> | PacientePlanoSaudeCreateWithoutPlanoInput[] | PacientePlanoSaudeUncheckedCreateWithoutPlanoInput[]
+    connectOrCreate?: PacientePlanoSaudeCreateOrConnectWithoutPlanoInput | PacientePlanoSaudeCreateOrConnectWithoutPlanoInput[]
+    createMany?: PacientePlanoSaudeCreateManyPlanoInputEnvelope
+    connect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+  }
+
+  export type ProfissionalPlanoSaudeCreateNestedManyWithoutPlanoInput = {
+    create?: XOR<ProfissionalPlanoSaudeCreateWithoutPlanoInput, ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput> | ProfissionalPlanoSaudeCreateWithoutPlanoInput[] | ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput[]
+    connectOrCreate?: ProfissionalPlanoSaudeCreateOrConnectWithoutPlanoInput | ProfissionalPlanoSaudeCreateOrConnectWithoutPlanoInput[]
+    createMany?: ProfissionalPlanoSaudeCreateManyPlanoInputEnvelope
+    connect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+  }
+
+  export type PacientePlanoSaudeUncheckedCreateNestedManyWithoutPlanoInput = {
+    create?: XOR<PacientePlanoSaudeCreateWithoutPlanoInput, PacientePlanoSaudeUncheckedCreateWithoutPlanoInput> | PacientePlanoSaudeCreateWithoutPlanoInput[] | PacientePlanoSaudeUncheckedCreateWithoutPlanoInput[]
+    connectOrCreate?: PacientePlanoSaudeCreateOrConnectWithoutPlanoInput | PacientePlanoSaudeCreateOrConnectWithoutPlanoInput[]
+    createMany?: PacientePlanoSaudeCreateManyPlanoInputEnvelope
+    connect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedCreateNestedManyWithoutPlanoInput = {
+    create?: XOR<ProfissionalPlanoSaudeCreateWithoutPlanoInput, ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput> | ProfissionalPlanoSaudeCreateWithoutPlanoInput[] | ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput[]
+    connectOrCreate?: ProfissionalPlanoSaudeCreateOrConnectWithoutPlanoInput | ProfissionalPlanoSaudeCreateOrConnectWithoutPlanoInput[]
+    createMany?: ProfissionalPlanoSaudeCreateManyPlanoInputEnvelope
+    connect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+  }
+
+  export type PacientePlanoSaudeUpdateManyWithoutPlanoNestedInput = {
+    create?: XOR<PacientePlanoSaudeCreateWithoutPlanoInput, PacientePlanoSaudeUncheckedCreateWithoutPlanoInput> | PacientePlanoSaudeCreateWithoutPlanoInput[] | PacientePlanoSaudeUncheckedCreateWithoutPlanoInput[]
+    connectOrCreate?: PacientePlanoSaudeCreateOrConnectWithoutPlanoInput | PacientePlanoSaudeCreateOrConnectWithoutPlanoInput[]
+    upsert?: PacientePlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput | PacientePlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput[]
+    createMany?: PacientePlanoSaudeCreateManyPlanoInputEnvelope
+    set?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    disconnect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    delete?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    connect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    update?: PacientePlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput | PacientePlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput[]
+    updateMany?: PacientePlanoSaudeUpdateManyWithWhereWithoutPlanoInput | PacientePlanoSaudeUpdateManyWithWhereWithoutPlanoInput[]
+    deleteMany?: PacientePlanoSaudeScalarWhereInput | PacientePlanoSaudeScalarWhereInput[]
+  }
+
+  export type ProfissionalPlanoSaudeUpdateManyWithoutPlanoNestedInput = {
+    create?: XOR<ProfissionalPlanoSaudeCreateWithoutPlanoInput, ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput> | ProfissionalPlanoSaudeCreateWithoutPlanoInput[] | ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput[]
+    connectOrCreate?: ProfissionalPlanoSaudeCreateOrConnectWithoutPlanoInput | ProfissionalPlanoSaudeCreateOrConnectWithoutPlanoInput[]
+    upsert?: ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput | ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput[]
+    createMany?: ProfissionalPlanoSaudeCreateManyPlanoInputEnvelope
+    set?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    disconnect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    delete?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    connect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    update?: ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput | ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput[]
+    updateMany?: ProfissionalPlanoSaudeUpdateManyWithWhereWithoutPlanoInput | ProfissionalPlanoSaudeUpdateManyWithWhereWithoutPlanoInput[]
+    deleteMany?: ProfissionalPlanoSaudeScalarWhereInput | ProfissionalPlanoSaudeScalarWhereInput[]
+  }
+
+  export type PacientePlanoSaudeUncheckedUpdateManyWithoutPlanoNestedInput = {
+    create?: XOR<PacientePlanoSaudeCreateWithoutPlanoInput, PacientePlanoSaudeUncheckedCreateWithoutPlanoInput> | PacientePlanoSaudeCreateWithoutPlanoInput[] | PacientePlanoSaudeUncheckedCreateWithoutPlanoInput[]
+    connectOrCreate?: PacientePlanoSaudeCreateOrConnectWithoutPlanoInput | PacientePlanoSaudeCreateOrConnectWithoutPlanoInput[]
+    upsert?: PacientePlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput | PacientePlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput[]
+    createMany?: PacientePlanoSaudeCreateManyPlanoInputEnvelope
+    set?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    disconnect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    delete?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    connect?: PacientePlanoSaudeWhereUniqueInput | PacientePlanoSaudeWhereUniqueInput[]
+    update?: PacientePlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput | PacientePlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput[]
+    updateMany?: PacientePlanoSaudeUpdateManyWithWhereWithoutPlanoInput | PacientePlanoSaudeUpdateManyWithWhereWithoutPlanoInput[]
+    deleteMany?: PacientePlanoSaudeScalarWhereInput | PacientePlanoSaudeScalarWhereInput[]
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedUpdateManyWithoutPlanoNestedInput = {
+    create?: XOR<ProfissionalPlanoSaudeCreateWithoutPlanoInput, ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput> | ProfissionalPlanoSaudeCreateWithoutPlanoInput[] | ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput[]
+    connectOrCreate?: ProfissionalPlanoSaudeCreateOrConnectWithoutPlanoInput | ProfissionalPlanoSaudeCreateOrConnectWithoutPlanoInput[]
+    upsert?: ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput | ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput[]
+    createMany?: ProfissionalPlanoSaudeCreateManyPlanoInputEnvelope
+    set?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    disconnect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    delete?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    connect?: ProfissionalPlanoSaudeWhereUniqueInput | ProfissionalPlanoSaudeWhereUniqueInput[]
+    update?: ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput | ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput[]
+    updateMany?: ProfissionalPlanoSaudeUpdateManyWithWhereWithoutPlanoInput | ProfissionalPlanoSaudeUpdateManyWithWhereWithoutPlanoInput[]
+    deleteMany?: ProfissionalPlanoSaudeScalarWhereInput | ProfissionalPlanoSaudeScalarWhereInput[]
+  }
+
+  export type PacienteCreateNestedOneWithoutPacientePlanoSaudeInput = {
+    create?: XOR<PacienteCreateWithoutPacientePlanoSaudeInput, PacienteUncheckedCreateWithoutPacientePlanoSaudeInput>
+    connectOrCreate?: PacienteCreateOrConnectWithoutPacientePlanoSaudeInput
+    connect?: PacienteWhereUniqueInput
+  }
+
+  export type PlanoSaudeCreateNestedOneWithoutPacientePlanoSaudeInput = {
+    create?: XOR<PlanoSaudeCreateWithoutPacientePlanoSaudeInput, PlanoSaudeUncheckedCreateWithoutPacientePlanoSaudeInput>
+    connectOrCreate?: PlanoSaudeCreateOrConnectWithoutPacientePlanoSaudeInput
+    connect?: PlanoSaudeWhereUniqueInput
+  }
+
+  export type PacienteUpdateOneRequiredWithoutPacientePlanoSaudeNestedInput = {
+    create?: XOR<PacienteCreateWithoutPacientePlanoSaudeInput, PacienteUncheckedCreateWithoutPacientePlanoSaudeInput>
+    connectOrCreate?: PacienteCreateOrConnectWithoutPacientePlanoSaudeInput
+    upsert?: PacienteUpsertWithoutPacientePlanoSaudeInput
+    connect?: PacienteWhereUniqueInput
+    update?: XOR<XOR<PacienteUpdateToOneWithWhereWithoutPacientePlanoSaudeInput, PacienteUpdateWithoutPacientePlanoSaudeInput>, PacienteUncheckedUpdateWithoutPacientePlanoSaudeInput>
+  }
+
+  export type PlanoSaudeUpdateOneRequiredWithoutPacientePlanoSaudeNestedInput = {
+    create?: XOR<PlanoSaudeCreateWithoutPacientePlanoSaudeInput, PlanoSaudeUncheckedCreateWithoutPacientePlanoSaudeInput>
+    connectOrCreate?: PlanoSaudeCreateOrConnectWithoutPacientePlanoSaudeInput
+    upsert?: PlanoSaudeUpsertWithoutPacientePlanoSaudeInput
+    connect?: PlanoSaudeWhereUniqueInput
+    update?: XOR<XOR<PlanoSaudeUpdateToOneWithWhereWithoutPacientePlanoSaudeInput, PlanoSaudeUpdateWithoutPacientePlanoSaudeInput>, PlanoSaudeUncheckedUpdateWithoutPacientePlanoSaudeInput>
+  }
+
+  export type ProfissionalCreateNestedOneWithoutProfissionalPlanoSaudeInput = {
+    create?: XOR<ProfissionalCreateWithoutProfissionalPlanoSaudeInput, ProfissionalUncheckedCreateWithoutProfissionalPlanoSaudeInput>
+    connectOrCreate?: ProfissionalCreateOrConnectWithoutProfissionalPlanoSaudeInput
+    connect?: ProfissionalWhereUniqueInput
+  }
+
+  export type PlanoSaudeCreateNestedOneWithoutProfissionalPlanoSaudeInput = {
+    create?: XOR<PlanoSaudeCreateWithoutProfissionalPlanoSaudeInput, PlanoSaudeUncheckedCreateWithoutProfissionalPlanoSaudeInput>
+    connectOrCreate?: PlanoSaudeCreateOrConnectWithoutProfissionalPlanoSaudeInput
+    connect?: PlanoSaudeWhereUniqueInput
+  }
+
+  export type ProfissionalUpdateOneRequiredWithoutProfissionalPlanoSaudeNestedInput = {
+    create?: XOR<ProfissionalCreateWithoutProfissionalPlanoSaudeInput, ProfissionalUncheckedCreateWithoutProfissionalPlanoSaudeInput>
+    connectOrCreate?: ProfissionalCreateOrConnectWithoutProfissionalPlanoSaudeInput
+    upsert?: ProfissionalUpsertWithoutProfissionalPlanoSaudeInput
+    connect?: ProfissionalWhereUniqueInput
+    update?: XOR<XOR<ProfissionalUpdateToOneWithWhereWithoutProfissionalPlanoSaudeInput, ProfissionalUpdateWithoutProfissionalPlanoSaudeInput>, ProfissionalUncheckedUpdateWithoutProfissionalPlanoSaudeInput>
+  }
+
+  export type PlanoSaudeUpdateOneRequiredWithoutProfissionalPlanoSaudeNestedInput = {
+    create?: XOR<PlanoSaudeCreateWithoutProfissionalPlanoSaudeInput, PlanoSaudeUncheckedCreateWithoutProfissionalPlanoSaudeInput>
+    connectOrCreate?: PlanoSaudeCreateOrConnectWithoutProfissionalPlanoSaudeInput
+    upsert?: PlanoSaudeUpsertWithoutProfissionalPlanoSaudeInput
+    connect?: PlanoSaudeWhereUniqueInput
+    update?: XOR<XOR<PlanoSaudeUpdateToOneWithWhereWithoutProfissionalPlanoSaudeInput, PlanoSaudeUpdateWithoutProfissionalPlanoSaudeInput>, PlanoSaudeUncheckedUpdateWithoutProfissionalPlanoSaudeInput>
+  }
+
   export type NestedUuidFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -17608,6 +22188,20 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedUuidWithAggregatesFilter<$PrismaModel = never> = {
@@ -17679,6 +22273,34 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedEnumTipoRegistroFilter<$PrismaModel = never> = {
     equals?: $Enums.TipoRegistro | EnumTipoRegistroFieldRefInput<$PrismaModel>
     in?: $Enums.TipoRegistro[] | ListEnumTipoRegistroFieldRefInput<$PrismaModel>
@@ -17713,20 +22335,6 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type NestedStringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
   export type NestedUuidNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -17736,34 +22344,6 @@ export namespace Prisma {
     gt?: string | StringFieldRefInput<$PrismaModel>
     gte?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedUuidNullableFilter<$PrismaModel> | string | null
-  }
-
-  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedUuidNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -17815,6 +22395,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     profissional?: ProfissionalCreateNestedOneWithoutUsuariosInput
     enderecos?: EnderecoUsuarioCreateNestedManyWithoutUsuarioInput
   }
@@ -17827,6 +22408,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     profissionalId?: string | null
     enderecos?: EnderecoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
   }
@@ -17927,6 +22509,32 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type PacientePlanoSaudeCreateWithoutPacienteInput = {
+    id?: string
+    numeroCarteirinha: string
+    validade: Date | string
+    nomeTitular: string
+    plano: PlanoSaudeCreateNestedOneWithoutPacientePlanoSaudeInput
+  }
+
+  export type PacientePlanoSaudeUncheckedCreateWithoutPacienteInput = {
+    id?: string
+    planoId: string
+    numeroCarteirinha: string
+    validade: Date | string
+    nomeTitular: string
+  }
+
+  export type PacientePlanoSaudeCreateOrConnectWithoutPacienteInput = {
+    where: PacientePlanoSaudeWhereUniqueInput
+    create: XOR<PacientePlanoSaudeCreateWithoutPacienteInput, PacientePlanoSaudeUncheckedCreateWithoutPacienteInput>
+  }
+
+  export type PacientePlanoSaudeCreateManyPacienteInputEnvelope = {
+    data: PacientePlanoSaudeCreateManyPacienteInput | PacientePlanoSaudeCreateManyPacienteInput[]
+    skipDuplicates?: boolean
+  }
+
   export type UsuarioUpsertWithWhereUniqueWithoutPacienteInput = {
     where: UsuarioWhereUniqueInput
     update: XOR<UsuarioUpdateWithoutPacienteInput, UsuarioUncheckedUpdateWithoutPacienteInput>
@@ -17954,6 +22562,7 @@ export namespace Prisma {
     telefone?: StringFilter<"Usuario"> | string
     avatar?: StringNullableFilter<"Usuario"> | string | null
     genero?: StringFilter<"Usuario"> | string
+    cpf?: StringFilter<"Usuario"> | string
     profissionalId?: UuidNullableFilter<"Usuario"> | string | null
     pacienteId?: UuidNullableFilter<"Usuario"> | string | null
   }
@@ -18030,6 +22639,34 @@ export namespace Prisma {
     consultaId?: UuidFilter<"HistoricoMedico"> | string
   }
 
+  export type PacientePlanoSaudeUpsertWithWhereUniqueWithoutPacienteInput = {
+    where: PacientePlanoSaudeWhereUniqueInput
+    update: XOR<PacientePlanoSaudeUpdateWithoutPacienteInput, PacientePlanoSaudeUncheckedUpdateWithoutPacienteInput>
+    create: XOR<PacientePlanoSaudeCreateWithoutPacienteInput, PacientePlanoSaudeUncheckedCreateWithoutPacienteInput>
+  }
+
+  export type PacientePlanoSaudeUpdateWithWhereUniqueWithoutPacienteInput = {
+    where: PacientePlanoSaudeWhereUniqueInput
+    data: XOR<PacientePlanoSaudeUpdateWithoutPacienteInput, PacientePlanoSaudeUncheckedUpdateWithoutPacienteInput>
+  }
+
+  export type PacientePlanoSaudeUpdateManyWithWhereWithoutPacienteInput = {
+    where: PacientePlanoSaudeScalarWhereInput
+    data: XOR<PacientePlanoSaudeUpdateManyMutationInput, PacientePlanoSaudeUncheckedUpdateManyWithoutPacienteInput>
+  }
+
+  export type PacientePlanoSaudeScalarWhereInput = {
+    AND?: PacientePlanoSaudeScalarWhereInput | PacientePlanoSaudeScalarWhereInput[]
+    OR?: PacientePlanoSaudeScalarWhereInput[]
+    NOT?: PacientePlanoSaudeScalarWhereInput | PacientePlanoSaudeScalarWhereInput[]
+    id?: UuidFilter<"PacientePlanoSaude"> | string
+    pacienteId?: UuidFilter<"PacientePlanoSaude"> | string
+    planoId?: UuidFilter<"PacientePlanoSaude"> | string
+    numeroCarteirinha?: StringFilter<"PacientePlanoSaude"> | string
+    validade?: DateTimeFilter<"PacientePlanoSaude"> | Date | string
+    nomeTitular?: StringFilter<"PacientePlanoSaude"> | string
+  }
+
   export type UsuarioCreateWithoutProfissionalInput = {
     id?: string
     nome: string
@@ -18038,6 +22675,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     paciente?: PacienteCreateNestedOneWithoutUsuariosInput
     enderecos?: EnderecoUsuarioCreateNestedManyWithoutUsuarioInput
   }
@@ -18050,6 +22688,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     pacienteId?: string | null
     enderecos?: EnderecoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
   }
@@ -18150,6 +22789,52 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type DisponibilidadeCreateWithoutProfissionalInput = {
+    id?: string
+    horaInicio: Date | string
+    horaFim: Date | string
+    clinica: ClinicaCreateNestedOneWithoutDisponibilidadeInput
+    diaSemana: DiaSemanaCreateNestedOneWithoutDisponibilidadeInput
+  }
+
+  export type DisponibilidadeUncheckedCreateWithoutProfissionalInput = {
+    id?: string
+    horaInicio: Date | string
+    horaFim: Date | string
+    diaSemanaId: string
+    clinicaId: string
+  }
+
+  export type DisponibilidadeCreateOrConnectWithoutProfissionalInput = {
+    where: DisponibilidadeWhereUniqueInput
+    create: XOR<DisponibilidadeCreateWithoutProfissionalInput, DisponibilidadeUncheckedCreateWithoutProfissionalInput>
+  }
+
+  export type DisponibilidadeCreateManyProfissionalInputEnvelope = {
+    data: DisponibilidadeCreateManyProfissionalInput | DisponibilidadeCreateManyProfissionalInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ProfissionalPlanoSaudeCreateWithoutProfissionalInput = {
+    id?: string
+    plano: PlanoSaudeCreateNestedOneWithoutProfissionalPlanoSaudeInput
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput = {
+    id?: string
+    planoId: string
+  }
+
+  export type ProfissionalPlanoSaudeCreateOrConnectWithoutProfissionalInput = {
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+    create: XOR<ProfissionalPlanoSaudeCreateWithoutProfissionalInput, ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput>
+  }
+
+  export type ProfissionalPlanoSaudeCreateManyProfissionalInputEnvelope = {
+    data: ProfissionalPlanoSaudeCreateManyProfissionalInput | ProfissionalPlanoSaudeCreateManyProfissionalInput[]
+    skipDuplicates?: boolean
+  }
+
   export type UsuarioUpsertWithWhereUniqueWithoutProfissionalInput = {
     where: UsuarioWhereUniqueInput
     update: XOR<UsuarioUpdateWithoutProfissionalInput, UsuarioUncheckedUpdateWithoutProfissionalInput>
@@ -18198,6 +22883,59 @@ export namespace Prisma {
     data: XOR<HistoricoMedicoUpdateManyMutationInput, HistoricoMedicoUncheckedUpdateManyWithoutProfissionalInput>
   }
 
+  export type DisponibilidadeUpsertWithWhereUniqueWithoutProfissionalInput = {
+    where: DisponibilidadeWhereUniqueInput
+    update: XOR<DisponibilidadeUpdateWithoutProfissionalInput, DisponibilidadeUncheckedUpdateWithoutProfissionalInput>
+    create: XOR<DisponibilidadeCreateWithoutProfissionalInput, DisponibilidadeUncheckedCreateWithoutProfissionalInput>
+  }
+
+  export type DisponibilidadeUpdateWithWhereUniqueWithoutProfissionalInput = {
+    where: DisponibilidadeWhereUniqueInput
+    data: XOR<DisponibilidadeUpdateWithoutProfissionalInput, DisponibilidadeUncheckedUpdateWithoutProfissionalInput>
+  }
+
+  export type DisponibilidadeUpdateManyWithWhereWithoutProfissionalInput = {
+    where: DisponibilidadeScalarWhereInput
+    data: XOR<DisponibilidadeUpdateManyMutationInput, DisponibilidadeUncheckedUpdateManyWithoutProfissionalInput>
+  }
+
+  export type DisponibilidadeScalarWhereInput = {
+    AND?: DisponibilidadeScalarWhereInput | DisponibilidadeScalarWhereInput[]
+    OR?: DisponibilidadeScalarWhereInput[]
+    NOT?: DisponibilidadeScalarWhereInput | DisponibilidadeScalarWhereInput[]
+    id?: UuidFilter<"Disponibilidade"> | string
+    horaInicio?: DateTimeFilter<"Disponibilidade"> | Date | string
+    horaFim?: DateTimeFilter<"Disponibilidade"> | Date | string
+    diaSemanaId?: UuidFilter<"Disponibilidade"> | string
+    clinicaId?: UuidFilter<"Disponibilidade"> | string
+    profissionalId?: UuidFilter<"Disponibilidade"> | string
+  }
+
+  export type ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutProfissionalInput = {
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+    update: XOR<ProfissionalPlanoSaudeUpdateWithoutProfissionalInput, ProfissionalPlanoSaudeUncheckedUpdateWithoutProfissionalInput>
+    create: XOR<ProfissionalPlanoSaudeCreateWithoutProfissionalInput, ProfissionalPlanoSaudeUncheckedCreateWithoutProfissionalInput>
+  }
+
+  export type ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutProfissionalInput = {
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+    data: XOR<ProfissionalPlanoSaudeUpdateWithoutProfissionalInput, ProfissionalPlanoSaudeUncheckedUpdateWithoutProfissionalInput>
+  }
+
+  export type ProfissionalPlanoSaudeUpdateManyWithWhereWithoutProfissionalInput = {
+    where: ProfissionalPlanoSaudeScalarWhereInput
+    data: XOR<ProfissionalPlanoSaudeUpdateManyMutationInput, ProfissionalPlanoSaudeUncheckedUpdateManyWithoutProfissionalInput>
+  }
+
+  export type ProfissionalPlanoSaudeScalarWhereInput = {
+    AND?: ProfissionalPlanoSaudeScalarWhereInput | ProfissionalPlanoSaudeScalarWhereInput[]
+    OR?: ProfissionalPlanoSaudeScalarWhereInput[]
+    NOT?: ProfissionalPlanoSaudeScalarWhereInput | ProfissionalPlanoSaudeScalarWhereInput[]
+    id?: UuidFilter<"ProfissionalPlanoSaude"> | string
+    profissionalId?: UuidFilter<"ProfissionalPlanoSaude"> | string
+    planoId?: UuidFilter<"ProfissionalPlanoSaude"> | string
+  }
+
   export type ProfissionalCreateWithoutUsuariosInput = {
     id?: string
     tipoRegistro: $Enums.TipoRegistro
@@ -18209,6 +22947,8 @@ export namespace Prisma {
     especialidade: string
     agendamentos?: ConsultaCreateNestedManyWithoutProfissionalInput
     HistoricoMedico?: HistoricoMedicoCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeCreateNestedManyWithoutProfissionalInput
   }
 
   export type ProfissionalUncheckedCreateWithoutUsuariosInput = {
@@ -18222,6 +22962,8 @@ export namespace Prisma {
     especialidade: string
     agendamentos?: ConsultaUncheckedCreateNestedManyWithoutProfissionalInput
     HistoricoMedico?: HistoricoMedicoUncheckedCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeUncheckedCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedCreateNestedManyWithoutProfissionalInput
   }
 
   export type ProfissionalCreateOrConnectWithoutUsuariosInput = {
@@ -18234,8 +22976,10 @@ export namespace Prisma {
     dataNascimento: Date | string
     peso: number
     altura: number
+    alergias?: string | null
     agendamentos?: ConsultaCreateNestedManyWithoutPacienteInput
     HistoricoMedico?: HistoricoMedicoCreateNestedManyWithoutPacienteInput
+    PacientePlanoSaude?: PacientePlanoSaudeCreateNestedManyWithoutPacienteInput
   }
 
   export type PacienteUncheckedCreateWithoutUsuariosInput = {
@@ -18243,8 +22987,10 @@ export namespace Prisma {
     dataNascimento: Date | string
     peso: number
     altura: number
+    alergias?: string | null
     agendamentos?: ConsultaUncheckedCreateNestedManyWithoutPacienteInput
     HistoricoMedico?: HistoricoMedicoUncheckedCreateNestedManyWithoutPacienteInput
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedCreateNestedManyWithoutPacienteInput
   }
 
   export type PacienteCreateOrConnectWithoutUsuariosInput = {
@@ -18294,6 +23040,8 @@ export namespace Prisma {
     especialidade?: StringFieldUpdateOperationsInput | string
     agendamentos?: ConsultaUpdateManyWithoutProfissionalNestedInput
     HistoricoMedico?: HistoricoMedicoUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUpdateManyWithoutProfissionalNestedInput
   }
 
   export type ProfissionalUncheckedUpdateWithoutUsuariosInput = {
@@ -18307,6 +23055,8 @@ export namespace Prisma {
     especialidade?: StringFieldUpdateOperationsInput | string
     agendamentos?: ConsultaUncheckedUpdateManyWithoutProfissionalNestedInput
     HistoricoMedico?: HistoricoMedicoUncheckedUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUncheckedUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedUpdateManyWithoutProfissionalNestedInput
   }
 
   export type PacienteUpsertWithoutUsuariosInput = {
@@ -18325,8 +23075,10 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
     agendamentos?: ConsultaUpdateManyWithoutPacienteNestedInput
     HistoricoMedico?: HistoricoMedicoUpdateManyWithoutPacienteNestedInput
+    PacientePlanoSaude?: PacientePlanoSaudeUpdateManyWithoutPacienteNestedInput
   }
 
   export type PacienteUncheckedUpdateWithoutUsuariosInput = {
@@ -18334,8 +23086,10 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
     agendamentos?: ConsultaUncheckedUpdateManyWithoutPacienteNestedInput
     HistoricoMedico?: HistoricoMedicoUncheckedUpdateManyWithoutPacienteNestedInput
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedUpdateManyWithoutPacienteNestedInput
   }
 
   export type EnderecoUsuarioUpsertWithWhereUniqueWithoutUsuarioInput = {
@@ -18383,6 +23137,32 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type DisponibilidadeCreateWithoutClinicaInput = {
+    id?: string
+    horaInicio: Date | string
+    horaFim: Date | string
+    profissional: ProfissionalCreateNestedOneWithoutDisponibilidadeInput
+    diaSemana: DiaSemanaCreateNestedOneWithoutDisponibilidadeInput
+  }
+
+  export type DisponibilidadeUncheckedCreateWithoutClinicaInput = {
+    id?: string
+    horaInicio: Date | string
+    horaFim: Date | string
+    diaSemanaId: string
+    profissionalId: string
+  }
+
+  export type DisponibilidadeCreateOrConnectWithoutClinicaInput = {
+    where: DisponibilidadeWhereUniqueInput
+    create: XOR<DisponibilidadeCreateWithoutClinicaInput, DisponibilidadeUncheckedCreateWithoutClinicaInput>
+  }
+
+  export type DisponibilidadeCreateManyClinicaInputEnvelope = {
+    data: DisponibilidadeCreateManyClinicaInput | DisponibilidadeCreateManyClinicaInput[]
+    skipDuplicates?: boolean
+  }
+
   export type EnderecoClinicaUpsertWithWhereUniqueWithoutClinicaInput = {
     where: EnderecoClinicaWhereUniqueInput
     update: XOR<EnderecoClinicaUpdateWithoutClinicaInput, EnderecoClinicaUncheckedUpdateWithoutClinicaInput>
@@ -18408,16 +23188,36 @@ export namespace Prisma {
     enderecoId?: UuidFilter<"EnderecoClinica"> | string
   }
 
+  export type DisponibilidadeUpsertWithWhereUniqueWithoutClinicaInput = {
+    where: DisponibilidadeWhereUniqueInput
+    update: XOR<DisponibilidadeUpdateWithoutClinicaInput, DisponibilidadeUncheckedUpdateWithoutClinicaInput>
+    create: XOR<DisponibilidadeCreateWithoutClinicaInput, DisponibilidadeUncheckedCreateWithoutClinicaInput>
+  }
+
+  export type DisponibilidadeUpdateWithWhereUniqueWithoutClinicaInput = {
+    where: DisponibilidadeWhereUniqueInput
+    data: XOR<DisponibilidadeUpdateWithoutClinicaInput, DisponibilidadeUncheckedUpdateWithoutClinicaInput>
+  }
+
+  export type DisponibilidadeUpdateManyWithWhereWithoutClinicaInput = {
+    where: DisponibilidadeScalarWhereInput
+    data: XOR<DisponibilidadeUpdateManyMutationInput, DisponibilidadeUncheckedUpdateManyWithoutClinicaInput>
+  }
+
   export type DisponibilidadeCreateWithoutDiaSemanaInput = {
     id?: string
     horaInicio: Date | string
     horaFim: Date | string
+    profissional: ProfissionalCreateNestedOneWithoutDisponibilidadeInput
+    clinica: ClinicaCreateNestedOneWithoutDisponibilidadeInput
   }
 
   export type DisponibilidadeUncheckedCreateWithoutDiaSemanaInput = {
     id?: string
     horaInicio: Date | string
     horaFim: Date | string
+    clinicaId: string
+    profissionalId: string
   }
 
   export type DisponibilidadeCreateOrConnectWithoutDiaSemanaInput = {
@@ -18446,14 +23246,66 @@ export namespace Prisma {
     data: XOR<DisponibilidadeUpdateManyMutationInput, DisponibilidadeUncheckedUpdateManyWithoutDiaSemanaInput>
   }
 
-  export type DisponibilidadeScalarWhereInput = {
-    AND?: DisponibilidadeScalarWhereInput | DisponibilidadeScalarWhereInput[]
-    OR?: DisponibilidadeScalarWhereInput[]
-    NOT?: DisponibilidadeScalarWhereInput | DisponibilidadeScalarWhereInput[]
-    id?: UuidFilter<"Disponibilidade"> | string
-    diaSemanaId?: UuidFilter<"Disponibilidade"> | string
-    horaInicio?: DateTimeFilter<"Disponibilidade"> | Date | string
-    horaFim?: DateTimeFilter<"Disponibilidade"> | Date | string
+  export type ProfissionalCreateWithoutDisponibilidadeInput = {
+    id?: string
+    tipoRegistro: $Enums.TipoRegistro
+    numeroRegistro: string
+    uf: string
+    descricao: string
+    instituicaoFormadora: string
+    tipoProfissional: string
+    especialidade: string
+    usuarios?: UsuarioCreateNestedManyWithoutProfissionalInput
+    agendamentos?: ConsultaCreateNestedManyWithoutProfissionalInput
+    HistoricoMedico?: HistoricoMedicoCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeCreateNestedManyWithoutProfissionalInput
+  }
+
+  export type ProfissionalUncheckedCreateWithoutDisponibilidadeInput = {
+    id?: string
+    tipoRegistro: $Enums.TipoRegistro
+    numeroRegistro: string
+    uf: string
+    descricao: string
+    instituicaoFormadora: string
+    tipoProfissional: string
+    especialidade: string
+    usuarios?: UsuarioUncheckedCreateNestedManyWithoutProfissionalInput
+    agendamentos?: ConsultaUncheckedCreateNestedManyWithoutProfissionalInput
+    HistoricoMedico?: HistoricoMedicoUncheckedCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedCreateNestedManyWithoutProfissionalInput
+  }
+
+  export type ProfissionalCreateOrConnectWithoutDisponibilidadeInput = {
+    where: ProfissionalWhereUniqueInput
+    create: XOR<ProfissionalCreateWithoutDisponibilidadeInput, ProfissionalUncheckedCreateWithoutDisponibilidadeInput>
+  }
+
+  export type ClinicaCreateWithoutDisponibilidadeInput = {
+    id?: string
+    nomeFantasia: string
+    razaoSocial: string
+    cnpj: string
+    inscricaoEstadual: string
+    telefone: string
+    tipoAtendimento: string
+    enderecos?: EnderecoClinicaCreateNestedManyWithoutClinicaInput
+  }
+
+  export type ClinicaUncheckedCreateWithoutDisponibilidadeInput = {
+    id?: string
+    nomeFantasia: string
+    razaoSocial: string
+    cnpj: string
+    inscricaoEstadual: string
+    telefone: string
+    tipoAtendimento: string
+    enderecos?: EnderecoClinicaUncheckedCreateNestedManyWithoutClinicaInput
+  }
+
+  export type ClinicaCreateOrConnectWithoutDisponibilidadeInput = {
+    where: ClinicaWhereUniqueInput
+    create: XOR<ClinicaCreateWithoutDisponibilidadeInput, ClinicaUncheckedCreateWithoutDisponibilidadeInput>
   }
 
   export type DiaSemanaCreateWithoutDisponibilidadeInput = {
@@ -18469,6 +23321,80 @@ export namespace Prisma {
   export type DiaSemanaCreateOrConnectWithoutDisponibilidadeInput = {
     where: DiaSemanaWhereUniqueInput
     create: XOR<DiaSemanaCreateWithoutDisponibilidadeInput, DiaSemanaUncheckedCreateWithoutDisponibilidadeInput>
+  }
+
+  export type ProfissionalUpsertWithoutDisponibilidadeInput = {
+    update: XOR<ProfissionalUpdateWithoutDisponibilidadeInput, ProfissionalUncheckedUpdateWithoutDisponibilidadeInput>
+    create: XOR<ProfissionalCreateWithoutDisponibilidadeInput, ProfissionalUncheckedCreateWithoutDisponibilidadeInput>
+    where?: ProfissionalWhereInput
+  }
+
+  export type ProfissionalUpdateToOneWithWhereWithoutDisponibilidadeInput = {
+    where?: ProfissionalWhereInput
+    data: XOR<ProfissionalUpdateWithoutDisponibilidadeInput, ProfissionalUncheckedUpdateWithoutDisponibilidadeInput>
+  }
+
+  export type ProfissionalUpdateWithoutDisponibilidadeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tipoRegistro?: EnumTipoRegistroFieldUpdateOperationsInput | $Enums.TipoRegistro
+    numeroRegistro?: StringFieldUpdateOperationsInput | string
+    uf?: StringFieldUpdateOperationsInput | string
+    descricao?: StringFieldUpdateOperationsInput | string
+    instituicaoFormadora?: StringFieldUpdateOperationsInput | string
+    tipoProfissional?: StringFieldUpdateOperationsInput | string
+    especialidade?: StringFieldUpdateOperationsInput | string
+    usuarios?: UsuarioUpdateManyWithoutProfissionalNestedInput
+    agendamentos?: ConsultaUpdateManyWithoutProfissionalNestedInput
+    HistoricoMedico?: HistoricoMedicoUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUpdateManyWithoutProfissionalNestedInput
+  }
+
+  export type ProfissionalUncheckedUpdateWithoutDisponibilidadeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tipoRegistro?: EnumTipoRegistroFieldUpdateOperationsInput | $Enums.TipoRegistro
+    numeroRegistro?: StringFieldUpdateOperationsInput | string
+    uf?: StringFieldUpdateOperationsInput | string
+    descricao?: StringFieldUpdateOperationsInput | string
+    instituicaoFormadora?: StringFieldUpdateOperationsInput | string
+    tipoProfissional?: StringFieldUpdateOperationsInput | string
+    especialidade?: StringFieldUpdateOperationsInput | string
+    usuarios?: UsuarioUncheckedUpdateManyWithoutProfissionalNestedInput
+    agendamentos?: ConsultaUncheckedUpdateManyWithoutProfissionalNestedInput
+    HistoricoMedico?: HistoricoMedicoUncheckedUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedUpdateManyWithoutProfissionalNestedInput
+  }
+
+  export type ClinicaUpsertWithoutDisponibilidadeInput = {
+    update: XOR<ClinicaUpdateWithoutDisponibilidadeInput, ClinicaUncheckedUpdateWithoutDisponibilidadeInput>
+    create: XOR<ClinicaCreateWithoutDisponibilidadeInput, ClinicaUncheckedCreateWithoutDisponibilidadeInput>
+    where?: ClinicaWhereInput
+  }
+
+  export type ClinicaUpdateToOneWithWhereWithoutDisponibilidadeInput = {
+    where?: ClinicaWhereInput
+    data: XOR<ClinicaUpdateWithoutDisponibilidadeInput, ClinicaUncheckedUpdateWithoutDisponibilidadeInput>
+  }
+
+  export type ClinicaUpdateWithoutDisponibilidadeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nomeFantasia?: StringFieldUpdateOperationsInput | string
+    razaoSocial?: StringFieldUpdateOperationsInput | string
+    cnpj?: StringFieldUpdateOperationsInput | string
+    inscricaoEstadual?: StringFieldUpdateOperationsInput | string
+    telefone?: StringFieldUpdateOperationsInput | string
+    tipoAtendimento?: StringFieldUpdateOperationsInput | string
+    enderecos?: EnderecoClinicaUpdateManyWithoutClinicaNestedInput
+  }
+
+  export type ClinicaUncheckedUpdateWithoutDisponibilidadeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nomeFantasia?: StringFieldUpdateOperationsInput | string
+    razaoSocial?: StringFieldUpdateOperationsInput | string
+    cnpj?: StringFieldUpdateOperationsInput | string
+    inscricaoEstadual?: StringFieldUpdateOperationsInput | string
+    telefone?: StringFieldUpdateOperationsInput | string
+    tipoAtendimento?: StringFieldUpdateOperationsInput | string
+    enderecos?: EnderecoClinicaUncheckedUpdateManyWithoutClinicaNestedInput
   }
 
   export type DiaSemanaUpsertWithoutDisponibilidadeInput = {
@@ -18572,6 +23498,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     profissional?: ProfissionalCreateNestedOneWithoutUsuariosInput
     paciente?: PacienteCreateNestedOneWithoutUsuariosInput
   }
@@ -18584,6 +23511,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     profissionalId?: string | null
     pacienteId?: string | null
   }
@@ -18641,6 +23569,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     profissional?: ProfissionalUpdateOneWithoutUsuariosNestedInput
     paciente?: PacienteUpdateOneWithoutUsuariosNestedInput
   }
@@ -18653,6 +23582,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     profissionalId?: NullableStringFieldUpdateOperationsInput | string | null
     pacienteId?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -18700,6 +23630,7 @@ export namespace Prisma {
     inscricaoEstadual: string
     telefone: string
     tipoAtendimento: string
+    Disponibilidade?: DisponibilidadeCreateNestedManyWithoutClinicaInput
   }
 
   export type ClinicaUncheckedCreateWithoutEnderecosInput = {
@@ -18710,6 +23641,7 @@ export namespace Prisma {
     inscricaoEstadual: string
     telefone: string
     tipoAtendimento: string
+    Disponibilidade?: DisponibilidadeUncheckedCreateNestedManyWithoutClinicaInput
   }
 
   export type ClinicaCreateOrConnectWithoutEnderecosInput = {
@@ -18765,6 +23697,7 @@ export namespace Prisma {
     inscricaoEstadual?: StringFieldUpdateOperationsInput | string
     telefone?: StringFieldUpdateOperationsInput | string
     tipoAtendimento?: StringFieldUpdateOperationsInput | string
+    Disponibilidade?: DisponibilidadeUpdateManyWithoutClinicaNestedInput
   }
 
   export type ClinicaUncheckedUpdateWithoutEnderecosInput = {
@@ -18775,6 +23708,7 @@ export namespace Prisma {
     inscricaoEstadual?: StringFieldUpdateOperationsInput | string
     telefone?: StringFieldUpdateOperationsInput | string
     tipoAtendimento?: StringFieldUpdateOperationsInput | string
+    Disponibilidade?: DisponibilidadeUncheckedUpdateManyWithoutClinicaNestedInput
   }
 
   export type EnderecoUpsertWithoutClinicasInput = {
@@ -18817,8 +23751,10 @@ export namespace Prisma {
     dataNascimento: Date | string
     peso: number
     altura: number
+    alergias?: string | null
     usuarios?: UsuarioCreateNestedManyWithoutPacienteInput
     HistoricoMedico?: HistoricoMedicoCreateNestedManyWithoutPacienteInput
+    PacientePlanoSaude?: PacientePlanoSaudeCreateNestedManyWithoutPacienteInput
   }
 
   export type PacienteUncheckedCreateWithoutAgendamentosInput = {
@@ -18826,8 +23762,10 @@ export namespace Prisma {
     dataNascimento: Date | string
     peso: number
     altura: number
+    alergias?: string | null
     usuarios?: UsuarioUncheckedCreateNestedManyWithoutPacienteInput
     HistoricoMedico?: HistoricoMedicoUncheckedCreateNestedManyWithoutPacienteInput
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedCreateNestedManyWithoutPacienteInput
   }
 
   export type PacienteCreateOrConnectWithoutAgendamentosInput = {
@@ -18846,6 +23784,8 @@ export namespace Prisma {
     especialidade: string
     usuarios?: UsuarioCreateNestedManyWithoutProfissionalInput
     HistoricoMedico?: HistoricoMedicoCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeCreateNestedManyWithoutProfissionalInput
   }
 
   export type ProfissionalUncheckedCreateWithoutAgendamentosInput = {
@@ -18859,6 +23799,8 @@ export namespace Prisma {
     especialidade: string
     usuarios?: UsuarioUncheckedCreateNestedManyWithoutProfissionalInput
     HistoricoMedico?: HistoricoMedicoUncheckedCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeUncheckedCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedCreateNestedManyWithoutProfissionalInput
   }
 
   export type ProfissionalCreateOrConnectWithoutAgendamentosInput = {
@@ -18926,8 +23868,10 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
     usuarios?: UsuarioUpdateManyWithoutPacienteNestedInput
     HistoricoMedico?: HistoricoMedicoUpdateManyWithoutPacienteNestedInput
+    PacientePlanoSaude?: PacientePlanoSaudeUpdateManyWithoutPacienteNestedInput
   }
 
   export type PacienteUncheckedUpdateWithoutAgendamentosInput = {
@@ -18935,8 +23879,10 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
     usuarios?: UsuarioUncheckedUpdateManyWithoutPacienteNestedInput
     HistoricoMedico?: HistoricoMedicoUncheckedUpdateManyWithoutPacienteNestedInput
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedUpdateManyWithoutPacienteNestedInput
   }
 
   export type ProfissionalUpsertWithoutAgendamentosInput = {
@@ -18961,6 +23907,8 @@ export namespace Prisma {
     especialidade?: StringFieldUpdateOperationsInput | string
     usuarios?: UsuarioUpdateManyWithoutProfissionalNestedInput
     HistoricoMedico?: HistoricoMedicoUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUpdateManyWithoutProfissionalNestedInput
   }
 
   export type ProfissionalUncheckedUpdateWithoutAgendamentosInput = {
@@ -18974,6 +23922,8 @@ export namespace Prisma {
     especialidade?: StringFieldUpdateOperationsInput | string
     usuarios?: UsuarioUncheckedUpdateManyWithoutProfissionalNestedInput
     HistoricoMedico?: HistoricoMedicoUncheckedUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUncheckedUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedUpdateManyWithoutProfissionalNestedInput
   }
 
   export type HistoricoMedicoUpsertWithWhereUniqueWithoutConsultaInput = {
@@ -18997,8 +23947,10 @@ export namespace Prisma {
     dataNascimento: Date | string
     peso: number
     altura: number
+    alergias?: string | null
     usuarios?: UsuarioCreateNestedManyWithoutPacienteInput
     agendamentos?: ConsultaCreateNestedManyWithoutPacienteInput
+    PacientePlanoSaude?: PacientePlanoSaudeCreateNestedManyWithoutPacienteInput
   }
 
   export type PacienteUncheckedCreateWithoutHistoricoMedicoInput = {
@@ -19006,8 +23958,10 @@ export namespace Prisma {
     dataNascimento: Date | string
     peso: number
     altura: number
+    alergias?: string | null
     usuarios?: UsuarioUncheckedCreateNestedManyWithoutPacienteInput
     agendamentos?: ConsultaUncheckedCreateNestedManyWithoutPacienteInput
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedCreateNestedManyWithoutPacienteInput
   }
 
   export type PacienteCreateOrConnectWithoutHistoricoMedicoInput = {
@@ -19026,6 +23980,8 @@ export namespace Prisma {
     especialidade: string
     usuarios?: UsuarioCreateNestedManyWithoutProfissionalInput
     agendamentos?: ConsultaCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeCreateNestedManyWithoutProfissionalInput
   }
 
   export type ProfissionalUncheckedCreateWithoutHistoricoMedicoInput = {
@@ -19039,6 +23995,8 @@ export namespace Prisma {
     especialidade: string
     usuarios?: UsuarioUncheckedCreateNestedManyWithoutProfissionalInput
     agendamentos?: ConsultaUncheckedCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeUncheckedCreateNestedManyWithoutProfissionalInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedCreateNestedManyWithoutProfissionalInput
   }
 
   export type ProfissionalCreateOrConnectWithoutHistoricoMedicoInput = {
@@ -19099,8 +24057,10 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
     usuarios?: UsuarioUpdateManyWithoutPacienteNestedInput
     agendamentos?: ConsultaUpdateManyWithoutPacienteNestedInput
+    PacientePlanoSaude?: PacientePlanoSaudeUpdateManyWithoutPacienteNestedInput
   }
 
   export type PacienteUncheckedUpdateWithoutHistoricoMedicoInput = {
@@ -19108,8 +24068,10 @@ export namespace Prisma {
     dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     peso?: FloatFieldUpdateOperationsInput | number
     altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
     usuarios?: UsuarioUncheckedUpdateManyWithoutPacienteNestedInput
     agendamentos?: ConsultaUncheckedUpdateManyWithoutPacienteNestedInput
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedUpdateManyWithoutPacienteNestedInput
   }
 
   export type ProfissionalUpsertWithoutHistoricoMedicoInput = {
@@ -19134,6 +24096,8 @@ export namespace Prisma {
     especialidade?: StringFieldUpdateOperationsInput | string
     usuarios?: UsuarioUpdateManyWithoutProfissionalNestedInput
     agendamentos?: ConsultaUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUpdateManyWithoutProfissionalNestedInput
   }
 
   export type ProfissionalUncheckedUpdateWithoutHistoricoMedicoInput = {
@@ -19147,6 +24111,8 @@ export namespace Prisma {
     especialidade?: StringFieldUpdateOperationsInput | string
     usuarios?: UsuarioUncheckedUpdateManyWithoutProfissionalNestedInput
     agendamentos?: ConsultaUncheckedUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUncheckedUpdateManyWithoutProfissionalNestedInput
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedUpdateManyWithoutProfissionalNestedInput
   }
 
   export type ConsultaUpsertWithoutHistoricoMedicoInput = {
@@ -19192,6 +24158,308 @@ export namespace Prisma {
     profissionalId?: StringFieldUpdateOperationsInput | string
   }
 
+  export type PacientePlanoSaudeCreateWithoutPlanoInput = {
+    id?: string
+    numeroCarteirinha: string
+    validade: Date | string
+    nomeTitular: string
+    paciente: PacienteCreateNestedOneWithoutPacientePlanoSaudeInput
+  }
+
+  export type PacientePlanoSaudeUncheckedCreateWithoutPlanoInput = {
+    id?: string
+    pacienteId: string
+    numeroCarteirinha: string
+    validade: Date | string
+    nomeTitular: string
+  }
+
+  export type PacientePlanoSaudeCreateOrConnectWithoutPlanoInput = {
+    where: PacientePlanoSaudeWhereUniqueInput
+    create: XOR<PacientePlanoSaudeCreateWithoutPlanoInput, PacientePlanoSaudeUncheckedCreateWithoutPlanoInput>
+  }
+
+  export type PacientePlanoSaudeCreateManyPlanoInputEnvelope = {
+    data: PacientePlanoSaudeCreateManyPlanoInput | PacientePlanoSaudeCreateManyPlanoInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ProfissionalPlanoSaudeCreateWithoutPlanoInput = {
+    id?: string
+    profissional: ProfissionalCreateNestedOneWithoutProfissionalPlanoSaudeInput
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput = {
+    id?: string
+    profissionalId: string
+  }
+
+  export type ProfissionalPlanoSaudeCreateOrConnectWithoutPlanoInput = {
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+    create: XOR<ProfissionalPlanoSaudeCreateWithoutPlanoInput, ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput>
+  }
+
+  export type ProfissionalPlanoSaudeCreateManyPlanoInputEnvelope = {
+    data: ProfissionalPlanoSaudeCreateManyPlanoInput | ProfissionalPlanoSaudeCreateManyPlanoInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type PacientePlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput = {
+    where: PacientePlanoSaudeWhereUniqueInput
+    update: XOR<PacientePlanoSaudeUpdateWithoutPlanoInput, PacientePlanoSaudeUncheckedUpdateWithoutPlanoInput>
+    create: XOR<PacientePlanoSaudeCreateWithoutPlanoInput, PacientePlanoSaudeUncheckedCreateWithoutPlanoInput>
+  }
+
+  export type PacientePlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput = {
+    where: PacientePlanoSaudeWhereUniqueInput
+    data: XOR<PacientePlanoSaudeUpdateWithoutPlanoInput, PacientePlanoSaudeUncheckedUpdateWithoutPlanoInput>
+  }
+
+  export type PacientePlanoSaudeUpdateManyWithWhereWithoutPlanoInput = {
+    where: PacientePlanoSaudeScalarWhereInput
+    data: XOR<PacientePlanoSaudeUpdateManyMutationInput, PacientePlanoSaudeUncheckedUpdateManyWithoutPlanoInput>
+  }
+
+  export type ProfissionalPlanoSaudeUpsertWithWhereUniqueWithoutPlanoInput = {
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+    update: XOR<ProfissionalPlanoSaudeUpdateWithoutPlanoInput, ProfissionalPlanoSaudeUncheckedUpdateWithoutPlanoInput>
+    create: XOR<ProfissionalPlanoSaudeCreateWithoutPlanoInput, ProfissionalPlanoSaudeUncheckedCreateWithoutPlanoInput>
+  }
+
+  export type ProfissionalPlanoSaudeUpdateWithWhereUniqueWithoutPlanoInput = {
+    where: ProfissionalPlanoSaudeWhereUniqueInput
+    data: XOR<ProfissionalPlanoSaudeUpdateWithoutPlanoInput, ProfissionalPlanoSaudeUncheckedUpdateWithoutPlanoInput>
+  }
+
+  export type ProfissionalPlanoSaudeUpdateManyWithWhereWithoutPlanoInput = {
+    where: ProfissionalPlanoSaudeScalarWhereInput
+    data: XOR<ProfissionalPlanoSaudeUpdateManyMutationInput, ProfissionalPlanoSaudeUncheckedUpdateManyWithoutPlanoInput>
+  }
+
+  export type PacienteCreateWithoutPacientePlanoSaudeInput = {
+    id?: string
+    dataNascimento: Date | string
+    peso: number
+    altura: number
+    alergias?: string | null
+    usuarios?: UsuarioCreateNestedManyWithoutPacienteInput
+    agendamentos?: ConsultaCreateNestedManyWithoutPacienteInput
+    HistoricoMedico?: HistoricoMedicoCreateNestedManyWithoutPacienteInput
+  }
+
+  export type PacienteUncheckedCreateWithoutPacientePlanoSaudeInput = {
+    id?: string
+    dataNascimento: Date | string
+    peso: number
+    altura: number
+    alergias?: string | null
+    usuarios?: UsuarioUncheckedCreateNestedManyWithoutPacienteInput
+    agendamentos?: ConsultaUncheckedCreateNestedManyWithoutPacienteInput
+    HistoricoMedico?: HistoricoMedicoUncheckedCreateNestedManyWithoutPacienteInput
+  }
+
+  export type PacienteCreateOrConnectWithoutPacientePlanoSaudeInput = {
+    where: PacienteWhereUniqueInput
+    create: XOR<PacienteCreateWithoutPacientePlanoSaudeInput, PacienteUncheckedCreateWithoutPacientePlanoSaudeInput>
+  }
+
+  export type PlanoSaudeCreateWithoutPacientePlanoSaudeInput = {
+    id?: string
+    nome: string
+    operadora: string
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeCreateNestedManyWithoutPlanoInput
+  }
+
+  export type PlanoSaudeUncheckedCreateWithoutPacientePlanoSaudeInput = {
+    id?: string
+    nome: string
+    operadora: string
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedCreateNestedManyWithoutPlanoInput
+  }
+
+  export type PlanoSaudeCreateOrConnectWithoutPacientePlanoSaudeInput = {
+    where: PlanoSaudeWhereUniqueInput
+    create: XOR<PlanoSaudeCreateWithoutPacientePlanoSaudeInput, PlanoSaudeUncheckedCreateWithoutPacientePlanoSaudeInput>
+  }
+
+  export type PacienteUpsertWithoutPacientePlanoSaudeInput = {
+    update: XOR<PacienteUpdateWithoutPacientePlanoSaudeInput, PacienteUncheckedUpdateWithoutPacientePlanoSaudeInput>
+    create: XOR<PacienteCreateWithoutPacientePlanoSaudeInput, PacienteUncheckedCreateWithoutPacientePlanoSaudeInput>
+    where?: PacienteWhereInput
+  }
+
+  export type PacienteUpdateToOneWithWhereWithoutPacientePlanoSaudeInput = {
+    where?: PacienteWhereInput
+    data: XOR<PacienteUpdateWithoutPacientePlanoSaudeInput, PacienteUncheckedUpdateWithoutPacientePlanoSaudeInput>
+  }
+
+  export type PacienteUpdateWithoutPacientePlanoSaudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
+    peso?: FloatFieldUpdateOperationsInput | number
+    altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
+    usuarios?: UsuarioUpdateManyWithoutPacienteNestedInput
+    agendamentos?: ConsultaUpdateManyWithoutPacienteNestedInput
+    HistoricoMedico?: HistoricoMedicoUpdateManyWithoutPacienteNestedInput
+  }
+
+  export type PacienteUncheckedUpdateWithoutPacientePlanoSaudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    dataNascimento?: DateTimeFieldUpdateOperationsInput | Date | string
+    peso?: FloatFieldUpdateOperationsInput | number
+    altura?: FloatFieldUpdateOperationsInput | number
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
+    usuarios?: UsuarioUncheckedUpdateManyWithoutPacienteNestedInput
+    agendamentos?: ConsultaUncheckedUpdateManyWithoutPacienteNestedInput
+    HistoricoMedico?: HistoricoMedicoUncheckedUpdateManyWithoutPacienteNestedInput
+  }
+
+  export type PlanoSaudeUpsertWithoutPacientePlanoSaudeInput = {
+    update: XOR<PlanoSaudeUpdateWithoutPacientePlanoSaudeInput, PlanoSaudeUncheckedUpdateWithoutPacientePlanoSaudeInput>
+    create: XOR<PlanoSaudeCreateWithoutPacientePlanoSaudeInput, PlanoSaudeUncheckedCreateWithoutPacientePlanoSaudeInput>
+    where?: PlanoSaudeWhereInput
+  }
+
+  export type PlanoSaudeUpdateToOneWithWhereWithoutPacientePlanoSaudeInput = {
+    where?: PlanoSaudeWhereInput
+    data: XOR<PlanoSaudeUpdateWithoutPacientePlanoSaudeInput, PlanoSaudeUncheckedUpdateWithoutPacientePlanoSaudeInput>
+  }
+
+  export type PlanoSaudeUpdateWithoutPacientePlanoSaudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    operadora?: StringFieldUpdateOperationsInput | string
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUpdateManyWithoutPlanoNestedInput
+  }
+
+  export type PlanoSaudeUncheckedUpdateWithoutPacientePlanoSaudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    operadora?: StringFieldUpdateOperationsInput | string
+    ProfissionalPlanoSaude?: ProfissionalPlanoSaudeUncheckedUpdateManyWithoutPlanoNestedInput
+  }
+
+  export type ProfissionalCreateWithoutProfissionalPlanoSaudeInput = {
+    id?: string
+    tipoRegistro: $Enums.TipoRegistro
+    numeroRegistro: string
+    uf: string
+    descricao: string
+    instituicaoFormadora: string
+    tipoProfissional: string
+    especialidade: string
+    usuarios?: UsuarioCreateNestedManyWithoutProfissionalInput
+    agendamentos?: ConsultaCreateNestedManyWithoutProfissionalInput
+    HistoricoMedico?: HistoricoMedicoCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeCreateNestedManyWithoutProfissionalInput
+  }
+
+  export type ProfissionalUncheckedCreateWithoutProfissionalPlanoSaudeInput = {
+    id?: string
+    tipoRegistro: $Enums.TipoRegistro
+    numeroRegistro: string
+    uf: string
+    descricao: string
+    instituicaoFormadora: string
+    tipoProfissional: string
+    especialidade: string
+    usuarios?: UsuarioUncheckedCreateNestedManyWithoutProfissionalInput
+    agendamentos?: ConsultaUncheckedCreateNestedManyWithoutProfissionalInput
+    HistoricoMedico?: HistoricoMedicoUncheckedCreateNestedManyWithoutProfissionalInput
+    Disponibilidade?: DisponibilidadeUncheckedCreateNestedManyWithoutProfissionalInput
+  }
+
+  export type ProfissionalCreateOrConnectWithoutProfissionalPlanoSaudeInput = {
+    where: ProfissionalWhereUniqueInput
+    create: XOR<ProfissionalCreateWithoutProfissionalPlanoSaudeInput, ProfissionalUncheckedCreateWithoutProfissionalPlanoSaudeInput>
+  }
+
+  export type PlanoSaudeCreateWithoutProfissionalPlanoSaudeInput = {
+    id?: string
+    nome: string
+    operadora: string
+    PacientePlanoSaude?: PacientePlanoSaudeCreateNestedManyWithoutPlanoInput
+  }
+
+  export type PlanoSaudeUncheckedCreateWithoutProfissionalPlanoSaudeInput = {
+    id?: string
+    nome: string
+    operadora: string
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedCreateNestedManyWithoutPlanoInput
+  }
+
+  export type PlanoSaudeCreateOrConnectWithoutProfissionalPlanoSaudeInput = {
+    where: PlanoSaudeWhereUniqueInput
+    create: XOR<PlanoSaudeCreateWithoutProfissionalPlanoSaudeInput, PlanoSaudeUncheckedCreateWithoutProfissionalPlanoSaudeInput>
+  }
+
+  export type ProfissionalUpsertWithoutProfissionalPlanoSaudeInput = {
+    update: XOR<ProfissionalUpdateWithoutProfissionalPlanoSaudeInput, ProfissionalUncheckedUpdateWithoutProfissionalPlanoSaudeInput>
+    create: XOR<ProfissionalCreateWithoutProfissionalPlanoSaudeInput, ProfissionalUncheckedCreateWithoutProfissionalPlanoSaudeInput>
+    where?: ProfissionalWhereInput
+  }
+
+  export type ProfissionalUpdateToOneWithWhereWithoutProfissionalPlanoSaudeInput = {
+    where?: ProfissionalWhereInput
+    data: XOR<ProfissionalUpdateWithoutProfissionalPlanoSaudeInput, ProfissionalUncheckedUpdateWithoutProfissionalPlanoSaudeInput>
+  }
+
+  export type ProfissionalUpdateWithoutProfissionalPlanoSaudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tipoRegistro?: EnumTipoRegistroFieldUpdateOperationsInput | $Enums.TipoRegistro
+    numeroRegistro?: StringFieldUpdateOperationsInput | string
+    uf?: StringFieldUpdateOperationsInput | string
+    descricao?: StringFieldUpdateOperationsInput | string
+    instituicaoFormadora?: StringFieldUpdateOperationsInput | string
+    tipoProfissional?: StringFieldUpdateOperationsInput | string
+    especialidade?: StringFieldUpdateOperationsInput | string
+    usuarios?: UsuarioUpdateManyWithoutProfissionalNestedInput
+    agendamentos?: ConsultaUpdateManyWithoutProfissionalNestedInput
+    HistoricoMedico?: HistoricoMedicoUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUpdateManyWithoutProfissionalNestedInput
+  }
+
+  export type ProfissionalUncheckedUpdateWithoutProfissionalPlanoSaudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tipoRegistro?: EnumTipoRegistroFieldUpdateOperationsInput | $Enums.TipoRegistro
+    numeroRegistro?: StringFieldUpdateOperationsInput | string
+    uf?: StringFieldUpdateOperationsInput | string
+    descricao?: StringFieldUpdateOperationsInput | string
+    instituicaoFormadora?: StringFieldUpdateOperationsInput | string
+    tipoProfissional?: StringFieldUpdateOperationsInput | string
+    especialidade?: StringFieldUpdateOperationsInput | string
+    usuarios?: UsuarioUncheckedUpdateManyWithoutProfissionalNestedInput
+    agendamentos?: ConsultaUncheckedUpdateManyWithoutProfissionalNestedInput
+    HistoricoMedico?: HistoricoMedicoUncheckedUpdateManyWithoutProfissionalNestedInput
+    Disponibilidade?: DisponibilidadeUncheckedUpdateManyWithoutProfissionalNestedInput
+  }
+
+  export type PlanoSaudeUpsertWithoutProfissionalPlanoSaudeInput = {
+    update: XOR<PlanoSaudeUpdateWithoutProfissionalPlanoSaudeInput, PlanoSaudeUncheckedUpdateWithoutProfissionalPlanoSaudeInput>
+    create: XOR<PlanoSaudeCreateWithoutProfissionalPlanoSaudeInput, PlanoSaudeUncheckedCreateWithoutProfissionalPlanoSaudeInput>
+    where?: PlanoSaudeWhereInput
+  }
+
+  export type PlanoSaudeUpdateToOneWithWhereWithoutProfissionalPlanoSaudeInput = {
+    where?: PlanoSaudeWhereInput
+    data: XOR<PlanoSaudeUpdateWithoutProfissionalPlanoSaudeInput, PlanoSaudeUncheckedUpdateWithoutProfissionalPlanoSaudeInput>
+  }
+
+  export type PlanoSaudeUpdateWithoutProfissionalPlanoSaudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    operadora?: StringFieldUpdateOperationsInput | string
+    PacientePlanoSaude?: PacientePlanoSaudeUpdateManyWithoutPlanoNestedInput
+  }
+
+  export type PlanoSaudeUncheckedUpdateWithoutProfissionalPlanoSaudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    operadora?: StringFieldUpdateOperationsInput | string
+    PacientePlanoSaude?: PacientePlanoSaudeUncheckedUpdateManyWithoutPlanoNestedInput
+  }
+
   export type UsuarioCreateManyPacienteInput = {
     id?: string
     nome: string
@@ -19200,6 +24468,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     profissionalId?: string | null
   }
 
@@ -19235,6 +24504,14 @@ export namespace Prisma {
     consultaId: string
   }
 
+  export type PacientePlanoSaudeCreateManyPacienteInput = {
+    id?: string
+    planoId: string
+    numeroCarteirinha: string
+    validade: Date | string
+    nomeTitular: string
+  }
+
   export type UsuarioUpdateWithoutPacienteInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
@@ -19243,6 +24520,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     profissional?: ProfissionalUpdateOneWithoutUsuariosNestedInput
     enderecos?: EnderecoUsuarioUpdateManyWithoutUsuarioNestedInput
   }
@@ -19255,6 +24533,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     profissionalId?: NullableStringFieldUpdateOperationsInput | string | null
     enderecos?: EnderecoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
   }
@@ -19267,6 +24546,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     profissionalId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -19368,6 +24648,30 @@ export namespace Prisma {
     consultaId?: StringFieldUpdateOperationsInput | string
   }
 
+  export type PacientePlanoSaudeUpdateWithoutPacienteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+    plano?: PlanoSaudeUpdateOneRequiredWithoutPacientePlanoSaudeNestedInput
+  }
+
+  export type PacientePlanoSaudeUncheckedUpdateWithoutPacienteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    planoId?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type PacientePlanoSaudeUncheckedUpdateManyWithoutPacienteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    planoId?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+  }
+
   export type UsuarioCreateManyProfissionalInput = {
     id?: string
     nome: string
@@ -19376,6 +24680,7 @@ export namespace Prisma {
     telefone: string
     avatar?: string | null
     genero: string
+    cpf: string
     pacienteId?: string | null
   }
 
@@ -19411,6 +24716,19 @@ export namespace Prisma {
     consultaId: string
   }
 
+  export type DisponibilidadeCreateManyProfissionalInput = {
+    id?: string
+    horaInicio: Date | string
+    horaFim: Date | string
+    diaSemanaId: string
+    clinicaId: string
+  }
+
+  export type ProfissionalPlanoSaudeCreateManyProfissionalInput = {
+    id?: string
+    planoId: string
+  }
+
   export type UsuarioUpdateWithoutProfissionalInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
@@ -19419,6 +24737,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     paciente?: PacienteUpdateOneWithoutUsuariosNestedInput
     enderecos?: EnderecoUsuarioUpdateManyWithoutUsuarioNestedInput
   }
@@ -19431,6 +24750,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     pacienteId?: NullableStringFieldUpdateOperationsInput | string | null
     enderecos?: EnderecoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
   }
@@ -19443,6 +24763,7 @@ export namespace Prisma {
     telefone?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     genero?: StringFieldUpdateOperationsInput | string
+    cpf?: StringFieldUpdateOperationsInput | string
     pacienteId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -19544,6 +24865,45 @@ export namespace Prisma {
     consultaId?: StringFieldUpdateOperationsInput | string
   }
 
+  export type DisponibilidadeUpdateWithoutProfissionalInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    clinica?: ClinicaUpdateOneRequiredWithoutDisponibilidadeNestedInput
+    diaSemana?: DiaSemanaUpdateOneRequiredWithoutDisponibilidadeNestedInput
+  }
+
+  export type DisponibilidadeUncheckedUpdateWithoutProfissionalInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    diaSemanaId?: StringFieldUpdateOperationsInput | string
+    clinicaId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type DisponibilidadeUncheckedUpdateManyWithoutProfissionalInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    diaSemanaId?: StringFieldUpdateOperationsInput | string
+    clinicaId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProfissionalPlanoSaudeUpdateWithoutProfissionalInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    plano?: PlanoSaudeUpdateOneRequiredWithoutProfissionalPlanoSaudeNestedInput
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedUpdateWithoutProfissionalInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    planoId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedUpdateManyWithoutProfissionalInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    planoId?: StringFieldUpdateOperationsInput | string
+  }
+
   export type EnderecoUsuarioCreateManyUsuarioInput = {
     id?: string
     enderecoId: string
@@ -19569,6 +24929,14 @@ export namespace Prisma {
     enderecoId: string
   }
 
+  export type DisponibilidadeCreateManyClinicaInput = {
+    id?: string
+    horaInicio: Date | string
+    horaFim: Date | string
+    diaSemanaId: string
+    profissionalId: string
+  }
+
   export type EnderecoClinicaUpdateWithoutClinicaInput = {
     id?: StringFieldUpdateOperationsInput | string
     endereco?: EnderecoUpdateOneRequiredWithoutClinicasNestedInput
@@ -19584,28 +24952,60 @@ export namespace Prisma {
     enderecoId?: StringFieldUpdateOperationsInput | string
   }
 
+  export type DisponibilidadeUpdateWithoutClinicaInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    profissional?: ProfissionalUpdateOneRequiredWithoutDisponibilidadeNestedInput
+    diaSemana?: DiaSemanaUpdateOneRequiredWithoutDisponibilidadeNestedInput
+  }
+
+  export type DisponibilidadeUncheckedUpdateWithoutClinicaInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    diaSemanaId?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type DisponibilidadeUncheckedUpdateManyWithoutClinicaInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    diaSemanaId?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
+  }
+
   export type DisponibilidadeCreateManyDiaSemanaInput = {
     id?: string
     horaInicio: Date | string
     horaFim: Date | string
+    clinicaId: string
+    profissionalId: string
   }
 
   export type DisponibilidadeUpdateWithoutDiaSemanaInput = {
     id?: StringFieldUpdateOperationsInput | string
     horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    profissional?: ProfissionalUpdateOneRequiredWithoutDisponibilidadeNestedInput
+    clinica?: ClinicaUpdateOneRequiredWithoutDisponibilidadeNestedInput
   }
 
   export type DisponibilidadeUncheckedUpdateWithoutDiaSemanaInput = {
     id?: StringFieldUpdateOperationsInput | string
     horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    clinicaId?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
   }
 
   export type DisponibilidadeUncheckedUpdateManyWithoutDiaSemanaInput = {
     id?: StringFieldUpdateOperationsInput | string
     horaInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     horaFim?: DateTimeFieldUpdateOperationsInput | Date | string
+    clinicaId?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
   }
 
   export type EnderecoUsuarioCreateManyEnderecoInput = {
@@ -19713,6 +25113,58 @@ export namespace Prisma {
     antecedentesFamiliares?: StringFieldUpdateOperationsInput | string
     status?: StringFieldUpdateOperationsInput | string
     pacienteId?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type PacientePlanoSaudeCreateManyPlanoInput = {
+    id?: string
+    pacienteId: string
+    numeroCarteirinha: string
+    validade: Date | string
+    nomeTitular: string
+  }
+
+  export type ProfissionalPlanoSaudeCreateManyPlanoInput = {
+    id?: string
+    profissionalId: string
+  }
+
+  export type PacientePlanoSaudeUpdateWithoutPlanoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+    paciente?: PacienteUpdateOneRequiredWithoutPacientePlanoSaudeNestedInput
+  }
+
+  export type PacientePlanoSaudeUncheckedUpdateWithoutPlanoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    pacienteId?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type PacientePlanoSaudeUncheckedUpdateManyWithoutPlanoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    pacienteId?: StringFieldUpdateOperationsInput | string
+    numeroCarteirinha?: StringFieldUpdateOperationsInput | string
+    validade?: DateTimeFieldUpdateOperationsInput | Date | string
+    nomeTitular?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProfissionalPlanoSaudeUpdateWithoutPlanoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    profissional?: ProfissionalUpdateOneRequiredWithoutProfissionalPlanoSaudeNestedInput
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedUpdateWithoutPlanoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    profissionalId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProfissionalPlanoSaudeUncheckedUpdateManyWithoutPlanoInput = {
+    id?: StringFieldUpdateOperationsInput | string
     profissionalId?: StringFieldUpdateOperationsInput | string
   }
 

@@ -20,12 +20,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.7.0
- * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+ * Prisma Client JS version: 6.8.0
+ * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
  */
 Prisma.prismaVersion = {
-  client: "6.7.0",
-  engine: "3cff47a7f5d65c3ea74883f1d736e41d68ce91ed"
+  client: "6.8.0",
+  engine: "2060c79ba17c6bb9f5823312b6f6b7f4a845738e"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -124,7 +124,8 @@ exports.Prisma.PacienteScalarFieldEnum = {
   id: 'id',
   dataNascimento: 'dataNascimento',
   peso: 'peso',
-  altura: 'altura'
+  altura: 'altura',
+  alergias: 'alergias'
 };
 
 exports.Prisma.ProfissionalScalarFieldEnum = {
@@ -146,6 +147,7 @@ exports.Prisma.UsuarioScalarFieldEnum = {
   telefone: 'telefone',
   avatar: 'avatar',
   genero: 'genero',
+  cpf: 'cpf',
   profissionalId: 'profissionalId',
   pacienteId: 'pacienteId'
 };
@@ -167,9 +169,11 @@ exports.Prisma.DiaSemanaScalarFieldEnum = {
 
 exports.Prisma.DisponibilidadeScalarFieldEnum = {
   id: 'id',
-  diaSemanaId: 'diaSemanaId',
   horaInicio: 'horaInicio',
-  horaFim: 'horaFim'
+  horaFim: 'horaFim',
+  diaSemanaId: 'diaSemanaId',
+  clinicaId: 'clinicaId',
+  profissionalId: 'profissionalId'
 };
 
 exports.Prisma.EnderecoScalarFieldEnum = {
@@ -229,6 +233,27 @@ exports.Prisma.HistoricoMedicoScalarFieldEnum = {
   consultaId: 'consultaId'
 };
 
+exports.Prisma.PlanoSaudeScalarFieldEnum = {
+  id: 'id',
+  nome: 'nome',
+  operadora: 'operadora'
+};
+
+exports.Prisma.PacientePlanoSaudeScalarFieldEnum = {
+  id: 'id',
+  pacienteId: 'pacienteId',
+  planoId: 'planoId',
+  numeroCarteirinha: 'numeroCarteirinha',
+  validade: 'validade',
+  nomeTitular: 'nomeTitular'
+};
+
+exports.Prisma.ProfissionalPlanoSaudeScalarFieldEnum = {
+  id: 'id',
+  profissionalId: 'profissionalId',
+  planoId: 'planoId'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -261,7 +286,10 @@ exports.Prisma.ModelName = {
   EnderecoUsuario: 'EnderecoUsuario',
   EnderecoClinica: 'EnderecoClinica',
   Consulta: 'Consulta',
-  HistoricoMedico: 'HistoricoMedico'
+  HistoricoMedico: 'HistoricoMedico',
+  PlanoSaude: 'PlanoSaude',
+  PacientePlanoSaude: 'PacientePlanoSaude',
+  ProfissionalPlanoSaude: 'ProfissionalPlanoSaude'
 };
 
 /**

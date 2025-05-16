@@ -2,10 +2,14 @@ import { ConflictException, Injectable } from '@nestjs/common';
 import MedicalRepository from '../repository/medical-repository';
 import { UpdateMedicalDto } from '../dto/update-medical';
 import { CreateMedicalDto } from '../dto/create-medical';
+import DisponibilityRepository from 'src/modules/disponibility/repository/disponibility-repository';
 
 @Injectable()
 export class MedicalService {
-  constructor(private readonly medicalRepository: MedicalRepository) {}
+  constructor(
+    private readonly medicalRepository: MedicalRepository,
+    private readonly disponibilityRepository: DisponibilityRepository,
+  ) {}
 
   async listAll() {
     return await this.medicalRepository.listAll();
@@ -37,5 +41,12 @@ export class MedicalService {
 
   async register(data: CreateMedicalDto) {
     return await this.medicalRepository.create(data);
+  }
+
+  async disponobilityMedical(professionalId: string) {
+    const result =
+      await this.disponibilityRepository.disponibilityMedical(professionalId);
+
+    return result;
   }
 }

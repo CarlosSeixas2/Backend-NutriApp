@@ -1,4 +1,4 @@
-import { ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsEmail, IsOptional, MinLength } from 'class-validator';
 
 export class UpdateUserDto {
@@ -25,6 +25,14 @@ export class UpdateUserDto {
   @IsOptional()
   @MinLength(6, { message: 'A senha deve ter pelo menos 6 caracteres.' })
   senha?: string;
+
+  @ApiProperty({
+    description: 'CPF do usuário (apenas números)',
+    example: '12345678909',
+  })
+  @MinLength(11, { message: 'O CPF deve ter 11 dígitos.' })
+  @IsOptional()
+  cpf: string;
 
   @ApiPropertyOptional({
     description: 'Número de telefone atualizado',

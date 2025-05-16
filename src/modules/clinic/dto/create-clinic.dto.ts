@@ -20,7 +20,7 @@ export class CreateClinicaDto {
 
   @ApiProperty({
     description: 'CNPJ da clínica',
-    example: '12.345.678/0001-99',
+    example: '12345678000199',
   })
   @IsNotEmpty({ message: 'O CNPJ é obrigatório.' })
   @IsString({ message: 'O CNPJ deve ser uma string.' })
@@ -36,7 +36,7 @@ export class CreateClinicaDto {
 
   @ApiProperty({
     description: 'Telefone da clínica',
-    example: '(86) 99876-5432',
+    example: '86998765432',
   })
   @IsNotEmpty({ message: 'O telefone é obrigatório.' })
   @IsString({ message: 'O telefone deve ser uma string.' })

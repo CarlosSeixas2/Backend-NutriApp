@@ -8,8 +8,8 @@ export default class UpdatePatientDto {
     type: String,
     format: 'date',
   })
-  @IsOptional()
   @IsDate({ message: 'Data de aniversário inválida.' })
+  @IsOptional()
   dataNascimento: Date;
 
   @ApiPropertyOptional({
@@ -27,4 +27,12 @@ export default class UpdatePatientDto {
   })
   @IsOptional()
   altura: number;
+
+  @ApiPropertyOptional({
+    description: 'Novas alergias do paciente',
+    example: 'Nenhuma',
+    type: String,
+  })
+  @IsOptional()
+  alergias: string;
 }
