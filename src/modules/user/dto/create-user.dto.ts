@@ -54,4 +54,18 @@ export class CreateUserDto {
   })
   @IsNotEmpty({ message: 'O gênero é obrigatório.' })
   genero: string;
+
+  @ApiPropertyOptional({
+    description: 'Novo ID do profissional (caso aplicável)',
+    example: 'pro-654321',
+  })
+  @IsOptional()
+  profissionalId?: string;
+
+  @ApiPropertyOptional({
+    description: 'Novo ID do paciente (caso aplicável)',
+    example: 'pac-123456',
+  })
+  @IsOptional()
+  pacienteId?: string;
 }

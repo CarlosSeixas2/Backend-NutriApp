@@ -3,9 +3,9 @@ import {
   Delete,
   Get,
   Param,
-  Patch,
   Post,
   Body,
+  Put,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { DayService } from '../service/day.service';
@@ -32,7 +32,7 @@ export class DayController {
     return await this.dayService.create(dto);
   }
 
-  @Patch(':id')
+  @Put(':id')
   async update(@Param('id') id: string, @Body() dto: UpdateDayDto) {
     return await this.dayService.update(id, dto);
   }

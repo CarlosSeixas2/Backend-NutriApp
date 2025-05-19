@@ -4,12 +4,13 @@ import {
   Delete,
   Get,
   Param,
-  Patch,
   Post,
+  Put,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { AdressService } from '../service/adress.service';
 import { CreateAdressDto } from '../dto/create-adress.dto';
+import { UpdateAdressDto } from '../dto/update-adress.dto';
 
 @ApiTags('Endereco')
 @Controller('adresses')
@@ -36,8 +37,8 @@ export class AdressController {
     return this.adressService.create(dto);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: CreateAdressDto) {
+  @Put(':id')
+  update(@Param('id') id: string, @Body() dto: UpdateAdressDto) {
     return this.adressService.update(id, dto);
   }
 

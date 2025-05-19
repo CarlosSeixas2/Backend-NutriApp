@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import adressRepository from '../repository/adress-repository';
 import { CreateAdressDto } from '../dto/create-adress.dto';
 import { UpdateAdressDto } from '../dto/update-adress.dto';
@@ -27,7 +27,7 @@ export class AdressService {
     const adress = await this.adressRepository.findById(id);
 
     if (!adress) {
-      throw new Error('Adress not found');
+      throw new NotFoundException('Id do Endereço não encontrado');
     }
 
     await this.adressRepository.update(id, data);
@@ -38,7 +38,7 @@ export class AdressService {
     const adress = await this.adressRepository.findById(id);
 
     if (!adress) {
-      throw new Error('Adress not found');
+      throw new NotFoundException('Id do Endereço não encontrado');
     }
 
     await this.adressRepository.delete(id);

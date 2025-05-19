@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import DayRepository from '../repository/day-repository';
 import { CreateDayDto } from '../dto/create-day.dto';
 import { UpdateDayDto } from '../dto/update-day.dto';
@@ -23,7 +23,7 @@ export class DayService {
     const day = await this.dayRepository.findById(id);
 
     if (!day) {
-      throw new Error('Day not found');
+      throw new NotFoundException('Id do Dia não encontrado');
     }
 
     await this.dayRepository.update(id, dto);
@@ -34,7 +34,7 @@ export class DayService {
     const day = await this.dayRepository.findById(id);
 
     if (!day) {
-      throw new Error('Day not found');
+      throw new NotFoundException('Id do Dia não encontrado');
     }
 
     await this.dayRepository.delete(id);

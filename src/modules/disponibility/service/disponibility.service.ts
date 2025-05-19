@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import DisponibilityRepository from '../repository/disponibility-repository';
 import { CreateDisponibilityDto } from '../dto/create-disponibility.dto';
 import { UpdateDisponibilityDto } from '../dto/update-disponibility.dto';
@@ -80,7 +84,7 @@ export default class DisponibilityService {
     const disponibility = await this.disponibilityRepository.findById(id);
 
     if (!disponibility) {
-      throw new Error('Disponibilidade não encontrada');
+      throw new NotFoundException('Id de Disponibilidade não encontrado');
     }
 
     return this.disponibilityRepository.update(id, data);
@@ -90,7 +94,7 @@ export default class DisponibilityService {
     const disponibility = await this.disponibilityRepository.findById(id);
 
     if (!disponibility) {
-      throw new Error('Disponibilidade não encontrada');
+      throw new NotFoundException('Id de Disponibilidade não encontrado');
     }
 
     return this.disponibilityRepository.delete(id);

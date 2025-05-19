@@ -1,4 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  ConflictException,
+} from '@nestjs/common';
 import ClinicRepository from '../repository/clinic-repository';
 import { CreateClinicaDto } from '../dto/create-clinic.dto';
 import { UpdateClinicaDto } from '../dto/update-clinic.dto';
@@ -19,7 +23,7 @@ export class ClinicService {
     const existingClinic = await this.clinicRepository.findByCnpj(data.cnpj);
 
     if (existingClinic) {
-      throw new Error('Clinic with this CNPJ already exists');
+      throw new ConflictException('CNPJ já cadastrado');
     }
 
     return await this.clinicRepository.create(data);
@@ -28,7 +32,7 @@ export class ClinicService {
   async update(id: string, data: UpdateClinicaDto) {
     const clinic = await this.clinicRepository.findById(id);
     if (!clinic) {
-      throw new Error('Clinic not found');
+      throw new NotFoundException('Id da clínica não encontrado');
     }
     await this.clinicRepository.update(id, data);
     return;
@@ -37,7 +41,7 @@ export class ClinicService {
   async delete(id: string) {
     const clinic = await this.clinicRepository.findById(id);
     if (!clinic) {
-      throw new Error('Clinic not found');
+      throw new NotFoundException('Id da clínica não encontrado');
     }
     await this.clinicRepository.delete(id);
     return;

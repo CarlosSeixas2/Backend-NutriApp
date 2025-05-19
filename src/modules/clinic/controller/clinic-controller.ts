@@ -4,8 +4,8 @@ import {
   Delete,
   Get,
   Param,
-  Patch,
   Post,
+  Put,
 } from '@nestjs/common';
 import { ClinicService } from '../service/clinic.service';
 import { ApiTags } from '@nestjs/swagger';
@@ -32,7 +32,7 @@ export class ClinicController {
     return this.clinicService.create(dto);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() dto: UpdateClinicaDto) {
     return this.clinicService.update(id, dto);
   }
